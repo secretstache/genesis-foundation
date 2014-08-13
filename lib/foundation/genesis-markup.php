@@ -1,24 +1,24 @@
 <?php
 // Priority 15 ensures it runs after Genesis itself has setup.
-add_action( 'genesis_setup', 'bsg_bootstrap_markup_setup', 15 );
+add_action( 'genesis_setup', 'ssfg_foundation_markup_setup', 15 );
 
-function bsg_bootstrap_markup_setup() {
+function ssfg_foundation_markup_setup() {
 
-    // add bootstrap classes
-    add_filter( 'genesis_attr_site-header',         'bsg_add_markup_class', 10, 2 );
-    add_filter( 'genesis_attr_site-inner',          'bsg_add_markup_class', 10, 2 );
-    add_filter( 'genesis_attr_content-sidebar-wrap','bsg_add_markup_class', 10, 2 );
-    add_filter( 'genesis_attr_content',             'bsg_add_markup_class', 10, 2 );
-    add_filter( 'genesis_attr_sidebar-primary',     'bsg_add_markup_class', 10, 2 );
-    add_filter( 'genesis_attr_archive-pagination',  'bsg_add_markup_class', 10, 2 );
-    add_filter( 'genesis_attr_site-footer',         'bsg_add_markup_class', 10, 2 );
+    // add foundation classes
+    add_filter( 'genesis_attr_site-header',         'ssfg_add_markup_class', 10, 2 );
+    add_filter( 'genesis_attr_site-inner',          'ssfg_add_markup_class', 10, 2 );
+    add_filter( 'genesis_attr_content-sidebar-wrap','ssfg_add_markup_class', 10, 2 );
+    add_filter( 'genesis_attr_content',             'ssfg_add_markup_class', 10, 2 );
+    add_filter( 'genesis_attr_sidebar-primary',     'ssfg_add_markup_class', 10, 2 );
+    add_filter( 'genesis_attr_archive-pagination',  'ssfg_add_markup_class', 10, 2 );
+    add_filter( 'genesis_attr_site-footer',         'ssfg_add_markup_class', 10, 2 );
 
-} // bsg_bootstrap_markup_setup()
+} // ssfg_foundation_markup_setup()
 
-function bsg_add_markup_class( $attr, $context ) {
+function ssfg_add_markup_class( $attr, $context ) {
     // default classes to add
-    $classes_to_add = apply_filters ('bsg-classes-to-add', 
-        // default bootstrap markup values
+    $classes_to_add = apply_filters ('ssfg-classes-to-add',
+        // default foundation markup values
         array(
             'site-header'       		=> 'row',
             'site-inner'       			=> 'inner-wrap',
@@ -36,7 +36,7 @@ function bsg_add_markup_class( $attr, $context ) {
     $class = isset( $classes_to_add[ $context ] ) ? $classes_to_add[ $context ] : '';
 
     // apply any filters to modify the class
-    $class = apply_filters( 'bsg-add-class', $class, $context, $attr );
+    $class = apply_filters( 'ssfg-add-class', $class, $context, $attr );
 
     // append the class(es) string (e.g. 'span9 custom-class1 custom-class2')
     $attr['class'] .= ' ' . sanitize_html_class( $class );
@@ -44,14 +44,14 @@ function bsg_add_markup_class( $attr, $context ) {
     return $attr;
 }
 
-/* Modify the Bootstrap Classes being applied
+/* Modify the foundation Classes being applied
  * based on the Genesis template chosen
  */
 
-// modify bootstrap classes based on genesis_site_layout
-add_filter('bsg-classes-to-add', 'bsg_modify_classes_based_on_template', 10, 3);
+// modify foundation classes based on genesis_site_layout
+add_filter('ssfg-classes-to-add', 'ssfg_modify_classes_based_on_template', 10, 3);
 
-function bsg_layout_options_modify_classes_to_add( $classes_to_add ) {
+function ssfg_layout_options_modify_classes_to_add( $classes_to_add ) {
 
     $layout = genesis_site_layout();
 
@@ -62,7 +62,7 @@ function bsg_layout_options_modify_classes_to_add( $classes_to_add ) {
         $classes_to_add['content'] = 'small-12';
     }
 
-    // sidebar-content          // not yet supported 
+    // sidebar-content          // not yet supported
     // - same markup as content-sidebar with css modifications rather than markup
 
     // content-sidebar-sidebar  // not yet supported
@@ -74,8 +74,8 @@ function bsg_layout_options_modify_classes_to_add( $classes_to_add ) {
     return $classes_to_add;
 };
 
-function bsg_modify_classes_based_on_template( $classes_to_add, $context, $attr ) {
-    $classes_to_add = bsg_layout_options_modify_classes_to_add( $classes_to_add );
+function ssfg_modify_classes_based_on_template( $classes_to_add, $context, $attr ) {
+    $classes_to_add = ssfg_layout_options_modify_classes_to_add( $classes_to_add );
 
     return $classes_to_add;
 }
