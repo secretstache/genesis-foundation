@@ -1,19 +1,13 @@
 <?php
-// Priority 15 ensures it runs after Genesis itself has setup.
-add_action( 'genesis_setup', 'ssfg_foundation_markup_setup', 15 );
 
-function ssfg_foundation_markup_setup() {
-
-    // add foundation classes
-    add_filter( 'genesis_attr_site-header',         'ssfg_add_markup_class', 10, 2 );
-    add_filter( 'genesis_attr_site-inner',          'ssfg_add_markup_class', 10, 2 );
-    add_filter( 'genesis_attr_content-sidebar-wrap','ssfg_add_markup_class', 10, 2 );
-    add_filter( 'genesis_attr_content',             'ssfg_add_markup_class', 10, 2 );
-    add_filter( 'genesis_attr_sidebar-primary',     'ssfg_add_markup_class', 10, 2 );
-    add_filter( 'genesis_attr_archive-pagination',  'ssfg_add_markup_class', 10, 2 );
-    add_filter( 'genesis_attr_site-footer',         'ssfg_add_markup_class', 10, 2 );
-
-} // ssfg_foundation_markup_setup()
+// add foundation classes
+add_filter( 'genesis_attr_site-header',         'ssfg_add_markup_class', 10, 2 );
+add_filter( 'genesis_attr_site-inner',          'ssfg_add_markup_class', 10, 2 );
+add_filter( 'genesis_attr_content-sidebar-wrap','ssfg_add_markup_class', 10, 2 );
+add_filter( 'genesis_attr_content',             'ssfg_add_markup_class', 10, 2 );
+add_filter( 'genesis_attr_sidebar-primary',     'ssfg_add_markup_class', 10, 2 );
+add_filter( 'genesis_attr_archive-pagination',  'ssfg_add_markup_class', 10, 2 );
+add_filter( 'genesis_attr_site-footer',         'ssfg_add_markup_class', 10, 2 );
 
 function ssfg_add_markup_class( $attr, $context ) {
     // default classes to add
