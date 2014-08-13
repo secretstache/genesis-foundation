@@ -1,0 +1,29 @@
+/*!
+Theme Name: Genesis Foundation BETA
+Theme URI: http://www.secretstache.com
+Description: Starter Theme for use as Child Theme of the Genesis Framework for building custom themes.
+Author: Secret Stache Media
+Author URI: http://www.secretstache.com
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.0
+
+Template: genesis
+*/
+
+// Normalize
+@import "../bower_components/foundation/scss/normalize";
+
+// Foundation Setting Overrides
+@import "partials/settings";
+
+// Foundation
+@import "../bower_components/foundation/scss/foundation";
+@import "partials/foundation-icons";
+
+// Genesis
+@import "partials/genesis";
+
+// Theme
+@import "partials/theme";
+
