@@ -161,12 +161,16 @@ function ssm_home_loop() { ?>
 		
 		<h2>Equal Height Columns</h2>
 	
-		<div class="row" data-equalizer>
-		  <div class="large-6 columns panel" data-equalizer-watch>
-		    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dignissim convallis sem vel ornare. In non risus vel nunc semper luctus. Pellentesque sed elit massa, a fermentum arcu. Cras sit amet nisi nec arcu tincidunt mollis quis nec lorem. Mauris sapien tortor, feugiat in mollis vitae, eleifend id nisi. Aliquam congue, risus eget ornare aliquet, metus magna tristique quam, ut elementum turpis arcu a velit. Quisque urna ante, semper sit amet faucibus eget, cursus sit amet ante. Vivamus rhoncus accumsan ligula, quis aliquam nisl iaculis vitae. Nullam blandit purus a massa pulvinar vitae posuere nisl vulputate. Quisque pretium facilisis turpis, ut sollicitudin turpis sodales eget. Donec interdum tincidunt molestie. Aliquam commodo consectetur egestas. Suspendisse convallis, arcu in sodales ullamcorper, arcu est ornare enim, sit amet varius tortor libero sit amet tellus. Pellentesque sit amet tortor vitae nisl mollis posuere.
-		  </div>
-		  <div class="large-6 columns panel" data-equalizer-watch>
-		    Vivamus rhoncus accumsan ligula, quis aliquam nisl iaculis vitae. Nullam blandit purus a massa pulvinar vitae posuere nisl vulputate. Quisque pretium facilisis turpis, ut sollicitudin turpis sodales eget. Donec interdum tincidunt molestie. Aliquam commodo consectetur egestas. Suspendisse convallis, arcu in sodales ullamcorper, arcu est ornare enim, sit amet varius tortor libero sit amet tellus. Pellentesque sit amet tortor vitae nisl mollis posuere.
+		<div class="info-cols" data-equalizer>
+			<div class="large-6 column">
+			  <div class="panel" data-equalizer-watch>
+			    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dignissim convallis sem vel ornare. In non risus vel nunc semper luctus. Pellentesque sed elit massa, a fermentum arcu. Cras sit amet nisi nec arcu tincidunt mollis quis nec lorem. Mauris sapien tortor, feugiat in mollis vitae, eleifend id nisi. Aliquam congue, risus eget ornare aliquet, metus magna tristique quam, ut elementum turpis arcu a velit. Quisque urna ante, semper sit amet faucibus eget, cursus sit amet ante. Vivamus rhoncus accumsan ligula, quis aliquam nisl iaculis vitae. Nullam blandit purus a massa pulvinar vitae posuere nisl vulputate. Quisque pretium facilisis turpis, ut sollicitudin turpis sodales eget. Donec interdum tincidunt molestie. Aliquam commodo consectetur egestas. Suspendisse convallis, arcu in sodales ullamcorper, arcu est ornare enim, sit amet varius tortor libero sit amet tellus. Pellentesque sit amet tortor vitae nisl mollis posuere.
+			  </div>
+			</div>
+		  <div class="large-6 column">
+			  <div class="panel"  data-equalizer-watch>
+			    Vivamus rhoncus accumsan ligula, quis aliquam nisl iaculis vitae. Nullam blandit purus a massa pulvinar vitae posuere nisl vulputate. Quisque pretium facilisis turpis, ut sollicitudin turpis sodales eget. Donec interdum tincidunt molestie. Aliquam commodo consectetur egestas. Suspendisse convallis, arcu in sodales ullamcorper, arcu est ornare enim, sit amet varius tortor libero sit amet tellus. Pellentesque sit amet tortor vitae nisl mollis posuere.
+			  </div>
 		  </div>
 		</div>
 	
@@ -205,6 +209,12 @@ function ssm_home_loop() { ?>
 		<i class="fi-star">Star</i>
 	
 	</div>
+	
+	<div class="demo-section">
+	
+	<span data-tooltip class="has-tip tip-top" title="Tooltips are awesome, you should totally use them!">extended information</span>
+	
+	</dov>
 
 
 <?php }

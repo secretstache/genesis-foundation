@@ -33,7 +33,7 @@ $include-html-global-classes: $include-html-classes;
 // $include-html-grid-classes: $include-html-classes;
 // $include-xl-html-grid-classes: false;
 
-$row-width: rem-calc(960);
+$row-width: rem-calc(1000);
 // $total-columns: 12;
 
 // Global
@@ -114,7 +114,7 @@ $primary-color: #008CBA;
 // $cursor-default-value: default;
 // $cursor-pointer-value: pointer;
 // $cursor-help-value: help;
-// $cursor-text-value: text;
+$cursor-text-value: text;
 
 //
 // TYPOGRAPHY

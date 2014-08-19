@@ -2,3 +2,39 @@
 	clear: both;
 	margin-bottom: 15px;
 }
+
+aside li.divider {
+	display: none;
+}
+
+body.sidebar-content .content.column, 
+body.sidebar-content .content.columns {
+	float: right;
+}
+
+@media all and (max-width: 40em) and (min-width: 0) {
+	#wpadminbar {
+		margin-top: -46px;
+	}
+	
+	body.sidebar-content .content.column, 
+	body.sidebar-content .content.columns {
+		float: none;
+	}
+	
+	.logged-in .fixed.mobile-menu {
+		margin-top: 46px;
+	}
+	.logged-in .sticky.mobile-menu {
+		margin-top: 0;
+	}
+	
+	.tabs dd, .tabs .tab-title {
+		width: 50%;
+	}
+}
+
+.site-footer .wrap {
+	margin-left: ($column-gutter/2);
+	margin-right: ($column-gutter/2);
+}

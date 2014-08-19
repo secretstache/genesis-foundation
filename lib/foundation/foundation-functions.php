@@ -13,7 +13,7 @@ add_action('genesis_after', 'ssm_close_offnav_markup');
  * Add Foundation offcanvas closing markup
  */
 function ssm_close_offnav_markup() {
-	echo '</div><!-- end .off-canvas-wrap --></div>';
+	echo '</div><!-- end .off-canvas-wrap -->';
 }
 
 /**
@@ -51,8 +51,23 @@ function ssm_primary_navigation() {
 	// display the wp3 menu if available
     wp_nav_menu(array(
 		'container'	=> false,
-		'container_class' => '',
     	'menu' => 'Primary Navigation',  				// nav name
+    	'theme_location' => 'primary-navigation',       // where it's located in the theme
+    	'before' => '',                                 // before the menu
+        'after' => '',                                  // after the menu
+        'link_before' => '',                            // before each link
+        'link_after' => '',                             // after each link
+		'walker'	=> new Foundation_Walker()
+	));
+
+}
+
+function ssm_primary_mobile_navigation() {
+	// display the wp3 menu if available
+    wp_nav_menu(array(
+		'container'	=> false,
+    	'menu' => 'Primary Navigation',  				// nav name
+		'menu_class' =>	'off-canvas-list',				// ul class			
     	'theme_location' => 'primary-navigation',       // where it's located in the theme
     	'before' => '',                                 // before the menu
         'after' => '',                                  // after the menu
@@ -79,10 +94,13 @@ function ssm_do_nav() { ?>
 			</nav>
 		</div>
 
-		<div class="show-for-small-only fixed">
+		<div class="show-for-small-only mobile-menu">
 			<nav class="tab-bar">
 				<section class="left-small">
-					<a class="left-off-canvas-toggle menu-icon" ><span></span></a>
+					<a class="left-off-canvas-toggle menu-icon"><span></span></a>
+				</section>
+				<section class="middle tab-bar-section">
+					<h1 class="title">Title</h1>
 				</section>
 			</nav>
 		</div>
@@ -92,7 +110,7 @@ function ssm_do_nav() { ?>
 					<li><label>Navigation</label></li>
 				</ul>
 				
-				<?php ssm_primary_navigation(); ?>
+				<?php ssm_primary_mobile_navigation(); ?>
 				
 		</aside>
 

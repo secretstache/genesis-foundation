@@ -1,39 +1,49 @@
 <?php
 
 // add foundation classes
-add_filter( 'genesis_attr_site-header',         'ssfg_add_markup_class', 10, 2 );
-add_filter( 'genesis_attr_site-inner',          'ssfg_add_markup_class', 10, 2 );
-add_filter( 'genesis_attr_content-sidebar-wrap','ssfg_add_markup_class', 10, 2 );
-add_filter( 'genesis_attr_content',             'ssfg_add_markup_class', 10, 2 );
-add_filter( 'genesis_attr_sidebar-primary',     'ssfg_add_markup_class', 10, 2 );
-add_filter( 'genesis_attr_archive-pagination',  'ssfg_add_markup_class', 10, 2 );
-add_filter( 'genesis_attr_site-footer',         'ssfg_add_markup_class', 10, 2 );
+add_filter( 'genesis_attr_site-header',         'ssm_add_markup_class', 10, 2 );
+add_filter( 'genesis_attr_site-container',      'ssm_add_markup_class', 10, 2 );
+add_filter( 'genesis_attr_content-sidebar-wrap','ssm_add_markup_class', 10, 2 );
+add_filter( 'genesis_attr_content',             'ssm_add_markup_class', 10, 2 );
+add_filter( 'genesis_attr_sidebar-primary',     'ssm_add_markup_class', 10, 2 );
+add_filter( 'genesis_attr_archive-pagination',  'ssm_add_markup_class', 10, 2 );
+add_filter( 'genesis_attr_site-footer',         'ssm_add_markup_class', 10, 2 );
 
-function ssfg_add_markup_class( $attr, $context ) {
+function ssm_add_markup_class( $attr, $context ) {
     // default classes to add
-    $classes_to_add = apply_filters ('ssfg-classes-to-add',
+    $classes_to_add = apply_filters ('ssm-classes-to-add',
         // default foundation markup values
         array(
             'site-header'       		=> 'row',
-            'site-inner'       			=> 'inner-wrap',
+            'site-container'       		=> 'inner-wrap',
             'site-footer'       		=> 'row',
             'content-sidebar-wrap'      => 'row',
-            'content'           		=> 'small-12 medium-7 large-8 column',
-            'sidebar-primary'   		=> 'small-12 medium-5 large-4 column',
+            'content'           		=> array('small-12', 'medium-7', 'large-8', 'column'),
+			'sidebar-primary'   		=> array('small-12', 'medium-5', 'large-4', 'column'),
             'archive-pagination'		=> 'clearfix',
         ),
         $context,
         $attr
     );
 
-    // lookup class from $classes_to_add
-    $class = isset( $classes_to_add[ $context ] ) ? $classes_to_add[ $context ] : '';
+	// populate $classes_array based on $classes_to_add
+	if ( isset( $classes_to_add[ $context ] ) ) {
+		if ( is_string( $classes_to_add[ $context ] ) ) {
+			$classes_array = explode( ' ', $classes_to_add[ $context ] );
+		} elseif ( is_array( $classes_to_add[ $context ] ) ) {
+			$classes_array = $classes_to_add[ $context ];
+		} else {
+			$classes_array = array();
+		}
+	} 
 
-    // apply any filters to modify the class
-    $class = apply_filters( 'ssfg-add-class', $class, $context, $attr );
+    // apply any filters to modify the class	
+	$classes_array = apply_filters( 'ssm-add-class', $classes_array, $context, $attr );
+	
+	$classes_array = array_map( 'sanitize_html_class', $classes_array );
 
-    // append the class(es) string (e.g. 'span9 custom-class1 custom-class2')
-    $attr['class'] .= ' ' . sanitize_html_class( $class );
+    // append the class(es) string (e.g. 'small-12', 'medium-7', 'large-8', 'column')
+    $attr['class'] .= ' ' . implode( ' ', $classes_array);
 
     return $attr;
 }
@@ -43,9 +53,9 @@ function ssfg_add_markup_class( $attr, $context ) {
  */
 
 // modify foundation classes based on genesis_site_layout
-add_filter('ssfg-classes-to-add', 'ssfg_modify_classes_based_on_template', 10, 3);
+add_filter('ssm-classes-to-add', 'ssm_modify_classes_based_on_template', 10, 3);
 
-function ssfg_layout_options_modify_classes_to_add( $classes_to_add ) {
+function ssm_layout_options_modify_classes_to_add( $classes_to_add ) {
 
     $layout = genesis_site_layout();
 
@@ -53,10 +63,10 @@ function ssfg_layout_options_modify_classes_to_add( $classes_to_add ) {
 
     // full-width-content       // supported
     if ( 'full-width-content' === $layout ) {
-        $classes_to_add['content'] = 'small-12';
+        $classes_to_add['content'] = array('small-12', 'column');
     }
 
-    // sidebar-content          // not yet supported
+    // sidebar-content
     // - same markup as content-sidebar with css modifications rather than markup
 
     // content-sidebar-sidebar  // not yet supported
@@ -68,8 +78,8 @@ function ssfg_layout_options_modify_classes_to_add( $classes_to_add ) {
     return $classes_to_add;
 };
 
-function ssfg_modify_classes_based_on_template( $classes_to_add, $context, $attr ) {
-    $classes_to_add = ssfg_layout_options_modify_classes_to_add( $classes_to_add );
+function ssm_modify_classes_based_on_template( $classes_to_add, $context, $attr ) {
+    $classes_to_add = ssm_layout_options_modify_classes_to_add( $classes_to_add );
 
     return $classes_to_add;
 }
