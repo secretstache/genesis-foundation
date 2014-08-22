@@ -177,6 +177,12 @@ function ssm_home_loop() { ?>
 	</div>
 	
 	<div class="demo-section">
+	
+	<span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="has-tip tip-top radius" title="Tooltips are awesome, you should totally use them!">extended information</span>
+	
+	</div>
+	
+	<div class="demo-section">
 		
 		<h2>Dropdown Button</h2>
 	
@@ -209,12 +215,6 @@ function ssm_home_loop() { ?>
 		<i class="fi-star">Star</i>
 	
 	</div>
-	
-	<div class="demo-section">
-	
-	<span data-tooltip class="has-tip tip-top" title="Tooltips are awesome, you should totally use them!">extended information</span>
-	
-	</dov>
 
 
 <?php }

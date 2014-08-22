@@ -1,23 +1,20 @@
-body.full-width-content main.content {
-	width: 100%;
-}
-
-
 /* WordPress
 --------------------------------------------- */
+
+.entry-content div {
+	max-width: 100%;
+}
 
 .avatar {
 	float: left;
 }
 
 .alignleft .avatar {
-	margin-right: 24px;
-	margin-right: 2.4rem;
+	margin-right: rem-calc(24);
 }
 
 .alignright .avatar {
-	margin-left: 24px;
-	margin-left: 2.4rem;
+	margin-left: rem-calc(24);;
 }
 
 .search-form input[type="submit"] {
@@ -30,19 +27,14 @@ body.full-width-content main.content {
 	width: 1px;
 }
 
-.sticky {
-}
-
 img.centered,
 .aligncenter {
 	display: block;
-	margin: 0 auto 24px;
-	margin: 0 auto 2.4rem;
+	margin: 0 auto rem-calc(24);
 }
 
 img.alignnone {
-	margin-bottom: 12px;
-	margin-bottom: 1.2rem;
+	margin-bottom: rem-calc(12);
 }
 
 .alignleft {
@@ -55,82 +47,34 @@ img.alignnone {
 	text-align: right;
 }
 
+img > wp-caption-text {
+	margin-bottom: rem-calc(24);
+}
+
 img.alignleft,
 .wp-caption.alignleft {
 	margin: 0 24px 24px 0;
-	margin: 0 2.4rem 2.4rem 0;
+	margin: 0 rem-calc(24) rem-calc(24) 0;
 }
 
 img.alignright,
 .wp-caption.alignright {
-	margin: 0 0 24px 24px;
-	margin: 0 0 2.4rem 2.4rem;
+	margin: 0 0 rem-calc(24) rem-calc(24);
 }
 
 .wp-caption-text {
-	font-size: 14px;
-	font-size: 1.4rem;
+	font-size: rem-calc(14);
 	font-weight: 700;
-	text-align: center;
-}
-
-.gallery-caption {
-}
-
-.widget_calendar table {
-	width: 100%;
-}
-
-.widget_calendar td,
-.widget_calendar th {
-	text-align: center;
-}
-
-/* Genesis
---------------------------------------------- */
-
-.breadcrumb {
-	margin-bottom: 20px;
-	margin-bottom: 2rem;
-}
-
-.archive-description,
-.author-box {
-	background-color: #fff;
-	margin-bottom: 40px;
-	margin-bottom: 4rem;
-}
-
-.archive-description {
-	padding: 40px 40px 24px;
-	padding: 4rem 4rem 2.4rem;
-}
-
-.author-box {
-	padding: 40px;
-	padding: 4rem;
-}
-
-.author-box-title {
-	color: #333;
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-size: 16px;
-	font-size: 1.6rem;
-	margin-bottom: 4px;
-	margin-bottom: 0.4rem;
-}
-
-.author-box a {
-	border-bottom: 1px solid #ddd;
-}
-
-.author-box p {
 	margin-bottom: 0;
+	text-align: center;
 }
 
-.author-box .avatar {
-	margin-right: 24px;
-	margin-right: 2.4rem;
+pre {
+	background: #eee;
+	border: 1px solid #ccc;
+	font-size: rem-calc(14);
+	padding: rem-calc(10);
+	line-height: 1.4;
 }
 
 /* Jetpack
@@ -145,10 +89,8 @@ img#wpstats {
 
 .archive-pagination,
 .entry-pagination {
-	font-size: 14px;
-	font-size: 1.4rem;
-	margin: 40px 0;
-	margin: 4rem 0;
+	font-size: rem-calc(14);
+	margin: rem-calc(40) 0;
 }
 
 .archive-pagination li {
@@ -161,8 +103,7 @@ img#wpstats {
 	color: #fff;
 	cursor: pointer;
 	display: inline-block;
-	padding: 8px 12px;
-	padding: 0.8rem 1.2rem;
+	padding: rem-calc(8) rem-calc(12);
 }
 
 .archive-pagination li a:hover,
@@ -181,19 +122,13 @@ img#wpstats {
 .entry-comments,
 .entry-pings {
 	background-color: #fff;
-	margin-bottom: 40px;
-	margin-bottom: 4rem;
+	margin-bottom: rem-calc(40);
 }
 
-.entry-comments {
-	padding: 40px;
-	padding: 4rem;
-}
 
 .comment-respond,
 .entry-pings {
-	padding: 40px 40px 16px;
-	padding: 4rem 4rem 1.6rem;
+	padding: rem-calc(40) 0 rem-calc(16);
 }
 
 .comment-respond a,
@@ -217,8 +152,11 @@ img#wpstats {
 
 .comment-respond label {
 	display: block;
-	margin-right: 12px;
-	margin-right: 1.2rem;
+	margin-right: rem-calc(12);
+}
+
+.comment-list, ul.children {
+	margin-left: 0;
 }
 
 .comment-list li,
@@ -227,26 +165,17 @@ img#wpstats {
 }
 
 .comment-list li {
-	margin-top: 24px;
-	margin-top: 2.4rem;
-	padding: 32px;
-	padding: 3.2rem;
-}
-
-.comment-list li li {
-	margin-right: -32px;
-	margin-right: -3.2rem;
+	margin-top: rem-calc(24);
+	padding: rem-calc(32);
 }
 
 li.comment {
 	background-color: #f5f5f5;
 	border: 2px solid #fff;
-	border-right: none;
 }
 
 .comment .avatar {
-	margin: 0 16px 24px 0;
-	margin: 0 1.6rem 2.4rem 0;
+	margin: 0 rem-calc(16) rem-calc(24) 0;
 }
 
 .entry-pings .reply {
@@ -255,8 +184,50 @@ li.comment {
 
 .form-allowed-tags {
 	background-color: #f5f5f5;
-	font-size: 14px;
-	font-size: 1.4rem;
-	padding: 24px;
-	padding: 2.4rem;
+	font-size: rem-calc(14);
+	padding: rem-calc(24);
+}
+
+p.form-submit input {
+	@include button;
+}
+
+/* Genesis
+--------------------------------------------- */
+
+.breadcrumb {
+	margin-bottom: rem-calc(20);
+}
+
+.archive-description,
+.author-box {
+	background-color: #fff;
+	margin-bottom: rem-calc(40);
+}
+
+.archive-description {
+	padding: rem-calc(40) rem-calc(40) rem-calc(24);
+}
+
+.author-box {
+	padding: rem-calc(40);
+}
+
+.author-box-title {
+	color: #333;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: rem-calc(16);
+	margin-bottom: rem-calc(4);
+}
+
+.author-box a {
+	border-bottom: 1px solid #ddd;
+}
+
+.author-box p {
+	margin-bottom: 0;
+}
+
+.author-box .avatar {
+	margin-right: rem-calc(24);
 }
