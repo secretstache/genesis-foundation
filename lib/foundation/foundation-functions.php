@@ -86,6 +86,8 @@ add_action('genesis_after_header', 'ssm_do_nav');
 */
 function ssm_do_nav() { ?>
 		
+		<?php if ( has_nav_menu('primary-navigation') ) { ?>
+		
 		<div class="show-for-medium-up contain-to-grid">
 			<nav class="top-bar" data-topbar>	
 				<section class="top-bar-section">
@@ -115,6 +117,8 @@ function ssm_do_nav() { ?>
 		</aside>
 
 		<a class="exit-off-canvas"></a>
+		
+		<?php } // endif has_nav_menu ?>
 		
 <?php }
 
