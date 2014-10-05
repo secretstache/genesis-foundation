@@ -37,6 +37,12 @@ function ssm_remove_genesis_page_templates( $page_templates ) {
 }
 
 /**
+ * Remove Unnecessary User Roles
+ */
+remove_role( 'subscriber' );
+remove_role( 'contributor' );
+
+/**
  * Remove Genesis Theme Settings Metaboxes
  */
 function ssm_remove_genesis_metaboxes( $_genesis_theme_settings_pagehook ) {
