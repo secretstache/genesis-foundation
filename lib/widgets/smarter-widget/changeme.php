@@ -52,7 +52,7 @@ class Smart_Widget extends WP_Widget { // Change Smart_Widget to something repre
 	}
 	
 	function register_admin_styles() {
-		wp_enqueue_style( 'widget-namespace-admin', get_bloginfo('stylesheet_directory') . '/includes/widgets/resources/admin.css'); // (ie ssm-resources-admin) + Be sure to update path
+		wp_enqueue_style( 'widget-namespace-admin', get_bloginfo('stylesheet_directory') . '/path/to/widget/admin.css'); // (ie ssm-resources-admin) + Be sure to update path
 	}
 	
 }

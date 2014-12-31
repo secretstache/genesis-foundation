@@ -173,6 +173,9 @@ function child_theme_setup() {
 
 	// Remove Read More Jump
 	add_filter('the_content_more_link', 'ssm_remove_more_jump_link');
+	
+	// Fix GravityForms tabindex conflict
+	add_filter( 'gform_tabindex', 'gform_tabindexer', 10, 2 );
 
 }
 
