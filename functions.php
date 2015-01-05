@@ -136,6 +136,9 @@ function child_theme_setup() {
 	
 	// Remove the injected styles for the [gallery] shortcode
 	add_filter( 'gallery_style', 'ssm_gallery_style' );
+	
+	// Replace Category Checkboxes with Radio Buttons
+	add_action( 'init', 'ssm_admin_catcher' );
 
 
 	/****************************************

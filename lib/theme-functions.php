@@ -206,6 +206,33 @@ if ( $homepage ) {
     update_option( 'show_on_front', 'page' );
 }
 
+/*
+ * Limits a post to a single category by changing the checkboxes into radio buttons. Simple.
+ *
+ */ 
+function ssm_admin_catcher() {
+	if( strstr($_SERVER['REQUEST_URI'], 'wp-admin/post-new.php') 
+		|| strstr($_SERVER['REQUEST_URI'], 'wp-admin/post.php') 
+		|| strstr($_SERVER['REQUEST_URI'], 'wp-admin/edit.php') ) {
+	  ob_start('ssm_one_category_only');
+	}
+}
+
+function ssm_one_category_only($content) {
+	return ssm_swap_out_checkboxes($content);
+}
+
+
+function ssm_swap_out_checkboxes($content) {
+	$content = str_replace('type="checkbox" name="post_category', 'type="radio" name="post_category', $content);
+
+	foreach (get_all_category_ids() as $i) { 
+		$content = str_replace('id="in-popular-category-'.$i.'" type="checkbox"', 'id="in-popular-category-'.$i.'" type="radio"', $content);
+	}
+
+	return $content;
+}
+
 
 
 /****************************************
