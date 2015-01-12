@@ -139,6 +139,9 @@ function child_theme_setup() {
 	
 	// Replace Category Checkboxes with Radio Buttons
 	add_action( 'init', 'ssm_admin_catcher' );
+	
+	// Add admin body class to differentiate the home page
+	add_filter( 'admin_body_class', 'ssm_home_admin_body_class' );
 
 
 	/****************************************

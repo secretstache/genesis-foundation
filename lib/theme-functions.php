@@ -233,7 +233,22 @@ function ssm_swap_out_checkboxes($content) {
 	return $content;
 }
 
+/*
+ * Adds a body class to target the home page edit screen
+ *
+ */
+function ssm_home_admin_body_class( $classes ) {
+	global $post;
+    $screen = get_current_screen();
+	$homepage = get_page_by_title( 'Home' );
 
+    if ( 'post' == $screen->base && ( $post->ID == $homepage->ID ) ) {
+        $classes .= 'front-page';
+	} 
+	
+    return $classes;
+		
+}
 
 /****************************************
 Frontend
