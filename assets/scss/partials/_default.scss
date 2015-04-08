@@ -21,9 +21,17 @@ textarea:focus,
 	transition:         all 0.1s ease-in-out;
 }
 
-button,
-a.button {
-	@include button();
+// button,
+// a.button {
+// 	@include button();
+// }
+
+.wrap {
+	@include grid-row();
+}
+
+p a {
+	text-decoration: underline;
 }
 
 /* WordPress
@@ -261,9 +269,17 @@ p.form-submit input {
 05 Menus
 ---------------------------------------------------------------------------------------------------- */
 
+nav {
+	background: $default-bg-gray;
+}
+
 .genesis-nav-menu {
 	clear: both;
+	margin: 0;
 	overflow: hidden;
+	ul {
+		margin: 0;
+	}
 }
 
 #header .genesis-nav-menu {
@@ -291,7 +307,7 @@ p.form-submit input {
 
 .genesis-nav-menu a {
 	display: block;
-	padding: $global-padding+5 $global-padding;
+	padding: $global-padding/2 $global-padding;
 	position: relative;
 }
 
@@ -313,7 +329,7 @@ p.form-submit input {
 	background-color: $white;
 	border: rem-calc(1) solid $default-border-gray;
 	border-top: none;
-	padding: $global-padding;
+	padding: $global-padding/2 $global-padding;
 	position: relative;
 	width: rem-calc(170);
 }

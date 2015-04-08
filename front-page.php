@@ -16,6 +16,7 @@ add_action( 'genesis_loop', 'ssm_home_loop' );
 
 function ssm_home_loop() { ?>
 
+<a class="button">A Button</a>
 
 <?php }
 
