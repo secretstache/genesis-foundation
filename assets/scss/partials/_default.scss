@@ -1,0 +1,385 @@
+body {
+	background-color: $body-bg;
+	color: $primary-color;
+	font-family: $primary-font-family;
+	font-size: $rem-base;
+}
+
+
+a,
+button,
+input:focus,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+textarea:focus,
+.button {
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition:    all 0.1s ease-in-out;
+	-ms-transition:     all 0.1s ease-in-out;
+	-o-transition:      all 0.1s ease-in-out;
+	transition:         all 0.1s ease-in-out;
+}
+
+button,
+a.button {
+	@include button();
+}
+
+/* WordPress
+--------------------------------------------- */
+
+.entry-content div {
+	max-width: 100%;
+}
+
+.avatar {
+	float: left;
+}
+
+.alignleft .avatar {
+	margin-right: $global-margin;
+}
+
+.alignright .avatar {
+	margin-left: $global-margin;
+}
+
+.search-form input[type="submit"] {
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+img.centered,
+.aligncenter {
+	display: block;
+	margin: 0 auto $global-margin;
+}
+
+img.alignnone {
+	margin-bottom: $global-margin/2;
+}
+
+.alignleft {
+	float: left;
+	text-align: left;
+}
+
+.alignright {
+	float: right;
+	text-align: right;
+}
+
+img > wp-caption-text {
+	margin-bottom: $global-margin;
+}
+
+img.alignleft,
+.wp-caption.alignleft {
+	margin: 0 $global-margin $global-margin 0;
+}
+
+img.alignright,
+.wp-caption.alignright {
+	margin: 0 0 $global-margin $global-margin;
+}
+
+.wp-caption-text {
+	font-size: 90%;
+	font-weight: $font-weight-bold;
+	margin-bottom: 0;
+	text-align: center;
+}
+
+pre {
+	background: $default-bg-gray;
+	border: rem-calc(1) solid $default-border-gray;
+	font-size: 90%;
+	padding: $global-padding/2;
+	line-height: $paragraph-line-height;
+}
+
+/* Jetpack
+--------------------------------------------- */
+
+img#wpstats {
+	display: none;
+}
+
+/* Pagination
+--------------------------------------------- */
+
+.archive-pagination,
+.entry-pagination {
+	font-size: 100%;
+	margin: $global-margin 0;
+}
+
+.archive-pagination li {
+	display: inline;
+}
+
+.archive-pagination li a {
+	background-color: $oil;
+	border-radius: $global-radius;
+	color: $white;
+	cursor: pointer;
+	display: inline-block;
+	padding: $global-padding $global-padding*1.5;
+}
+
+.archive-pagination li a:hover,
+.archive-pagination li.active a {
+	background-color: $default-bg-gray;
+}
+
+.entry-pagination a {
+	border-bottom: rem-calc(1) solid $default-border-gray;
+}
+
+/* Comments
+--------------------------------------------- */
+
+.comment-respond,
+.entry-comments,
+.entry-pings {
+	background-color: $white;
+	margin-bottom: $global-margin;
+}
+
+
+.comment-respond,
+.entry-pings {
+	padding: $global-padding 0 $global-padding/2;
+}
+
+.comment-respond a,
+.entry-comments a {
+	border-bottom: rem-calc(1) solid $default-border-gray;
+}
+
+.comment-content {
+	clear: both;
+}
+
+.entry-comments .comment-author {
+	margin-bottom: 0;
+}
+
+.comment-respond input[type="email"],
+.comment-respond input[type="text"],
+.comment-respond input[type="url"] {
+	width: 50%
+}
+
+.comment-respond label {
+	display: block;
+	margin-right: $global-margin;
+}
+
+.comment-list, ul.children {
+	margin-left: 0;
+}
+
+.comment-list li,
+.ping-list li {
+	list-style-type: none;
+}
+
+.comment-list li {
+	margin-top: $global-margin;
+	padding: $global-padding;
+}
+
+li.comment {
+	background-color: $white-smoke;
+	border: rem-calc(2) solid $white;
+}
+
+.comment .avatar {
+	margin: 0 $global-margin/2 $global-margin 0;
+}
+
+.entry-pings .reply {
+	display: none;
+}
+
+.form-allowed-tags {
+	background-color: $default-bg-gray;
+	font-size: 100%;
+	padding: $global-padding;
+}
+
+p.form-submit input {
+	@include button();
+}
+
+/* Genesis
+--------------------------------------------- */
+
+.breadcrumb {
+	margin-bottom: $global-margin;
+}
+
+.archive-description,
+.author-box {
+	background-color: $default-bg-gray;
+	margin-bottom: $global-margin;
+}
+
+.archive-description {
+	padding: $global-padding $global-padding $global-padding/2;
+}
+
+.author-box {
+	padding: $global-padding;
+}
+
+.author-box-title {
+	color: $primary-color;
+	margin-bottom: $global-margin/5;
+}
+
+.author-box a {
+	border-bottom: rem-calc(1) solid $default-border-gray;
+}
+
+.author-box p {
+	margin-bottom: 0;
+}
+
+.author-box .avatar {
+	margin-right: $global-margin;
+}
+
+/*
+05 Menus
+---------------------------------------------------------------------------------------------------- */
+
+.genesis-nav-menu {
+	clear: both;
+	overflow: hidden;
+}
+
+#header .genesis-nav-menu {
+	float: right;
+	margin-top: $global-margin*2;
+	width: auto;
+}
+
+.genesis-nav-menu.menu-primary,
+.genesis-nav-menu.menu-secondary {
+	border-bottom: rem-calc(1) solid $default-border-gray;
+}
+
+.genesis-nav-menu ul {
+	float: left;
+	width: 100%;
+}
+
+.genesis-nav-menu li {
+	display: inline-block;
+	float: left;
+	list-style-type: none;
+	text-align: left;
+}
+
+.genesis-nav-menu a {
+	display: block;
+	padding: $global-padding+5 $global-padding;
+	position: relative;
+}
+
+.genesis-nav-menu li.highlight-menu-item {
+	margin-left: $global-margin;
+}
+
+.genesis-nav-menu .highlight-menu-item a {
+	background-color: $default-bg-gray;
+}
+
+.genesis-nav-menu .highlight-menu-item a:hover {
+	background-color: darken($default-bg-gray, 10%);
+}
+
+.genesis-nav-menu li li a,
+.genesis-nav-menu li li a:link,
+.genesis-nav-menu li li a:visited {
+	background-color: $white;
+	border: rem-calc(1) solid $default-border-gray;
+	border-top: none;
+	padding: $global-padding;
+	position: relative;
+	width: rem-calc(170);
+}
+
+.genesis-nav-menu li ul {
+	left: -9999px;
+	position: absolute;
+	width: rem-calc(212);
+	z-index: 99;
+}
+
+.genesis-nav-menu li ul ul {
+	margin: rem-calc(-55) 0 0 rem-calc(211);
+}
+
+.genesis-nav-menu li:hover ul ul,
+.genesis-nav-menu li.sfHover ul ul {
+	left: -9999px;
+}
+
+.genesis-nav-menu li:hover,
+.genesis-nav-menu li.sfHover {
+	position: static;
+}
+
+ul.genesis-nav-menu li:hover>ul,
+ul.genesis-nav-menu li.sfHover ul,
+#header .genesis-nav-menu li:hover>ul,
+#header .genesis-nav-menu li.sfHover ul {
+	left: auto;
+}
+
+.genesis-nav-menu li a .sf-sub-indicator,
+.genesis-nav-menu li li a .sf-sub-indicator,
+.genesis-nav-menu li li li a .sf-sub-indicator {
+	position: absolute;
+	text-indent: -9999px;
+}
+
+#wpadminbar li:hover ul ul {
+	left: 0;
+}
+
+/* 05a - Primary Navigation Extras ----------- */
+
+.genesis-nav-menu li.right {
+	float: right;
+	padding: $global-padding;
+}
+
+.genesis-nav-menu li.right a {
+	display: inline;
+	padding: 0;
+}
+
+.genesis-nav-menu li.search {
+	padding: rem-calc(6) 0 0;
+}
+
+.genesis-nav-menu li.rss a {
+	background: url(assets/images/rss.png) no-repeat center left;
+	margin-left: $global-margin;
+	padding-left: $global-padding;
+}
+
+.genesis-nav-menu li.twitter a {
+	background: url(assets/images/twitter-nav.png) no-repeat center left;
+	padding-left: $global-padding;
+}

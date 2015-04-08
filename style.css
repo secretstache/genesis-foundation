@@ -1,5 +1,5 @@
 /*!
-Theme Name: Genesis Foundation BETA
+Theme Name: Genesis Foundation
 Theme URI: http://www.secretstache.com
 Description: Starter Theme for use as Child Theme of the Genesis Framework for building custom themes.
 Author: Secret Stache Media
@@ -6521,8 +6521,12 @@ th.hide-for-touch {
 
   th.show-for-print {
     display: table-cell !important; } }
-/* WordPress
---------------------------------------------- */
+body {
+  background-color: #fff;
+  color: #008CBA;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 16px; }
+
 a,
 button,
 input:focus,
@@ -6537,6 +6541,42 @@ textarea:focus,
   -o-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out; }
 
+button,
+a.button {
+  border-style: solid;
+  border-width: 0;
+  cursor: pointer;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: normal;
+  line-height: normal;
+  margin: 0 0 1.25rem;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 0;
+  display: inline-block;
+  padding-top: 1rem;
+  padding-right: 2rem;
+  padding-bottom: 1.0625rem;
+  padding-left: 2rem;
+  font-size: 1rem;
+  background-color: #008CBA;
+  border-color: #007095;
+  color: #FFFFFF;
+  transition: background-color 300ms ease-out; }
+  button:hover, button:focus,
+  a.button:hover,
+  a.button:focus {
+    background-color: #007095; }
+  button:hover, button:focus,
+  a.button:hover,
+  a.button:focus {
+    color: #FFFFFF; }
+
+/* WordPress
+--------------------------------------------- */
 .entry-content div {
   max-width: 100%; }
 
@@ -6544,10 +6584,10 @@ textarea:focus,
   float: left; }
 
 .alignleft .avatar {
-  margin-right: 1.5rem; }
+  margin-right: 1.25rem; }
 
 .alignright .avatar {
-  margin-left: 1.5rem; }
+  margin-left: 1.25rem; }
 
 .search-form input[type="submit"] {
   border: 0;
@@ -6561,10 +6601,10 @@ textarea:focus,
 img.centered,
 .aligncenter {
   display: block;
-  margin: 0 auto 1.5rem; }
+  margin: 0 auto 1.25rem; }
 
 img.alignnone {
-  margin-bottom: 0.75rem; }
+  margin-bottom: 0.625rem; }
 
 .alignleft {
   float: left;
@@ -6575,29 +6615,28 @@ img.alignnone {
   text-align: right; }
 
 img > wp-caption-text {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.25rem; }
 
 img.alignleft,
 .wp-caption.alignleft {
-  margin: 0 24px 24px 0;
-  margin: 0 1.5rem 1.5rem 0; }
+  margin: 0 1.25rem 1.25rem 0; }
 
 img.alignright,
 .wp-caption.alignright {
-  margin: 0 0 1.5rem 1.5rem; }
+  margin: 0 0 1.25rem 1.25rem; }
 
 .wp-caption-text {
-  font-size: 0.875rem;
-  font-weight: 700;
+  font-size: 90%;
+  font-weight: bold;
   margin-bottom: 0;
   text-align: center; }
 
 pre {
-  background: #eee;
-  border: 1px solid #ccc;
-  font-size: 0.875rem;
+  background: #EEEEEE;
+  border: 0.0625rem solid #CCCCCC;
+  font-size: 90%;
   padding: 0.625rem;
-  line-height: 1.4; }
+  line-height: 1.6; }
 
 /* Jetpack
 --------------------------------------------- */
@@ -6608,42 +6647,42 @@ img#wpstats {
 --------------------------------------------- */
 .archive-pagination,
 .entry-pagination {
-  font-size: 0.875rem;
-  margin: 2.5rem 0; }
+  font-size: 100%;
+  margin: 1.25rem 0; }
 
 .archive-pagination li {
   display: inline; }
 
 .archive-pagination li a {
-  background-color: #333;
+  background-color: #333333;
   border-radius: 3px;
-  color: #fff;
+  color: #FFFFFF;
   cursor: pointer;
   display: inline-block;
-  padding: 0.5rem 0.75rem; }
+  padding: 1.25rem 1.875rem; }
 
 .archive-pagination li a:hover,
 .archive-pagination li.active a {
-  background-color: #f15123; }
+  background-color: #EEEEEE; }
 
 .entry-pagination a {
-  border-bottom: 1px solid #ddd; }
+  border-bottom: 0.0625rem solid #CCCCCC; }
 
 /* Comments
 --------------------------------------------- */
 .comment-respond,
 .entry-comments,
 .entry-pings {
-  background-color: #fff;
-  margin-bottom: 2.5rem; }
+  background-color: #FFFFFF;
+  margin-bottom: 1.25rem; }
 
 .comment-respond,
 .entry-pings {
-  padding: 2.5rem 0 1rem; }
+  padding: 1.25rem 0 0.625rem; }
 
 .comment-respond a,
 .entry-comments a {
-  border-bottom: 1px solid #ddd; }
+  border-bottom: 0.0625rem solid #CCCCCC; }
 
 .comment-content {
   clear: both; }
@@ -6658,7 +6697,7 @@ img#wpstats {
 
 .comment-respond label {
   display: block;
-  margin-right: 0.75rem; }
+  margin-right: 1.25rem; }
 
 .comment-list, ul.children {
   margin-left: 0; }
@@ -6668,23 +6707,23 @@ img#wpstats {
   list-style-type: none; }
 
 .comment-list li {
-  margin-top: 1.5rem;
-  padding: 2rem; }
+  margin-top: 1.25rem;
+  padding: 1.25rem; }
 
 li.comment {
-  background-color: #f5f5f5;
-  border: 2px solid #fff; }
+  background-color: #F5F5F5;
+  border: 0.125rem solid #FFFFFF; }
 
 .comment .avatar {
-  margin: 0 1rem 1.5rem 0; }
+  margin: 0 0.625rem 1.25rem 0; }
 
 .entry-pings .reply {
   display: none; }
 
 .form-allowed-tags {
-  background-color: #f5f5f5;
-  font-size: 0.875rem;
-  padding: 1.5rem; }
+  background-color: #EEEEEE;
+  font-size: 100%;
+  padding: 1.25rem; }
 
 p.form-submit input {
   border-style: solid;
@@ -6722,57 +6761,127 @@ p.form-submit input {
 
 .archive-description,
 .author-box {
-  background-color: #fff;
-  margin-bottom: 2.5rem; }
+  background-color: #EEEEEE;
+  margin-bottom: 1.25rem; }
 
 .archive-description {
-  padding: 2.5rem 2.5rem 1.5rem; }
+  padding: 1.25rem 1.25rem 0.625rem; }
 
 .author-box {
-  padding: 2.5rem; }
+  padding: 1.25rem; }
 
 .author-box-title {
-  color: #333;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 1rem;
+  color: #008CBA;
   margin-bottom: 0.25rem; }
 
 .author-box a {
-  border-bottom: 1px solid #ddd; }
+  border-bottom: 0.0625rem solid #CCCCCC; }
 
 .author-box p {
   margin-bottom: 0; }
 
 .author-box .avatar {
-  margin-right: 1.5rem; }
+  margin-right: 1.25rem; }
 
-.demo-section {
+/*
+05 Menus
+---------------------------------------------------------------------------------------------------- */
+.genesis-nav-menu {
   clear: both;
-  margin-bottom: 15px; }
+  overflow: hidden; }
 
-aside li.divider {
-  display: none; }
+#header .genesis-nav-menu {
+  float: right;
+  margin-top: 2.5rem;
+  width: auto; }
 
-body.sidebar-content .content.column,
-body.sidebar-content .content.columns {
-  float: right; }
+.genesis-nav-menu.menu-primary,
+.genesis-nav-menu.menu-secondary {
+  border-bottom: 0.0625rem solid #CCCCCC; }
 
-@media all and (max-width: 40em) and (min-width: 0) {
-  #wpadminbar {
-    margin-top: -46px; }
+.genesis-nav-menu ul {
+  float: left;
+  width: 100%; }
 
-  body.sidebar-content .content.column,
-  body.sidebar-content .content.columns {
-    float: none; }
+.genesis-nav-menu li {
+  display: inline-block;
+  float: left;
+  list-style-type: none;
+  text-align: left; }
 
-  .logged-in .fixed.mobile-menu {
-    margin-top: 46px; }
+.genesis-nav-menu a {
+  display: block;
+  padding: 6.25rem 1.25rem;
+  position: relative; }
 
-  .logged-in .sticky.mobile-menu {
-    margin-top: 0; }
+.genesis-nav-menu li.highlight-menu-item {
+  margin-left: 1.25rem; }
 
-  .tabs dd, .tabs .tab-title {
-    width: 50%; } }
-.site-footer .wrap {
-  margin-left: 0.9375rem;
-  margin-right: 0.9375rem; }
+.genesis-nav-menu .highlight-menu-item a {
+  background-color: #EEEEEE; }
+
+.genesis-nav-menu .highlight-menu-item a:hover {
+  background-color: #d4d4d4; }
+
+.genesis-nav-menu li li a,
+.genesis-nav-menu li li a:link,
+.genesis-nav-menu li li a:visited {
+  background-color: #FFFFFF;
+  border: 0.0625rem solid #CCCCCC;
+  border-top: none;
+  padding: 1.25rem;
+  position: relative;
+  width: 10.625rem; }
+
+.genesis-nav-menu li ul {
+  left: -9999px;
+  position: absolute;
+  width: 13.25rem;
+  z-index: 99; }
+
+.genesis-nav-menu li ul ul {
+  margin: -3.4375rem 0 0 13.1875rem; }
+
+.genesis-nav-menu li:hover ul ul,
+.genesis-nav-menu li.sfHover ul ul {
+  left: -9999px; }
+
+.genesis-nav-menu li:hover,
+.genesis-nav-menu li.sfHover {
+  position: static; }
+
+ul.genesis-nav-menu li:hover > ul,
+ul.genesis-nav-menu li.sfHover ul,
+#header .genesis-nav-menu li:hover > ul,
+#header .genesis-nav-menu li.sfHover ul {
+  left: auto; }
+
+.genesis-nav-menu li a .sf-sub-indicator,
+.genesis-nav-menu li li a .sf-sub-indicator,
+.genesis-nav-menu li li li a .sf-sub-indicator {
+  position: absolute;
+  text-indent: -9999px; }
+
+#wpadminbar li:hover ul ul {
+  left: 0; }
+
+/* 05a - Primary Navigation Extras ----------- */
+.genesis-nav-menu li.right {
+  float: right;
+  padding: 1.25rem; }
+
+.genesis-nav-menu li.right a {
+  display: inline;
+  padding: 0; }
+
+.genesis-nav-menu li.search {
+  padding: 0.375rem 0 0; }
+
+.genesis-nav-menu li.rss a {
+  background: url(assets/images/rss.png) no-repeat center left;
+  margin-left: 1.25rem;
+  padding-left: 1.25rem; }
+
+.genesis-nav-menu li.twitter a {
+  background: url(assets/images/twitter-nav.png) no-repeat center left;
+  padding-left: 1.25rem; }

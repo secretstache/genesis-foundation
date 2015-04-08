@@ -121,18 +121,3 @@ function ssm_do_nav() { ?>
 		<?php } // endif has_nav_menu ?>
 		
 <?php }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

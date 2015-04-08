@@ -69,9 +69,9 @@
 // $base-line-height: 150%;
 
 // We use this to control whether or not CSS classes come through in the gem files.
-$include-html-classes: true;
+// $include-html-classes: true;
 // $include-print-styles: true;
-$include-html-global-classes: $include-html-classes;
+// $include-html-global-classes: $include-html-classes;
 
 // b. Grid
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -115,7 +115,7 @@ $include-html-global-classes: $include-html-classes;
 // $tuatara     : #444444;
 // $oil         : #333333;
 // $jet         : #222222;
-// $black       : #000000;
+// $black       	: #000000;
 
 // We use these as default colors throughout
 // $primary-color: #008CBA;

@@ -1,5 +1,5 @@
 /*!
-Theme Name: Genesis Foundation BETA
+Theme Name: Genesis Foundation
 Theme URI: http://www.secretstache.com
 Description: Starter Theme for use as Child Theme of the Genesis Framework for building custom themes.
 Author: Secret Stache Media
@@ -15,15 +15,20 @@ Template: genesis
 @import "../bower_components/foundation/scss/normalize";
 
 // Foundation Setting Overrides
-@import "partials/settings";
+@import "partials/foundation-settings";
 
 // Foundation
 @import "../bower_components/foundation/scss/foundation";
+
+// Foundation Icons
 // @import "partials/foundation-icons";
 
-// Genesis
-@import "partials/genesis";
+// Foundation Setting Overrides
+@import "partials/theme-settings";
+
+// Genesis / WordPress
+@import "partials/default";
 
 // Theme
-@import "partials/theme";
+@import "partials/custom";
 
