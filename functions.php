@@ -143,6 +143,12 @@ function child_theme_setup() {
 	// Add admin body class to differentiate the home page
 	add_filter( 'admin_body_class', 'ssm_home_admin_body_class' );
 
+	// Remove Editor Support on Pages (Replaced with ACF Page Builder)
+	//add_action( 'init', 'ssm_remove_editor' );
+
+	// Remove unnecessary menu items from add new dropdown
+	add_action( 'admin_bar_menu', 'remove_wp_nodes', 999 );
+
 
 	/****************************************
 	Frontend
@@ -163,6 +169,9 @@ function child_theme_setup() {
 
 	// Load Apple touch icon in header
 	add_filter( 'genesis_meta', 'ssm_apple_touch_icon' );
+
+	// Rebuilds Title to create better markup for SEO 
+	add_filter( 'genesis_seo_title', 'ssm_site_title', 10, 1 );
 	
 	// Remove the site description
 	remove_action( 'genesis_site_description', 'genesis_seo_site_description' );

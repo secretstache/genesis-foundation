@@ -21,10 +21,6 @@ textarea:focus,
 	transition:         all 0.1s ease-in-out;
 }
 
-// button,
-// a.button {
-// 	@include button();
-// }
 
 .wrap {
 	@include grid-row();

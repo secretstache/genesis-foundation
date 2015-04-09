@@ -1967,12 +1967,12 @@ button, .button {
   padding-bottom: 1.0625rem;
   padding-left: 2rem;
   font-size: 1rem;
-  background-color: #333333;
-  border-color: #292929;
+  background-color: #008CBA;
+  border-color: #007095;
   color: #FFFFFF;
   transition: background-color 300ms ease-out; }
   button:hover, button:focus, .button:hover, .button:focus {
-    background-color: #292929; }
+    background-color: #007095; }
   button:hover, button:focus, .button:hover, .button:focus {
     color: #FFFFFF; }
   button.secondary, .button.secondary {
@@ -2048,18 +2048,18 @@ button, .button {
   button.round, .button.round {
     border-radius: 1000px; }
   button.disabled, button[disabled], .button.disabled, .button[disabled] {
-    background-color: #333333;
-    border-color: #292929;
+    background-color: #008CBA;
+    border-color: #007095;
     color: #FFFFFF;
     cursor: default;
     opacity: 0.7;
     box-shadow: none; }
     button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
-      background-color: #292929; }
+      background-color: #007095; }
     button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
       color: #FFFFFF; }
     button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus, .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
-      background-color: #333333; }
+      background-color: #008CBA; }
     button.disabled.secondary, button[disabled].secondary, .button.disabled.secondary, .button[disabled].secondary {
       background-color: #e7e7e7;
       border-color: #b9b9b9;
@@ -6727,12 +6727,12 @@ p.form-submit input {
   padding-bottom: 1.0625rem;
   padding-left: 2rem;
   font-size: 1rem;
-  background-color: #333333;
-  border-color: #292929;
+  background-color: #008CBA;
+  border-color: #007095;
   color: #FFFFFF;
   transition: background-color 300ms ease-out; }
   p.form-submit input:hover, p.form-submit input:focus {
-    background-color: #292929; }
+    background-color: #007095; }
   p.form-submit input:hover, p.form-submit input:focus {
     color: #FFFFFF; }
 

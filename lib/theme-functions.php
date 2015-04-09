@@ -250,6 +250,35 @@ function ssm_home_admin_body_class( $classes ) {
 		
 }
 
+/**
+*  Remove Editor Support on Pages (Replaced with ACF Page Builder)
+*/
+function ssm_remove_editor() {
+	remove_post_type_support( 'page', 'editor' );
+	remove_post_type_support( 'product', 'editor' );
+}
+
+/**
+*  Creates ACF Options Page
+*/
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page();
+	
+}
+
+/**
+*  Removes unnecessary menu items from add new dropdown
+*/
+function remove_wp_nodes() {
+    global $wp_admin_bar;   
+    $wp_admin_bar->remove_node( 'new-link' );
+    $wp_admin_bar->remove_node( 'new-media' );
+    $wp_admin_bar->remove_node( 'new-shop_coupon' );
+    $wp_admin_bar->remove_node( 'new-shop_order' );
+    $wp_admin_bar->remove_node( 'new-user' );
+}
+
 /****************************************
 Frontend
 *****************************************/
@@ -342,6 +371,22 @@ function gform_tabindexer( $tab_index, $form = false ) {
     if( $form )
         add_filter( 'gform_tabindex_' . $form['id'], 'gform_tabindexer' );
     return GFCommon::$tab_index >= $starting_index ? GFCommon::$tab_index : $starting_index;
+}
+
+/**
+ * Replace Site Title text entered in Settings > Reading with custom HTML.
+ * @author Sridhar Katakam
+ * @link http://sridharkatakam.com/replace-site-title-text-custom-html-genesis/
+ *
+ * @param string original title text
+ * @return string modified title HTML
+ */
+function ssm_site_title( $title ) {	
+	$image = get_field('brand_logo', 'options');
+	$url = $image['url'];	
+	
+	$title = '<a href="' . home_url() . '"><img src="' . $url . '" alt="' . get_bloginfo('description') . '" title="' . get_bloginfo('description') . '"/></a>';
+	return $title;
 }
 
 

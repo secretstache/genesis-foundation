@@ -113,9 +113,11 @@
 // $steel       : #666666;
 // $charcoal    : #555555;
 // $tuatara     : #444444;
-$oil         : #333333;
+$oil 	        : #333333;
 // $jet         : #222222;
 // $black       : #000000;
+$foundationBlue : #008CBA;
+$blue:			$foundationBlue;
 
 // We use these as default colors throughout
 $primary-color: $oil;
@@ -258,7 +260,7 @@ $primary-color: $oil;
 // We use these to style anchors
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
-$anchor-font-color: #008CBA;
+$anchor-font-color: $blue;
 $anchor-font-color-hover: darken($anchor-font-color, 10%);
 
 // We use these to style the <hr> element
@@ -452,7 +454,7 @@ $anchor-font-color-hover: darken($anchor-font-color, 10%);
 // We use these to control button border styles.
 // $button-border-width: 0;
 // $button-border-style: solid;
-// $button-bg-color: $primary-color;
+$button-bg-color: $blue;
 // $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
