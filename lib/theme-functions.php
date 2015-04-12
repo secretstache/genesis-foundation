@@ -274,8 +274,8 @@ function remove_wp_nodes() {
     global $wp_admin_bar;   
     $wp_admin_bar->remove_node( 'new-link' );
     $wp_admin_bar->remove_node( 'new-media' );
-    $wp_admin_bar->remove_node( 'new-shop_coupon' );
-    $wp_admin_bar->remove_node( 'new-shop_order' );
+    // $wp_admin_bar->remove_node( 'new-shop_coupon' );
+    // $wp_admin_bar->remove_node( 'new-shop_order' );
     $wp_admin_bar->remove_node( 'new-user' );
 }
 
@@ -304,14 +304,14 @@ function ssm_html5_doctype() {
  * Load custom favicon to header
  */
 function ssm_custom_favicon_filter( $favicon_url ) {
-	return get_stylesheet_directory_uri() . '/assets/images/favicon.ico';
+	return CHILD_URL . '/assets/images/favicon.ico';
 }
 
 /**
  * Load apple touch icon in header
  */
 function ssm_apple_touch_icon() {
-	echo '<link rel="apple-touch-icon" href="' . get_stylesheet_directory_uri() . '/assets/images/apple-touch-icon.png">';
+	echo '<link rel="apple-touch-icon" href="' . CHILD_URL . '/assets/images/apple-touch-icon.png">';
 }
 
 
@@ -325,16 +325,16 @@ function ssm_scripts() {
 		wp_deregister_script('jquery');
 		
 		// Bring Back jQuery from bower components
-		wp_enqueue_script('jquery', get_stylesheet_directory_uri() . '/assets/bower_components/jquery/dist/jquery.min.js', array(), NULL, false);
+		wp_enqueue_script('jquery', CHILD_URL . '/assets/bower_components/jquery/dist/jquery.min.js', array(), NULL, false);
 		
 		// Modernizr (without media query polyfill)
-	    wp_enqueue_script( 'modernizr', get_stylesheet_directory_uri() . '/assets/bower_components/foundation/js/vendor/modernizr.js', array(), NULL, false );
+	    wp_enqueue_script( 'modernizr', CHILD_URL . '/assets/bower_components/foundation/js/vendor/modernizr.js', array(), NULL, false );
 		
 		// Foundation
-		wp_enqueue_script('foundation-js', get_stylesheet_directory_uri() . '/assets/bower_components/foundation/js/foundation.min.js', array('jquery'), NULL, true );
+		wp_enqueue_script('foundation-js', CHILD_URL . '/assets/bower_components/foundation/js/foundation.min.js', array('jquery'), NULL, true );
 		
 		// Theme Scripts
-		wp_enqueue_script('ssm-scripts', get_stylesheet_directory_uri() . '/assets/js/source/main.js', array('jquery'), NULL, true );
+		wp_enqueue_script('ssm-scripts', CHILD_URL . '/assets/js/source/main.js', array('jquery'), NULL, true );
 		
 	}
 }
@@ -382,13 +382,31 @@ function gform_tabindexer( $tab_index, $form = false ) {
  * @return string modified title HTML
  */
 function ssm_site_title( $title ) {	
-	$image = get_field('brand_logo', 'options');
-	$url = $image['url'];	
-	
+	$logo = get_field('brand_logo', 'options');
+
+	if ( $logo ) {	
+
+		$url = $logo['url'];
+
+	} else {
+
+		$url = CHILD_URL . '/assets/images/ph-logo.png';
+
+	}
+
 	$title = '<a href="' . home_url() . '"><img src="' . $url . '" alt="' . get_bloginfo('description') . '" title="' . get_bloginfo('description') . '"/></a>';
 	return $title;
 }
 
+/**
+ * Rebuild Genesis Footer
+ *
+ */
+function ssm_do_footer() {
+
+	include( CHILD_DIR . '/templates/includes/footer.php');
+
+}
 
 /****************************************
 Misc Theme Functions
@@ -407,4 +425,37 @@ function ssm_unregister_superfish() {
  */
 function ssm_filter_yoast_seo_metabox() {
 	return 'low';
+}
+
+/**
+ *  Sanitize multiple classes at once
+ */
+if ( ! function_exists( "sanitize_html_classes" ) && function_exists( "sanitize_html_class" ) ) {
+  /**
+	 * sanitize_html_class works just fine for a single class
+	 * Some times le wild <span class="blue hedgehog"> appears, which is when you need this function,
+	 * to validate both blue and hedgehog,
+	 * Because sanitize_html_class doesn't allow spaces.
+	 *
+	 * @uses   sanitize_html_class
+	 * @param  (mixed: string/array) $class   "blue hedgehog goes shopping" or array("blue", "hedgehog", "goes", "shopping")
+	 * @param  (mixed) $fallback Anything you want returned in case of a failure
+	 * @return (mixed: string / $fallback )
+	 */
+	function sanitize_html_classes( $class, $fallback = null ) {
+
+		// Explode it, if it's a string
+		if ( is_string( $class ) ) {
+			$class = explode(" ", $class);
+		} 
+
+
+		if ( is_array( $class ) && count( $class ) > 0 ) {
+			$class = array_map("sanitize_html_class", $class);
+			return implode(" ", $class);
+		}
+		else { 
+			return sanitize_html_class( $class, $fallback );
+		}
+	}
 }

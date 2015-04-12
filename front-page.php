@@ -16,7 +16,16 @@ add_action( 'genesis_loop', 'ssm_home_loop' );
 
 function ssm_home_loop() { ?>
 
-<a class="button">A Button</a>
+<article <?php post_class(); ?> itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+
+	<div class="entry-content" itemprop="text">
+
+		<?php include('templates/includes/content-blocks.php'); ?>
+
+	</div>
+	<!-- entry-content -->
+
+</article>
 
 <?php }
 

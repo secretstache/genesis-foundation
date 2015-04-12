@@ -21,7 +21,7 @@ Template: genesis
 @import "../bower_components/foundation/scss/foundation";
 
 // Foundation Icons
-// @import "partials/foundation-icons";
+@import "partials/foundation-icons";
 
 // Foundation Setting Overrides
 @import "partials/theme-settings";
@@ -31,4 +31,7 @@ Template: genesis
 
 // Theme
 @import "partials/custom";
+
+// Sections
+@import "partials/sections";
 

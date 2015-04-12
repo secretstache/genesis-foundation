@@ -44,6 +44,8 @@ function child_theme_setup() {
 
 	// Image Sizes
 	// add_image_size( $name, $width = 0, $height = 0, $crop = false );
+	add_image_size( 'featured-image', 9999, 600, TRUE );
+	add_image_size( 'square-500', 500, 500, TRUE );
 	
 	// add_filter( 'image_size_names_choose', 'ssm_image_size_names_choose' );
 	/**
@@ -79,6 +81,8 @@ function child_theme_setup() {
 	genesis_unregister_layout( 'content-sidebar-sidebar' );
 	genesis_unregister_layout( 'sidebar-sidebar-content' );
 	genesis_unregister_layout( 'sidebar-content-sidebar' );
+	genesis_unregister_layout( 'sidebar-content' );
+	genesis_unregister_layout( 'content-sidebar' );
 
 	// Remove Unused User Settings
 	add_filter( 'user_contactmethods', 'ssm_contactmethods' );
@@ -191,6 +195,10 @@ function child_theme_setup() {
 	
 	// Fix GravityForms tabindex conflict
 	add_filter( 'gform_tabindex', 'gform_tabindexer', 10, 2 );
+
+	// Remove and Rebuild the Genesis Footer
+	remove_action( 'genesis_footer', 'genesis_do_footer');
+	add_action( 'genesis_footer', 'ssm_do_footer');
 
 }
 

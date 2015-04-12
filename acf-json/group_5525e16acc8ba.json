@@ -1,0 +1,59 @@
+{
+    "key": "group_5525e16acc8ba",
+    "title": "Footer",
+    "fields": [
+        {
+            "key": "field_5525e17465ea1",
+            "label": "Copy",
+            "name": "content",
+            "prefix": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Copyright [footer_copyright]. All Rights Reserved.",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0
+        },
+        {
+            "key": "field_5525e275f333a",
+            "label": "Menu",
+            "name": "footer_menu",
+            "prefix": "",
+            "type": "nav_menu",
+            "instructions": "An <strong>Optional<\/strong> Menu to add to the footer",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "save_format": "id",
+            "container": "nav",
+            "allow_null": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options"
+            }
+        ]
+    ],
+    "menu_order": 20,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "modified": 1428596600
+}

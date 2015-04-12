@@ -2,22 +2,24 @@
 
 // add foundation classes
 add_filter( 'genesis_attr_site-header',         'ssm_add_markup_class', 10, 2 );
+add_filter( 'genesis_attr_title-area',         'ssm_add_markup_class', 10, 2 );
 add_filter( 'genesis_attr_site-container',      'ssm_add_markup_class', 10, 2 );
-add_filter( 'genesis_attr_content-sidebar-wrap','ssm_add_markup_class', 10, 2 );
+//add_filter( 'genesis_attr_content-sidebar-wrap','ssm_add_markup_class', 10, 2 );
 add_filter( 'genesis_attr_content',             'ssm_add_markup_class', 10, 2 );
 add_filter( 'genesis_attr_sidebar-primary',     'ssm_add_markup_class', 10, 2 );
 add_filter( 'genesis_attr_archive-pagination',  'ssm_add_markup_class', 10, 2 );
-add_filter( 'genesis_attr_site-footer',         'ssm_add_markup_class', 10, 2 );
+// add_filter( 'genesis_attr_site-footer',         'ssm_add_markup_class', 10, 2 );
 
 function ssm_add_markup_class( $attr, $context ) {
     // default classes to add
     $classes_to_add = apply_filters ('ssm-classes-to-add',
         // default foundation markup values
         array(
-            'site-header'       		=> 'row',
+            //'site-header'       		=> 'row',
+            'title-area'                => array('small-12', 'medium-6', 'large-4', 'column'),
             'site-container'       		=> 'inner-wrap',
-            'site-footer'       		=> 'row',
-            'content-sidebar-wrap'      => 'row',
+            //'site-footer'       		=> 'row',
+            //'content-sidebar-wrap'      => 'row',
             'content'           		=> array('small-12', 'medium-7', 'large-8', 'column'),
 			'sidebar-primary'   		=> array('small-12', 'medium-5', 'large-4', 'column'),
             'archive-pagination'		=> 'clearfix',
