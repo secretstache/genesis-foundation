@@ -911,6 +911,31 @@
                                     "mime_types": ""
                                 },
                                 {
+                                    "key": "field_552afb33c3ca6",
+                                    "label": "Optional Image Link",
+                                    "name": "image_link",
+                                    "prefix": "",
+                                    "type": "url",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_55245ba883c50",
+                                                "operator": "==",
+                                                "value": "Image"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": ""
+                                },
+                                {
                                     "key": "field_55245bf583c53",
                                     "label": "Video",
                                     "name": "video",
@@ -934,6 +959,29 @@
                                     },
                                     "width": "",
                                     "height": ""
+                                },
+                                {
+                                    "key": "field_552afb5fc3ca7",
+                                    "label": "Link Target",
+                                    "name": "link_target",
+                                    "prefix": "",
+                                    "type": "radio",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "Default": "Default",
+                                        "New Tab": "New Tab"
+                                    },
+                                    "other_choice": 0,
+                                    "save_other_choice": 0,
+                                    "default_value": "Default",
+                                    "layout": "horizontal"
                                 }
                             ]
                         },
@@ -1691,5 +1739,5 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1428858163
+    "modified": 1428880262
 }

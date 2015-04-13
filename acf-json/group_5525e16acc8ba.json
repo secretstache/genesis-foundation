@@ -38,6 +38,29 @@
             "save_format": "id",
             "container": "nav",
             "allow_null": 1
+        },
+        {
+            "key": "field_552bd0be1cb0a",
+            "label": "Include Social Networks?",
+            "name": "include_social_networks",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Yes": "Yes",
+                "No": "No"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "Yes",
+            "layout": "horizontal"
         }
     ],
     "location": [
@@ -55,5 +78,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1428596600
+    "modified": 1428934873
 }

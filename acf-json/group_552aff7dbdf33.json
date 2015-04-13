@@ -1,0 +1,103 @@
+{
+    "key": "group_552aff7dbdf33",
+    "title": "Header Right",
+    "fields": [
+        {
+            "key": "field_552aff8d425dd",
+            "label": "Options",
+            "name": "header_right_options",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Empty": "Empty",
+                "Menu": "Menu",
+                "Search Form": "Search Form",
+                "Social Networks": "Social Networks"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "Empty",
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_552b04d027887",
+            "label": "Menu",
+            "name": "header_right_menu",
+            "prefix": "",
+            "type": "nav_menu",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_552aff8d425dd",
+                        "operator": "==",
+                        "value": "Menu"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "save_format": "id",
+            "container": "div",
+            "allow_null": 0
+        },
+        {
+            "key": "field_552b04f9ecb72",
+            "label": "Placeholder Text",
+            "name": "placeholder_text",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_552aff8d425dd",
+                        "operator": "==",
+                        "value": "Search Form"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Search...",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "modified": 1428882827
+}

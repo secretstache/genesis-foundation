@@ -280,10 +280,35 @@ pre {
 	/* Header
 	---------------------------------------------------------------------------------------------------- */
 
-	.title-area {
+	header {
 		padding-bottom: $global-padding/2;
 		padding-top: $global-padding/2;
 	}
+
+	header ul.menu {
+		float: right;
+		margin: 0;
+		li {
+			display: inline-block;
+			font-size: 90%;
+			list-style-type: none;
+			margin: 0 $global-padding/5;
+			&:first-of-type {
+				margin-left: 0;
+			}
+		}
+		@media #{$small-only} {
+			float: none;
+		}
+	}
+
+	header .header-right {
+		@media #{$small-only} {
+			margin-top: $global-margin;
+		}
+	}
+
+
 
 	/* Primary Navigation
 	---------------------------------------------------------------------------------------------------- */
@@ -324,6 +349,9 @@ pre {
 		float: right;
 		margin-top: $global-margin*2;
 		width: auto;
+		@media #{$small-only} {
+			float: none;
+		}
 	}
 
 	.genesis-nav-menu.menu-primary,

@@ -58,7 +58,19 @@ $column_count = count(get_sub_field('column_list'));
 
 					<?php } elseif ( $column['content_type'] == 'Image' && $image = $column['image'] ) { ?>
 
-					<img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" title="<?php echo $image['title']; ?>" />
+					<?php if ( $column['image_link'] ) { ?>
+
+					<a href="<?php echo $column['image_link']; ?>"<?php echo $column['link_target'] == 'New Tab' ? ' target="_blank"' : ''; ?>>
+
+					<?php } ?>
+
+						<img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" title="<?php echo $image['title']; ?>" />
+
+					<?php if ( $column['image_link'] ) { ?>
+
+					</a>
+
+					<?php } ?>
 
 					<?php } elseif ( $column['content_type'] == 'Video' && $video = $column['video'] ) { ?>
 

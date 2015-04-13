@@ -148,7 +148,7 @@ function child_theme_setup() {
 	add_filter( 'admin_body_class', 'ssm_home_admin_body_class' );
 
 	// Remove Editor Support on Pages (Replaced with ACF Page Builder)
-	//add_action( 'init', 'ssm_remove_editor' );
+	add_action( 'init', 'ssm_remove_editor' );
 
 	// Remove unnecessary menu items from add new dropdown
 	add_action( 'admin_bar_menu', 'remove_wp_nodes', 999 );
@@ -180,6 +180,8 @@ function child_theme_setup() {
 	// Remove the site description
 	remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
 
+	add_action( 'genesis_header', 'ssm_do_header_right', 10 );
+
 	// Remove Edit link
 	add_filter( 'genesis_edit_post_link', '__return_false' );
 
@@ -199,6 +201,9 @@ function child_theme_setup() {
 	// Remove and Rebuild the Genesis Footer
 	remove_action( 'genesis_footer', 'genesis_do_footer');
 	add_action( 'genesis_footer', 'ssm_do_footer');
+
+	// Modify the placeholder search text
+	add_filter( 'genesis_search_text', 'ssm_modify_search_text' );
 
 }
 

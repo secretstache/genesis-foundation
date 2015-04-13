@@ -113,7 +113,7 @@ function ssm_remove_dashboard_widgets() {
 
 function remove_acf_menu(){
     // provide a list of usernames who can edit custom field definitions here
-    $admins = array( 'admin', 'jrstaatsiii');
+    $admins = array( 'admin', 'jrstaatsiii', 'brian');
  
     // get the current user
     $current_user = wp_get_current_user();
@@ -255,7 +255,6 @@ function ssm_home_admin_body_class( $classes ) {
 */
 function ssm_remove_editor() {
 	remove_post_type_support( 'page', 'editor' );
-	remove_post_type_support( 'product', 'editor' );
 }
 
 /**
@@ -399,6 +398,17 @@ function ssm_site_title( $title ) {
 }
 
 /**
+ * Build Header Right
+ *
+ */
+function ssm_do_header_right() {
+
+	include( CHILD_DIR . '/templates/includes/header-right.php');
+
+}
+
+
+/**
  * Rebuild Genesis Footer
  *
  */
@@ -406,6 +416,23 @@ function ssm_do_footer() {
 
 	include( CHILD_DIR . '/templates/includes/footer.php');
 
+}
+
+/**
+ * Replace Search Text
+ *
+ */
+function ssm_modify_search_text( $text ) {
+	
+	if ( $placeholder_text = get_field('placeholder_text', 'options') ) { 
+
+	return esc_attr( $placeholder_text ); 
+
+	} else {
+
+	return esc_attr( 'Seach this site...' ); 
+
+	}
 }
 
 /****************************************

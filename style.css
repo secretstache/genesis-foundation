@@ -4646,7 +4646,7 @@ table {
       .tabs dd > a:focus, .tabs .tab-title > a:focus {
         outline: none; }
     .tabs dd.active a, .tabs .tab-title.active a {
-      background-color: #FFFFFF;
+      background-color: #e2e2e2;
       color: #222222; }
   .tabs.radius dd:first-child a, .tabs.radius .tab:first-child a {
     -webkit-border-bottom-left-radius: 3px;
@@ -7953,9 +7953,27 @@ p.form-submit input {
 ---------------------------------------------------------------------------------------------------- */
 /* Header
 ---------------------------------------------------------------------------------------------------- */
-.title-area {
+header {
   padding-bottom: 0.625rem;
   padding-top: 0.625rem; }
+
+header ul.menu {
+  float: right;
+  margin: 0; }
+  header ul.menu li {
+    display: inline-block;
+    font-size: 90%;
+    list-style-type: none;
+    margin: 0 0.25rem; }
+    header ul.menu li:first-of-type {
+      margin-left: 0; }
+  @media only screen and (max-width: 40em) {
+    header ul.menu {
+      float: none; } }
+
+@media only screen and (max-width: 40em) {
+  header .header-right {
+    margin-top: 1.25rem; } }
 
 /* Primary Navigation
 ---------------------------------------------------------------------------------------------------- */
@@ -7992,6 +8010,9 @@ nav {
   float: right;
   margin-top: 2.5rem;
   width: auto; }
+  @media only screen and (max-width: 40em) {
+    #header .genesis-nav-menu {
+      float: none; } }
 
 .genesis-nav-menu.menu-primary,
 .genesis-nav-menu.menu-secondary {
@@ -8280,3 +8301,20 @@ section.form .business-information p {
   margin-bottom: 0; }
 section.form .address {
   margin: 1.25rem 0; }
+@media only screen and (max-width: 40em) {
+  section.form .gform_wrapper {
+    margin-top: 1.25rem; }
+  section.form .gform_wrapper .ginput_complex.ginput_container span,
+  section.form .gform_wrapper .ginput_complex.ginput_container span,
+  section.form .gform_wrapper .ginput_complex.ginput_container span,
+  section.form .gform_wrapper .top_label input.medium,
+  section.form .gform_wrapper .top_label select.medium,
+  section.form .gform_wrapper .ginput_complex input[type=email],
+  section.form .gform_wrapper .ginput_complex input[type=number],
+  section.form .gform_wrapper .ginput_complex input[type=password],
+  section.form .gform_wrapper .ginput_complex input[type=tel],
+  section.form .gform_wrapper .ginput_complex input[type=text],
+  section.form .gform_wrapper .ginput_complex input[type=url],
+  section.form .gform_wrapper textarea.medium {
+    max-width: 100% !important;
+    width: 100% !important; } }
