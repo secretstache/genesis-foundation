@@ -240,6 +240,108 @@
         "hide_on_screen": ""
     },
     {
+        "key": "group_552aff7dbdf33",
+        "title": "Header Right",
+        "fields": [
+            {
+                "key": "field_552aff8d425dd",
+                "label": "Options",
+                "name": "header_right_options",
+                "prefix": "",
+                "type": "radio",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "Empty": "Empty",
+                    "Menu": "Menu",
+                    "Search Form": "Search Form",
+                    "Social Networks": "Social Networks"
+                },
+                "other_choice": 0,
+                "save_other_choice": 0,
+                "default_value": "Empty",
+                "layout": "horizontal"
+            },
+            {
+                "key": "field_552b04d027887",
+                "label": "Menu",
+                "name": "header_right_menu",
+                "prefix": "",
+                "type": "nav_menu",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_552aff8d425dd",
+                            "operator": "==",
+                            "value": "Menu"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "save_format": "id",
+                "container": "div",
+                "allow_null": 0
+            },
+            {
+                "key": "field_552b04f9ecb72",
+                "label": "Placeholder Text",
+                "name": "placeholder_text",
+                "prefix": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_552aff8d425dd",
+                            "operator": "==",
+                            "value": "Search Form"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Search...",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": "",
+                "readonly": 0,
+                "disabled": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "acf-options"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": ""
+    },
+    {
         "key": "group_54b4a6119629d",
         "title": "Layout Builder",
         "fields": [
@@ -1152,6 +1254,31 @@
                                         "mime_types": ""
                                     },
                                     {
+                                        "key": "field_552afb33c3ca6",
+                                        "label": "Optional Image Link",
+                                        "name": "image_link",
+                                        "prefix": "",
+                                        "type": "url",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": [
+                                            [
+                                                {
+                                                    "field": "field_55245ba883c50",
+                                                    "operator": "==",
+                                                    "value": "Image"
+                                                }
+                                            ]
+                                        ],
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "placeholder": ""
+                                    },
+                                    {
                                         "key": "field_55245bf583c53",
                                         "label": "Video",
                                         "name": "video",
@@ -1175,6 +1302,29 @@
                                         },
                                         "width": "",
                                         "height": ""
+                                    },
+                                    {
+                                        "key": "field_552afb5fc3ca7",
+                                        "label": "Link Target",
+                                        "name": "link_target",
+                                        "prefix": "",
+                                        "type": "radio",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "choices": {
+                                            "Default": "Default",
+                                            "New Tab": "New Tab"
+                                        },
+                                        "other_choice": 0,
+                                        "save_other_choice": 0,
+                                        "default_value": "Default",
+                                        "layout": "horizontal"
                                     }
                                 ]
                             },
@@ -1938,29 +2088,6 @@
         "title": "Social Networks",
         "fields": [
             {
-                "key": "field_55269ec719a40",
-                "label": "Include Social Networks?",
-                "name": "include_social_networks",
-                "prefix": "",
-                "type": "radio",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "choices": {
-                    "Yes": "Yes",
-                    "No": "No"
-                },
-                "other_choice": 0,
-                "save_other_choice": 0,
-                "default_value": "Yes",
-                "layout": "horizontal"
-            },
-            {
                 "key": "field_5525e0d292ac5",
                 "label": "Facebook",
                 "name": "facebook",
@@ -2136,6 +2263,29 @@
                 "save_format": "id",
                 "container": "nav",
                 "allow_null": 1
+            },
+            {
+                "key": "field_552bd0be1cb0a",
+                "label": "Include Social Networks?",
+                "name": "include_social_networks",
+                "prefix": "",
+                "type": "radio",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "Yes": "Yes",
+                    "No": "No"
+                },
+                "other_choice": 0,
+                "save_other_choice": 0,
+                "default_value": "Yes",
+                "layout": "horizontal"
             }
         ],
         "location": [
