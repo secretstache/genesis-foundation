@@ -7708,6 +7708,9 @@ textarea:focus,
   .wrap:after {
     clear: both; }
 
+.landing-page .wrap {
+  max-width: 50rem; }
+
 .large-collapse.column {
   padding-left: 0;
   padding-right: 0; }
@@ -7953,9 +7956,9 @@ p.form-submit input {
 ---------------------------------------------------------------------------------------------------- */
 /* Header
 ---------------------------------------------------------------------------------------------------- */
-header {
-  padding-bottom: 0.625rem;
-  padding-top: 0.625rem; }
+header.site-header {
+  padding-bottom: 1.25rem;
+  padding-top: 1.25rem; }
 
 header ul.menu {
   float: right;
@@ -7974,6 +7977,10 @@ header ul.menu {
 @media only screen and (max-width: 40em) {
   header .header-right {
     margin-top: 1.25rem; } }
+
+.landing-page header .title-area {
+  float: none;
+  margin: 0 auto; }
 
 /* Primary Navigation
 ---------------------------------------------------------------------------------------------------- */
@@ -8115,6 +8122,9 @@ ul.genesis-nav-menu li.sfHover ul,
   .content-sidebar-wrap:after {
     clear: both; }
 
+.landing-page .content-sidebar-wrap {
+  padding-top: 0; }
+
 .full-width-content main.content {
   padding-left: 0;
   padding-right: 0; }
@@ -8225,6 +8235,8 @@ section.content-block {
         padding-right: 0; } }
   section.content-block.bg-primary {
     background: #EEEEEE; }
+  section.content-block.align-center {
+    text-align: center; }
   section.content-block header {
     margin-bottom: 1.25rem; }
   section.content-block h1.section-title,
@@ -8238,16 +8250,26 @@ section.content-block {
     text-transform: uppercase; }
   section.content-block p:last-of-type {
     margin-bottom: 0; }
+  section.content-block button,
+  section.content-block a.button {
+    margin-bottom: 0; }
   @media only screen and (max-width: 40em) {
     section.content-block {
       margin: 0.625rem 0;
       padding: 0.3125rem 0; } }
+
+section.media .clearing-thumbs, section.media [data-clearing] {
+  margin-bottom: 0;
+  margin-left: -0.625rem;
+  list-style: none; }
 
 section.cols:before, section.cols:after {
   content: " ";
   display: table; }
 section.cols:after {
   clear: both; }
+section.cols h2.col-title {
+  font-size: 1.54167rem; }
 @media only screen and (max-width: 40em) {
   section.cols .image {
     margin-bottom: 1.25rem; } }

@@ -13,7 +13,9 @@
 
 		<?php } // endif $content ?>
 
-		<?php if ( $footer_menu = get_field('footer_menu', 'options') ) { ?>
+		<?php if ( get_field('footer_menu', 'options') && !is_page_template('page-landing.php') ) { ?>
+
+		<?php $footer_menu = get_field('footer_menu', 'options'); ?>
 
 		<div class="footer-menu">
 
@@ -22,14 +24,25 @@
 		</div>
 		<!-- end .footer-menu -->
 
-		<?php } // endif $footer_menu ?>
+		<?php } elseif ( get_field('landing_page_menu', 'options') && is_page_template('page-landing.php') ) { ?>
+
+		<?php $lp_footer_menu = get_field('landing_page_menu', 'options'); ?>
+
+		<div class="footer-menu">
+
+			<?php wp_nav_menu( array('depth' => 1, 'menu' => $lp_footer_menu ) ); ?>
+
+		</div>
+		<!-- end .footer-menu -->
+
+		<?php } // endif $lp_footer_menu ?>
 
 	</div>
 	<!-- end .column -->
 
 <?php } // endif $content or $footer_menu ?>
 
-<?php if ( $social_networks = get_field('include_social_networks', 'option') == 'Yes' ) { ?>
+<?php if ( $social_networks = get_field('include_social_networks', 'option') == 'Yes' && !is_page_template('page-landing.php') ) { ?>
 
 <div class="social small-12 medium-6 column">
 

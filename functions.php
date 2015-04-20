@@ -82,7 +82,7 @@ function child_theme_setup() {
 	genesis_unregister_layout( 'sidebar-sidebar-content' );
 	genesis_unregister_layout( 'sidebar-content-sidebar' );
 	genesis_unregister_layout( 'sidebar-content' );
-	genesis_unregister_layout( 'content-sidebar' );
+	// genesis_unregister_layout( 'content-sidebar' );
 
 	// Remove Unused User Settings
 	add_filter( 'user_contactmethods', 'ssm_contactmethods' );
@@ -180,6 +180,7 @@ function child_theme_setup() {
 	// Remove the site description
 	remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
 
+	// Load Header Right
 	add_action( 'genesis_header', 'ssm_do_header_right', 10 );
 
 	// Remove Edit link

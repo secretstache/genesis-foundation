@@ -26,6 +26,9 @@ section.content-block {
 	&.bg-primary {
 		background: $default-bg-gray;
 	}
+	&.align-center {
+		text-align: center;
+	} 
 	header {
 		margin-bottom: $global-margin;
 	}
@@ -44,14 +47,30 @@ section.content-block {
 	p:last-of-type {
 		margin-bottom: 0;
 	}
+	button,
+	a.button {
+		margin-bottom: 0;
+	}
 	@media #{$small-only} {
 		margin: $global-margin/2 0;
 		padding: $global-padding/4 0;
 	}
 }
 
+section.media {
+	.clearing-thumbs, [data-clearing] {
+		margin-bottom: 0;
+		margin-left: -0.625rem;
+		list-style: none;
+	}
+}
+
+
 section.cols {
 	@include clearfix();
+	h2.col-title {
+		font-size: $h2-font-size/1.5;
+	}
 	@media #{$small-only} {
 		.image {
 			margin-bottom: $global-margin;

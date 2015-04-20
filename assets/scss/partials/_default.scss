@@ -27,6 +27,10 @@ textarea:focus,
 	@include grid-row();
 }
 
+.landing-page .wrap {
+	max-width: $row-width*.8;
+}
+
 .large-collapse.column {
 	padding-left: 0;
 	padding-right: 0;
@@ -280,9 +284,9 @@ pre {
 	/* Header
 	---------------------------------------------------------------------------------------------------- */
 
-	header {
-		padding-bottom: $global-padding/2;
-		padding-top: $global-padding/2;
+	header.site-header {
+		padding-bottom: $global-padding;
+		padding-top: $global-padding;
 	}
 
 	header ul.menu {
@@ -308,6 +312,10 @@ pre {
 		}
 	}
 
+	.landing-page header .title-area {
+		float: none;
+		margin: 0 auto;
+	}
 
 
 	/* Primary Navigation
@@ -471,6 +479,10 @@ pre {
 	.content-sidebar-wrap {
 		@include clearfix();
 		padding: $global-padding 0;
+	}
+
+	.landing-page .content-sidebar-wrap {
+		padding-top: 0;
 	}
 
 	.full-width-content main.content {

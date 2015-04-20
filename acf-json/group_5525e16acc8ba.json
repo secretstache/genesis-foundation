@@ -40,6 +40,24 @@
             "allow_null": 1
         },
         {
+            "key": "field_5532b5838ca63",
+            "label": "Landing Page Menu",
+            "name": "landing_page_menu",
+            "prefix": "",
+            "type": "nav_menu",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "save_format": "id",
+            "container": "nav",
+            "allow_null": 0
+        },
+        {
             "key": "field_552bd0be1cb0a",
             "label": "Include Social Networks?",
             "name": "include_social_networks",
@@ -78,5 +96,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1428934873
+    "modified": 1429388308
 }

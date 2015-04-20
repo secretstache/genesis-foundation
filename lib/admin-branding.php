@@ -17,7 +17,7 @@ function ssm_login_headertitle() {
     return get_bloginfo( 'name' );
 }
 
-// add_action( 'login_enqueue_scripts', 'ssm_replace_login_logo' );
+add_action( 'login_enqueue_scripts', 'ssm_replace_login_logo' );
 /**
  * Replaces the login screen's WordPress logo with the 'login-logo.png' in your child theme images folder.
  * Disabled by default. Make sure you have a login logo before using this function!
@@ -25,12 +25,30 @@ function ssm_login_headertitle() {
  * @since 1.0.0
  */
 function ssm_replace_login_logo() { ?>
+
+<?php if ( $image = get_field('brand_logo', 'options') ) { ?>
+
+	<?php 
+	
+	$background_image = $image['url'];
+	} else {	
+	$background_image =  get_stylesheet_directory_uri() . '/assets/images/ph-logo.png';
+	} 
+
+	$width = $image['sizes'][ $size . '-width' ];
+	$height = $image['sizes'][ $size . '-height' ];
+
+	$width_height = $width .' '. $height;
+	
+	?>
 	
 	<style type="text/css">
 		body.login div#login h1 a {
-			background-image: url(<?php echo get_stylesheet_directory_uri() ?>/assets/images/login-logo.png) !important;
-			background-size: 274px 63px;
+			background: url(<?php echo $background_image; ?>) no-repeat !important;
+			background-size: 292px 36px;
+			height: 36px;
 			padding-bottom: 15px;
+			width: 292px;
 		}
 	</style>
 

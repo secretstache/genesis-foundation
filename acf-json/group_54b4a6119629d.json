@@ -851,6 +851,28 @@
                                     "layout": "horizontal"
                                 },
                                 {
+                                    "key": "field_552dce84bc8cd",
+                                    "label": "Column Title",
+                                    "name": "column_title",
+                                    "prefix": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": "",
+                                    "readonly": 0,
+                                    "disabled": 0
+                                },
+                                {
                                     "key": "field_55245bcd83c51",
                                     "label": "Visual Editor",
                                     "name": "visual_editor",
@@ -968,7 +990,15 @@
                                     "type": "radio",
                                     "instructions": "",
                                     "required": 0,
-                                    "conditional_logic": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_55245ba883c50",
+                                                "operator": "==",
+                                                "value": "Image"
+                                            }
+                                        ]
+                                    ],
                                     "wrapper": {
                                         "width": "",
                                         "class": "",
@@ -1739,5 +1769,5 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1428880262
+    "modified": 1429395503
 }
