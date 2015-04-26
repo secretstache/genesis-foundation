@@ -131,11 +131,11 @@
             }
         ]
     ],
-    "menu_order": 10,
+    "menu_order": 99,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1428934893
+    "modified": 1429978399
 }

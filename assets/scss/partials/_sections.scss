@@ -50,6 +50,9 @@ section.content-block {
 	button,
 	a.button {
 		margin-bottom: 0;
+		@media #{$small-only} {
+			margin-bottom: $global-margin;
+		}
 	}
 	@media #{$small-only} {
 		margin: $global-margin/2 0;

@@ -44,13 +44,6 @@ p a {
 	text-decoration: underline;
 }
 
-.archive .content-sidebar-wrap,
-.single .content-sidebar-wrap,
-.error404 .content-sidebar-wrap,
-.search .content-sidebar-wrap {
-	@include grid-row();
-}
-
 /* WordPress
 --------------------------------------------- */
 
@@ -325,6 +318,10 @@ pre {
 		background: $default-bg-gray;
 		&.nav-primary .genesis-nav-menu {
 			@include grid-column(12);
+			a:hover,
+			.active a {
+				background: darken($default-bg-gray, 10%);
+			}
 		}
 	}
 
@@ -476,6 +473,16 @@ pre {
 
 	/* Content Sidebar Wrap
 	---------------------------------------------------------------------------------------------------- */
+	
+	.archive .content-sidebar-wrap,
+	.single .content-sidebar-wrap,
+	.error404 .content-sidebar-wrap,
+	.search .content-sidebar-wrap,
+	.content-sidebar .content-sidebar-wrap,
+	.sidebar-content .content-sidebar-wrap {
+		@include grid-row();
+	}
+
 	.content-sidebar-wrap {
 		@include clearfix();
 		padding: $global-padding 0;
@@ -505,7 +512,7 @@ pre {
 		@include clearfix(); 
 	}
 
-	.full-width-content header.entry-header {
+	header.entry-header {
 		@include grid-row();
 		h1.entry-title {
 			@include grid-column(12);
