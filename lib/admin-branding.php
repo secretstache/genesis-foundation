@@ -26,19 +26,15 @@ add_action( 'login_enqueue_scripts', 'ssm_replace_login_logo' );
  */
 function ssm_replace_login_logo() { ?>
 
-<?php if ( $image = get_field('brand_logo', 'options') ) { ?>
-
-	<?php 
+<?php if ( $image = get_field('brand_logo', 'options') ) { 
 	
 	$background_image = $image['url'];
+	
 	} else {	
+	
 	$background_image =  get_stylesheet_directory_uri() . '/assets/images/ph-logo.png';
+	
 	} 
-
-	$width = $image['sizes'][ $size . '-width' ];
-	$height = $image['sizes'][ $size . '-height' ];
-
-	$width_height = $width .' '. $height;
 	
 	?>
 	

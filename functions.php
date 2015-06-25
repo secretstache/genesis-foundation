@@ -46,6 +46,7 @@ function child_theme_setup() {
 	// add_image_size( $name, $width = 0, $height = 0, $crop = false );
 	add_image_size( 'featured-image', 9999, 600, TRUE );
 	add_image_size( 'square-500', 500, 500, TRUE );
+	add_image_size( 'icon', 100, 100, TRUE );
 	
 	// add_filter( 'image_size_names_choose', 'ssm_image_size_names_choose' );
 	/**

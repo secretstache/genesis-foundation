@@ -24,6 +24,29 @@ include( CHILD_DIR . '/templates/includes/additional-classes.php' );
 
 		<?php } ?>
 
+		<?php if ( get_sub_field('include_cta') == 'Yes' && $button_text = get_sub_field('button_text') ) { ?>
+
+		<div class="button-wrapper">
+
+			<?php if ( get_sub_field('button_link') == 'Page' ) { 
+				$link = get_sub_field('choose_page');
+			} elseif ( get_sub_field('button_link') == 'Absolute URL' ) {
+				$link = get_sub_field('url');
+			} ?>
+
+			<?php if ( get_sub_field('button_link') == 'Absolute URL' && get_sub_field('link_target') == 'New Tab') {
+				$target= ' target="_blank"';
+			} else {
+				$target = '';
+			}; ?>
+
+			<a class="button" href="<?php echo $link; ?>"<?php echo $target; ?>><?php echo $button_text; ?></a>
+
+		</div>
+		<!-- end .button-wrapper -->
+
+		<?php } ?> 
+
 	</header>
 
 	<?php } ?>

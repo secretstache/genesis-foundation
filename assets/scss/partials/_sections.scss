@@ -74,6 +74,9 @@ section.cols {
 	h2.col-title {
 		font-size: $h2-font-size/1.5;
 	}
+	.icon-image {
+		margin-bottom: $global-margin/2;
+	}
 	@media #{$small-only} {
 		.image {
 			margin-bottom: $global-margin;

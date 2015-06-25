@@ -6,7 +6,6 @@
             "key": "field_5525dff1be331",
             "label": "Image",
             "name": "brand_logo",
-            "prefix": "",
             "type": "image",
             "instructions": "For best results, use an <strong>SVG<\/strong> Image",
             "required": 0,
@@ -43,5 +42,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1428592441
+    "modified": 1435118045
 }

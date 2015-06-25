@@ -8285,6 +8285,8 @@ section.cols:after {
   clear: both; }
 section.cols h2.col-title {
   font-size: 1.54167rem; }
+section.cols .icon-image {
+  margin-bottom: 0.625rem; }
 @media only screen and (max-width: 40em) {
   section.cols .image {
     margin-bottom: 1.25rem; } }

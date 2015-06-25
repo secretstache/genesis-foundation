@@ -52,6 +52,12 @@ $column_count = count(get_sub_field('column_list'));
 
 				<div class="<?php echo $column_type; ?> col-<?php echo $i; ?> <?php echo sanitize_html_classes($column_classes); ?>">
 
+					<?php if ( ( $column['content_type'] == 'Visual Editor') && $icon = $column['icon'] )  { ?>
+					
+					<img class="icon-image centered" src="<?php echo $icon['sizes']['icon']; ?>" alt="<?php echo $icon['alt']; ?>" title="<?php echo $icon['title']; ?>" />
+
+					<?php } ?>
+
 					<?php if ( $column['column_title'] ) { ?>
 
 					<h2 class="col-title"><?php echo $column['column_title']; ?></h2>

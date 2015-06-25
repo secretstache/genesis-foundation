@@ -6,7 +6,6 @@
             "key": "field_5525e17465ea1",
             "label": "Copy",
             "name": "content",
-            "prefix": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -25,7 +24,6 @@
             "key": "field_5525e275f333a",
             "label": "Menu",
             "name": "footer_menu",
-            "prefix": "",
             "type": "nav_menu",
             "instructions": "An <strong>Optional<\/strong> Menu to add to the footer",
             "required": 0,
@@ -43,7 +41,6 @@
             "key": "field_5532b5838ca63",
             "label": "Landing Page Menu",
             "name": "landing_page_menu",
-            "prefix": "",
             "type": "nav_menu",
             "instructions": "",
             "required": 0,
@@ -61,7 +58,6 @@
             "key": "field_552bd0be1cb0a",
             "label": "Include Social Networks?",
             "name": "include_social_networks",
-            "prefix": "",
             "type": "radio",
             "instructions": "",
             "required": 0,
@@ -79,6 +75,30 @@
             "save_other_choice": 0,
             "default_value": "Yes",
             "layout": "horizontal"
+        },
+        {
+            "key": "field_558a062e11194",
+            "label": "Note",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_552bd0be1cb0a",
+                        "operator": "==",
+                        "value": "Yes"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Choose Social Networks <a href=\"#acf-group_5525e0c443cc8\">Below<\/a>.",
+            "esc_html": 0
         }
     ],
     "location": [
@@ -96,5 +116,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1429388308
+    "modified": 1435108931
 }

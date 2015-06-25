@@ -16,6 +16,8 @@ add_action( 'genesis_loop', 'ssm_home_loop' );
 
 function ssm_home_loop() { ?>
 
+<?php do_action('genesis_before_entry'); ?>
+
 <article <?php post_class(); ?> itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
 
 	<div class="entry-content" itemprop="text">
@@ -26,6 +28,8 @@ function ssm_home_loop() { ?>
 	<!-- entry-content -->
 
 </article>
+
+<?php do_action('genesis_after_entry'); ?>
 
 <?php }
 

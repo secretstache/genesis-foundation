@@ -278,6 +278,7 @@ function remove_wp_nodes() {
     $wp_admin_bar->remove_node( 'new-user' );
 }
 
+
 /****************************************
 Frontend
 *****************************************/
