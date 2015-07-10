@@ -14,13 +14,13 @@ include( CHILD_DIR . '/templates/includes/additional-classes.php' );
 
 			<?php if ( $headline = get_sub_field('headline') ) { ?>
 
-			<h1 class="section-title"><?php echo $headline; ?></h1>
+			<h1 class="section-title<?php echo $headline_animation != NULL ? ' wow ' . $headline_animation : ''; ?>"><?php echo $headline; ?></h1>
 
 			<?php } ?>
 
 			<?php if ( $subheadline = get_sub_field('subheadline') ) { ?>
 
-			<h2 class="section-subtitle"><?php echo $subheadline; ?></h2>
+			<h2 class="section-subtitle<?php echo $subheadline_animation != NULL ? ' wow ' . $subheadline_animation : ''; ?>"><?php echo $subheadline; ?></h2>
 
 			<?php } ?>
 
@@ -32,7 +32,7 @@ include( CHILD_DIR . '/templates/includes/additional-classes.php' );
 
 		<?php if ( $business_information ) { ?>
 
-		<div class="business-information small-12 medium-4 column" itemscope itemtype="http://schema.org/LocalBusiness">
+		<div class="business-information small-12 medium-4 column<?php echo $form_animation != NULL ? ' wow ' . $form_animation : ''; ?>" itemscope itemtype="http://schema.org/LocalBusiness">
 
 			<?php if ( in_array('Business Name', $business_information) ) { ?>
 
@@ -113,7 +113,7 @@ include( CHILD_DIR . '/templates/includes/additional-classes.php' );
 
 		<?php if ( $form = get_sub_field('form') ) { ?>
 
-		<div class="form<?php echo $business_information != NULL ? ' small-12 medium-8 column' : ' small-12 large-9 large-centered column'; ?>">
+		<div class="form<?php echo $business_information != NULL ? ' small-12 medium-8 column' : ' small-12 large-9 large-centered column'; ?><?php echo $form_animation != NULL ? ' wow ' . $form_animation : ''; ?>">
 
 		<?php gravity_form_enqueue_scripts($form->id, true); ?>
 		<?php gravity_form($form->id, false, false, false, '', true, 1); ?>

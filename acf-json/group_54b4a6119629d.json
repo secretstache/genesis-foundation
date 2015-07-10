@@ -203,10 +203,10 @@
                             "placement": "top"
                         },
                         {
-                            "key": "field_5525ebdcfa95c",
-                            "label": "HTML Classes",
-                            "name": "html_classes",
-                            "type": "text",
+                            "key": "field_559083eed4a5c",
+                            "label": "Available Classes",
+                            "name": "class_options",
+                            "type": "checkbox",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -215,13 +215,16 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": "",
-                            "readonly": 0,
-                            "disabled": 0
+                            "choices": {
+                                "class-one": "Class One",
+                                "class-two": "Class Two",
+                                "class-three": "Class Three"
+                            },
+                            "default_value": {
+                                "": ""
+                            },
+                            "layout": "horizontal",
+                            "toggle": 0
                         },
                         {
                             "key": "field_5525ebdcfa95d",
@@ -376,10 +379,10 @@
                             "placement": "top"
                         },
                         {
-                            "key": "field_54bc87c5c6dbd",
-                            "label": "HTML Classes",
-                            "name": "html_classes",
-                            "type": "text",
+                            "key": "field_55908571dcab9",
+                            "label": "Available Classes",
+                            "name": "class_options",
+                            "type": "checkbox",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -388,13 +391,16 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": "",
-                            "readonly": 0,
-                            "disabled": 0
+                            "choices": {
+                                "class-one": "Class One",
+                                "class-two": "Class Two",
+                                "class-three": "Class Three"
+                            },
+                            "default_value": {
+                                "": ""
+                            },
+                            "layout": "horizontal",
+                            "toggle": 0
                         },
                         {
                             "key": "field_54bc87cfc6dbe",
@@ -839,10 +845,10 @@
                             "placement": "top"
                         },
                         {
-                            "key": "field_54bc883377318",
-                            "label": "HTML Classes",
-                            "name": "html_classes",
-                            "type": "text",
+                            "key": "field_559085b4dcaba",
+                            "label": "Available Classes",
+                            "name": "class_options",
+                            "type": "checkbox",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -851,13 +857,16 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": "",
-                            "readonly": 0,
-                            "disabled": 0
+                            "choices": {
+                                "class-one": "Class One",
+                                "class-two": "Class Two",
+                                "class-three": "Class Three"
+                            },
+                            "default_value": {
+                                "": ""
+                            },
+                            "layout": "horizontal",
+                            "toggle": 0
                         },
                         {
                             "key": "field_54bc883e77319",
@@ -946,7 +955,7 @@
                         {
                             "key": "field_558b49ffab8d6",
                             "label": "Subheadline",
-                            "name": "subheadline",
+                            "name": "subheadline_animation",
                             "type": "select",
                             "instructions": "",
                             "required": 0,
@@ -1339,10 +1348,10 @@
                             "placement": "top"
                         },
                         {
-                            "key": "field_54bc8a3477326",
-                            "label": "HTML Classes",
-                            "name": "html_classes",
-                            "type": "text",
+                            "key": "field_559085e9dcabb",
+                            "label": "Available Classes",
+                            "name": "class_options",
+                            "type": "checkbox",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -1351,13 +1360,16 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": "",
-                            "readonly": 0,
-                            "disabled": 0
+                            "choices": {
+                                "class-one": "Class One",
+                                "class-two": "Class Two",
+                                "class-three": "Class Three"
+                            },
+                            "default_value": {
+                                "": ""
+                            },
+                            "layout": "horizontal",
+                            "toggle": 0
                         },
                         {
                             "key": "field_54bc8a3e77327",
@@ -1478,7 +1490,7 @@
                         {
                             "key": "field_558b4e32861ae",
                             "label": "Media Item",
-                            "name": "media_item",
+                            "name": "media_item_animation",
                             "type": "select",
                             "instructions": "ie. Single Photo, Gallery or Video",
                             "required": 0,
@@ -1853,10 +1865,10 @@
                             "placement": "top"
                         },
                         {
-                            "key": "field_55245c6483c54",
-                            "label": "HTML Classes",
-                            "name": "html_classes",
-                            "type": "text",
+                            "key": "field_5590864adcabc",
+                            "label": "Available Classes",
+                            "name": "class_options",
+                            "type": "checkbox",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -1865,13 +1877,16 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": "",
-                            "readonly": 0,
-                            "disabled": 0
+                            "choices": {
+                                "class-one": "Class One",
+                                "class-two": "Class Two",
+                                "class-three": "Class Three"
+                            },
+                            "default_value": {
+                                "": ""
+                            },
+                            "layout": "horizontal",
+                            "toggle": 0
                         },
                         {
                             "key": "field_55245c8e83c55",
@@ -2237,10 +2252,10 @@
                             "placement": "top"
                         },
                         {
-                            "key": "field_5525e92a0618d",
-                            "label": "HTML Classes",
-                            "name": "html_classes",
-                            "type": "text",
+                            "key": "field_55908672dcabd",
+                            "label": "Available Classes",
+                            "name": "class_options",
+                            "type": "checkbox",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -2249,13 +2264,16 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": "",
-                            "readonly": 0,
-                            "disabled": 0
+                            "choices": {
+                                "class-one": "Class One",
+                                "class-two": "Class Two",
+                                "class-three": "Class Three"
+                            },
+                            "default_value": {
+                                "": ""
+                            },
+                            "layout": "horizontal",
+                            "toggle": 0
                         },
                         {
                             "key": "field_5525e9320618e",
@@ -2562,10 +2580,10 @@
                             "placement": "top"
                         },
                         {
-                            "key": "field_55245d2f83c5d",
-                            "label": "HTML Classes",
-                            "name": "html_classes",
-                            "type": "text",
+                            "key": "field_5590868fdcabe",
+                            "label": "Available Classes",
+                            "name": "class_options",
+                            "type": "checkbox",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -2574,13 +2592,16 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": "",
-                            "readonly": 0,
-                            "disabled": 0
+                            "choices": {
+                                "class-one": "Class One",
+                                "class-two": "Class Two",
+                                "class-three": "Class Three"
+                            },
+                            "default_value": {
+                                "": ""
+                            },
+                            "layout": "horizontal",
+                            "toggle": 0
                         },
                         {
                             "key": "field_55245d3883c5e",
@@ -2887,10 +2908,10 @@
                             "placement": "top"
                         },
                         {
-                            "key": "field_55245e0083c68",
-                            "label": "HTML Classes",
-                            "name": "html_classes",
-                            "type": "text",
+                            "key": "field_559086a5dcabf",
+                            "label": "Available Classes",
+                            "name": "class_options",
+                            "type": "checkbox",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -2899,13 +2920,16 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": "",
-                            "readonly": 0,
-                            "disabled": 0
+                            "choices": {
+                                "class-one": "Class One",
+                                "class-two": "Class Two",
+                                "class-three": "Class Three"
+                            },
+                            "default_value": {
+                                "": ""
+                            },
+                            "layout": "horizontal",
+                            "toggle": 0
                         },
                         {
                             "key": "field_55245e0583c69",
@@ -2994,7 +3018,7 @@
                         {
                             "key": "field_558b68a7ea6c5",
                             "label": "Subheadline",
-                            "name": "subheadline",
+                            "name": "subheadline_animation",
                             "type": "select",
                             "instructions": "",
                             "required": 0,
@@ -3195,10 +3219,10 @@
                             "placement": "top"
                         },
                         {
-                            "key": "field_5525e5dc06186",
-                            "label": "HTML Classes",
-                            "name": "html_classes",
-                            "type": "text",
+                            "key": "field_559086f0dcac0",
+                            "label": "Available Classes",
+                            "name": "class_options",
+                            "type": "checkbox",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -3207,13 +3231,16 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": "",
-                            "readonly": 0,
-                            "disabled": 0
+                            "choices": {
+                                "class-one": "Class One",
+                                "class-two": "Class Two",
+                                "class-three": "Class Three"
+                            },
+                            "default_value": {
+                                "": ""
+                            },
+                            "layout": "horizontal",
+                            "toggle": 0
                         },
                         {
                             "key": "field_5525e5f306187",
@@ -3269,8 +3296,8 @@
                         },
                         {
                             "key": "field_558b6b5487d00",
-                            "label": "Headine",
-                            "name": "headine_animation",
+                            "label": "Headline",
+                            "name": "headline_animation",
                             "type": "select",
                             "instructions": "",
                             "required": 0,
@@ -3345,15 +3372,15 @@
                                 "id": ""
                             },
                             "choices": {
-                                "": ""
-                            },
-                            "default_value": {
                                 "pulse": "pulse",
                                 "fadeIn": "fadeIn",
                                 "fadeInDown": "fadeInDown",
                                 "fadeInUp": "fadeInUp",
                                 "fadeInLeft": "fadeInLeft",
                                 "fadeInRight": "fadeInRight"
+                            },
+                            "default_value": {
+                                "": ""
                             },
                             "allow_null": 1,
                             "multiple": 0,
@@ -3439,5 +3466,5 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1435200450
+    "modified": 1436547537
 }

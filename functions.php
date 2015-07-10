@@ -151,6 +151,9 @@ function child_theme_setup() {
 	// Remove Editor Support on Pages (Replaced with ACF Page Builder)
 	add_action( 'init', 'ssm_remove_editor' );
 
+	// Load default choices from options page into content blocks
+	add_filter('acf/load_field/name=class_options', 'acf_load_style_default_choices');
+
 	// Remove unnecessary menu items from add new dropdown
 	add_action( 'admin_bar_menu', 'remove_wp_nodes', 999 );
 
@@ -189,6 +192,9 @@ function child_theme_setup() {
 
 	// Enqueue Scripts
 	add_action( 'wp_enqueue_scripts', 'ssm_scripts' );
+
+	// Inline Scripts
+	add_action( 'wp_footer', 'ssm_inline_scripts', 99 );
 
 	// Remove Query Strings From Static Resources
 	add_filter('script_loader_src', 'ssm_remove_script_version', 15, 1);

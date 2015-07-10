@@ -32,7 +32,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "acf-options"
+                "value": "acf-options-brand-options"
             }
         ]
     ],
@@ -42,5 +42,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1435118045
+    "modified": 1435531844
 }

@@ -14,13 +14,13 @@ include( CHILD_DIR . '/templates/includes/additional-classes.php' );
 
 			<?php if ( $headline = get_sub_field('headline') ) { ?>
 
-			<h1 class="section-title"><?php echo $headline; ?></h1>
+			<h1 class="section-title<?php echo $headline_animation != NULL ? ' wow ' . $headline_animation : ''; ?>"><?php echo $headline; ?></h1>
 
 			<?php } ?>
 
 			<?php if ( $subheadline = get_sub_field('subheadline') ) { ?>
 
-			<h2 class="section-subtitle"><?php echo $subheadline; ?></h2>
+			<h2 class="section-subtitle<?php echo $subheadline_animation != NULL ? ' wow ' . $headline_animation : ''; ?>"><?php echo $subheadline; ?></h2>
 
 			<?php } ?>
 
@@ -34,7 +34,7 @@ include( CHILD_DIR . '/templates/includes/additional-classes.php' );
 		<?php $t_i = 1; ?>
 		<?php $c_i = 1; ?>
 
-		<div class="small-12 column">
+		<div class="small-12 column<?php echo $tab_list_animation != NULL ? ' wow ' . $tab_list_animation : ''; ?>">
 
 			<ul class="tabs" data-tab>
 

@@ -258,12 +258,59 @@ function ssm_remove_editor() {
 }
 
 /**
-*  Creates ACF Options Page
+*  Creates ACF Options Page(s)
 */
-if( function_exists('acf_add_options_page') ) {
+if( function_exists('acf_add_options_sub_page') ) {
 	
-	acf_add_options_page();
+	acf_add_options_page('Brand Options');
+	acf_add_options_page('Style Builder');
+
+	acf_add_options_sub_page(array(
+        'title' => 'Brand Options',
+        'parent' => 'options-general.php',
+        'capability' => 'manage_options'
+    ));
+
+    acf_add_options_sub_page(array(
+        'title' => 'Style Builder',
+        'parent' => 'options-general.php',
+        'capability' => 'manage_options'
+    ));
 	
+}
+
+/**
+*  Load default choices from options page into content blocks
+*/
+function acf_load_style_default_choices( $field ) {
+    
+    // reset choices
+    $field['choices'] = array();
+
+
+    // if has rows
+    if( have_rows('additional_styles', 'option') ) {
+        
+        // while has rows
+        while( have_rows('additional_styles', 'option') ) {
+            
+            // instantiate row
+            the_row();
+            
+	            // vars
+            $value = get_sub_field('value');
+            $label = get_sub_field('label');
+            
+            // append to choices
+            $field['choices'][ $value ] = $label;
+            
+        }
+        
+    }
+
+    // return the field
+    return $field;
+    
 }
 
 /**
@@ -335,9 +382,23 @@ function ssm_scripts() {
 		
 		// Theme Scripts
 		wp_enqueue_script('ssm-scripts', CHILD_URL . '/assets/js/source/main.js', array('jquery'), NULL, true );
+
+		// Animation Scripts
+		wp_enqueue_script('wow', CHILD_URL . '/assets/bower_components/wow.js/dist/wow.min.js', array('jquery'), NULL, true );
 		
 	}
 }
+
+/**
+ * Inline Scripts
+ */
+function ssm_inline_scripts() { ?>
+	
+<script>
+	 new WOW().init();
+</script>
+
+<?php }
 
 /**
  * Remove Query Strings From Static Resources
