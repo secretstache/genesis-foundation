@@ -16,13 +16,13 @@ $column_count = count(get_sub_field('column_list'));
 
 			<?php if ( $headline = get_sub_field('headline') ) { ?>
 
-			<h1 class="section-title<?php echo $headline_animation != NULL ? ' wow ' . $headline_animation : ''; ?>"><?php echo $headline; ?></h1>
+			<h1 class="section-title"><?php echo $headline; ?></h1>
 
 			<?php } ?>
 
 			<?php if ( $subheadline = get_sub_field('subheadline') ) { ?>
 
-			<h2 class="section-subtitle<?php echo $subheadline_animation != NULL ? ' wow ' . $subheadline_animation : ''; ?>"><?php echo $subheadline; ?></h2>
+			<h2 class="section-subtitle"><?php echo $subheadline; ?></h2>
 
 			<?php } ?>
 
@@ -44,7 +44,7 @@ $column_count = count(get_sub_field('column_list'));
 
 			<?php $i = 1; ?>
 
-			<div class="section-entry row<?php echo $column_list_animation != NULL ? ' wow ' . $column_list_animation : ''; ?>">
+			<div class="section-entry row">
 
 				<?php foreach ( $columns as $column ) { ?>
 
@@ -54,7 +54,7 @@ $column_count = count(get_sub_field('column_list'));
 
 					<?php if ( ( $column['content_type'] == 'Visual Editor') && $icon = $column['icon'] )  { ?>
 					
-					<img class="icon-image centered<?php echo $icon_animation != NULL ? ' wow ' . $icon_animation : ''; ?>" src="<?php echo $icon['sizes']['icon']; ?>" alt="<?php echo $icon['alt']; ?>" title="<?php echo $icon['title']; ?>" />
+					<img class="icon-image centered" src="<?php echo $icon['sizes']['icon']; ?>" alt="<?php echo $icon['alt']; ?>" title="<?php echo $icon['title']; ?>" />
 
 					<?php } ?>
 

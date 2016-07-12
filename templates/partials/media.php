@@ -22,13 +22,13 @@ include( CHILD_DIR . '/templates/includes/additional-classes.php' );
 
 			<?php if ( $headline = get_sub_field('headline') ) { ?>
 
-			<h1 class="section-title<?php echo $headline_animation != NULL ? ' wow ' . $headline_animation : ''; ?>"><?php echo $headline; ?></h1>
+			<h1 class="section-title"><?php echo $headline; ?></h1>
 
 			<?php } ?>
 
 			<?php if ( $subheadline = get_sub_field('subheadline') ) { ?>
 
-			<h2 class="section-subtitle<?php echo $subheadline_animation != NULL ? ' wow ' . $subheadline_animation : ''; ?>"><?php echo $subheadline; ?></h2>
+			<h2 class="section-subtitle"><?php echo $subheadline; ?></h2>
 
 			<?php } ?>
 
@@ -36,7 +36,7 @@ include( CHILD_DIR . '/templates/includes/additional-classes.php' );
 
 		<?php } ?>
 
-		<div class="small-12 column<?php echo $media_size == 'Full Width' ? ' large-collapse' : ''; ?><?php echo $media_item_animation != NULL ? ' wow ' . $media_item_animation : ''; ?>">
+		<div class="small-12 column<?php echo $media_size == 'Full Width' ? ' large-collapse' : ''; ?>">
 
 			<?php if ( get_sub_field('media_type') == 'Photo' && $image = get_sub_field('image') ) { ?>
 

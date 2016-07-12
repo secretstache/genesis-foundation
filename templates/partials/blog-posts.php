@@ -38,13 +38,13 @@ if ( $curated = get_sub_field('blog_posts_display') == 'Curated' ) {
 
 			<?php if ( $headline = get_sub_field('headline') ) { ?>
 
-			<h1 class="section-title<?php echo $headline_animation != NULL ? ' wow ' . $headline_animation : ''; ?>"><?php echo $headline; ?></h1>
+			<h1 class="section-title"><?php echo $headline; ?></h1>
 
 			<?php } ?>
 
 			<?php if ( $subheadline = get_sub_field('subheadline') ) { ?>
 
-			<h2 class="section-subtitle<?php echo $subheadline_animation != NULL ? ' wow ' . $subheadline_animation : ''; ?>"><?php echo $subheadline; ?></h2>
+			<h2 class="section-subtitle"><?php echo $subheadline; ?></h2>
 
 			<?php } ?>
 
@@ -56,7 +56,7 @@ if ( $curated = get_sub_field('blog_posts_display') == 'Curated' ) {
 
 		<?php if ( $post_query->have_posts() ) { ?>
 
-			<div class="row<?php echo $blog_posts_list_animation != NULL ? ' wow ' . $blog_posts_list_animation : ''; ?>" data-equalizer data-options="equalize_on_stack: true">
+			<div class="row" data-equalizer data-options="equalize_on_stack: true">
 
 			<?php do_action( 'genesis_before_while' ); ?>
 

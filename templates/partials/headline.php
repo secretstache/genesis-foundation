@@ -14,19 +14,19 @@ include( CHILD_DIR . '/templates/includes/additional-classes.php' );
 
 		<?php if ( $headline = get_sub_field('headline') ) { ?>
 
-		<h1 class="section-title<?php echo $headline_animation != NULL ? ' wow ' . $headline_animation : ''; ?>"><?php echo $headline; ?></h1>
+		<h1 class="section-title"</h1>
 
 		<?php } ?>
 
 		<?php if ( $subheadline = get_sub_field('subheadline') ) { ?>
 
-		<h2 class="section-subtitle<?php echo $subheadline_animation != NULL ? ' wow ' . $subheadline_animation : ''; ?>"><?php echo $subheadline; ?></h2>
+		<h2 class="section-subtitle"><?php echo $subheadline; ?></h2>
 
 		<?php } ?>
 
 		<?php if ( get_sub_field('include_cta') == 'Yes' && $button_text = get_sub_field('button_text') ) { ?>
 
-		<div class="button-wrapper<?php echo $button_animation != NULL ? ' wow ' . $button_animation : ''; ?>">
+		<div class="button-wrapper">
 
 			<?php if ( get_sub_field('button_link') == 'Page' ) { 
 				$link = get_sub_field('choose_page');
