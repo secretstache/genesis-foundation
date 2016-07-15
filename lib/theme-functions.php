@@ -375,13 +375,10 @@ function ssm_scripts() {
     wp_enqueue_script('jquery', CHILD_URL . '/assets/bower_components/jquery/dist/jquery.min.js', array(), NULL, false);
 
     // Modernizr (without media query polyfill)
-      wp_enqueue_script( 'modernizr', CHILD_URL . '/assets/bower_components/foundation/js/vendor/modernizr.js', array(), NULL, false );
-
-    // Foundation
-    wp_enqueue_script('foundation-js', CHILD_URL . '/assets/bower_components/foundation/js/foundation.min.js', array('jquery'), NULL, true );
+    wp_enqueue_script( 'modernizr', CHILD_URL . '/assets/bower_components/foundation/js/vendor/modernizr.js', array(), NULL, false );
 
     // Theme Scripts
-    wp_enqueue_script('ssm-scripts', CHILD_URL . '/assets/js/source/main.js', array('jquery'), NULL, true );
+    wp_enqueue_script('ssm-scripts', CHILD_URL . '/assets/js/main.min.js', array('jquery'), NULL, true );
 
     // Animation Scripts
     wp_enqueue_script('wow', CHILD_URL . '/assets/bower_components/wow.js/dist/wow.min.js', array('jquery'), NULL, true );
