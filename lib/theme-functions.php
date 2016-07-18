@@ -368,15 +368,6 @@ function ssm_apple_touch_icon() {
 function ssm_scripts() {
   if ( !is_admin() ) {
 
-    // removes WP version of jQuery
-    wp_deregister_script('jquery');
-
-    // Bring Back jQuery from bower components
-    wp_enqueue_script('jquery', CHILD_URL . '/assets/bower_components/jquery/dist/jquery.min.js', array(), NULL, false);
-
-    // Modernizr (without media query polyfill)
-    wp_enqueue_script( 'modernizr', CHILD_URL . '/assets/bower_components/foundation/js/vendor/modernizr.js', array(), NULL, false );
-
     // Theme Scripts
     wp_enqueue_script('ssm-scripts', CHILD_URL . '/assets/js/main.min.js', array('jquery'), NULL, true );
 
