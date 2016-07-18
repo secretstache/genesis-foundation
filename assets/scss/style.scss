@@ -11,15 +11,6 @@ Version: 1.0
 Template: genesis
 */
 
-// Normalize
-@import "../bower_components/foundation/scss/normalize";
-
-// Foundation Setting Overrides
-@import "partials/foundation-settings";
-
-// Foundation
-@import "../bower_components/foundation/scss/foundation";
-
 // Foundation Icons
 @import "partials/foundation-icons";
 
@@ -37,4 +28,3 @@ Template: genesis
 
 // Animate.css
 @import "partials/animate";
-
