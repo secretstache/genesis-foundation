@@ -56,7 +56,7 @@ gulp.task('clean', function() {
 
 // Default task
 gulp.task('default', ['clean'], function() {
-  gulp.start('styles', 'scripts');
+  gulp.start('bower', 'styles', 'scripts');
 });
 
 // Watch

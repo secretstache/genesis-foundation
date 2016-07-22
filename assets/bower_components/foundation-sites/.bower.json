@@ -38,6 +38,5 @@
   },
   "_source": "https://github.com/zurb/foundation-sites.git",
   "_target": "~6.2.3",
-  "_originalSource": "foundation-sites",
-  "_direct": true
+  "_originalSource": "foundation-sites"
 }
