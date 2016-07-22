@@ -5,6 +5,9 @@
 !.gitignore
 !.gitmodules
 
+# track .bowerrc file
+!.bowerrc
+
 # track .editorconfig file (i.e. do NOT ignore it)
 !.editorconfig
 
