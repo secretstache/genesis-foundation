@@ -1,0 +1,22 @@
+{
+  "name": "genesis-foundation",
+  "description": "Starter Theme for use as Child Theme of the Genesis Framework for building custom themes.",
+  "main": "gulpfile.js",
+  "authors": [
+    "Secret Stache Media"
+  ],
+  "license": "GPL-2.0",
+  "homepage": "https://github.com/secretstache/genesis-foundation",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/bower_components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation-sites": "~6.2.3"
+  }
+}

@@ -1,7 +1,27 @@
-$primary-font-family	: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !default;;
-
+// Base
 $global-margin			: rem-calc(20);
 $global-padding			: rem-calc(20);
+$column-gutter: rem-calc(30);
+$rem-base: 16px;
+$row-width: rem-calc(1000);
 
+// Typography
+$primary-font-family	: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !default;
+$primary-color: #555555;
+$paragraph-font-size: 1rem;
+$paragraph-line-height: 1.6;
+$h1-font-size: rem-calc(44);
+$h2-font-size: rem-calc(37);
+$h3-font-size: rem-calc(27);
+$h4-font-size: rem-calc(23);
+$h5-font-size: rem-calc(18);
+$h6-font-size: 1rem;
+
+// Colors
 $default-bg-gray		: #EEEEEE;
 $default-border-gray	: #CCCCCC !default;
+$oil 	        : #333333;
+$silver      : #EFEFEF;
+$white-smoke : #F5F5F5;
+$foundationBlue : #008CBA;
+$blue:			$foundationBlue;

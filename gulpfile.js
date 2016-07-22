@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
     bower = require('gulp-bower'),
     autoprefixer = require('gulp-autoprefixer'),
-    minifycss = require('gulp-minify-css'),
+    cleanCSS = require('gulp-clean-css'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
@@ -56,7 +56,7 @@ gulp.task('clean', function() {
 
 // Default task
 gulp.task('default', ['clean'], function() {
-  gulp.start('styles', 'scripts');
+  gulp.start('bower', 'styles', 'scripts');
 });
 
 // Watch

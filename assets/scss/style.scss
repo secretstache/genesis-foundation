@@ -14,6 +14,10 @@ Template: genesis
 // Foundation Icons
 @import "partials/foundation-icons";
 
+// Foundation 6
+@import "../bower_components/foundation-sites/scss/foundation";
+@include foundation-everything;
+
 // Foundation Setting Overrides
 @import "partials/theme-settings";
 
