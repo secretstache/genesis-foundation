@@ -536,3 +536,27 @@ if ( ! function_exists( "sanitize_html_classes" ) && function_exists( "sanitize_
     }
   }
 }
+
+
+/**
+  * Set classes for a block wrapper. These can be overridden or added to with a filter like the following:
+  *     add_filter( 'fcb_set_block_wrapper_classes', 'custom_block_wrapper_classes' );
+  *     function custom_block_wrapper_classes($classes) {
+  *         if(is_page_template('template-landing-page.php') {
+  *             $classes[]   = 'on-landing-page';
+  *         }
+  *         return $classes;
+  *     }
+  *
+  * @return string string of classes
+  */
+ function ssm_block_wrapper_classes() {
+    global $cb_i;
+    $classes    = array();
+    $classes[]  = get_sub_field('html_id');
+    $classes[]  = sanitize_html_classes(get_sub_field('class_options'));
+    $classes[]  = 0 == $cb_i % 2 ? 'even' : 'odd';
+
+    $classes = array_filter(array_map('trim', $classes));
+    echo trim(implode(' ', apply_filters( 'fcb_set_block_wrapper_classes', $classes )));
+}
