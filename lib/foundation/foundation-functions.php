@@ -5,7 +5,7 @@ add_action('genesis_before', 'ssm_open_offnav_markup', 10);
  * Add Foundation offcanvas opening markup
  */
 function ssm_open_offnav_markup() {
-	echo '<div class="off-canvas-wrap" data-offcanvas>';
+	echo '<div class="off-canvas-wrapper"><div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>';
 }
 
 add_action('genesis_after', 'ssm_close_offnav_markup', 5);
@@ -13,7 +13,7 @@ add_action('genesis_after', 'ssm_close_offnav_markup', 5);
  * Add Foundation offcanvas closing markup
  */
 function ssm_close_offnav_markup() {
-	echo '</div><!-- end .off-canvas-wrap -->';
+	echo '</div><!-- end .off-canvas-wrap --></div></div>';
 }
 
 /**
@@ -106,7 +106,7 @@ function ssm_do_top_bar_navigation() { ?>
 		
 		<?php if ( has_nav_menu('top-bar-navigation') ) { ?>
 		
-		<div class="show-for-medium-up fixed">
+		<div class="show-for-medium fixed">
 			<nav class="top-bar" data-topbar>	
 				<section class="top-bar-section">
 					<?php ssm_top_bar_navigation(); ?>
@@ -146,7 +146,7 @@ function ssm_do_primary_navigation() { ?>
 		
 		<?php if ( has_nav_menu('primary-navigation') ) { ?>
 		
-		<div class="show-for-large-up">
+		<div class="show-for-large">
 			<nav class="nav-primary">
 				<div class="wrap">	
 				<?php ssm_primary_navigation(); ?>
@@ -154,27 +154,21 @@ function ssm_do_primary_navigation() { ?>
 			</nav>
 		</div>
 
-		<div class="show-for-medium-down mobile-menu">
+		<div class="hide-for-large mobile-menu">
 			<nav class="tab-bar">
-				<section class="left-small">
-					<a href="#" class="left-off-canvas-toggle menu-icon"><span></span></a>
-				</section>
-				<section class="middle tab-bar-section">
-					<h1 class="title">Menu</h1>
-				</section>
+				<button type="button" class="menu-item" data-open="offCanvasLeft">X</button>
 			</nav>
 		</div>
 
-		<aside class="left-off-canvas-menu">
-			<ul class="off-canvas-list">
-				<li><label>Navigation</label></li>
-			</ul>
-			
-			<?php ssm_primary_mobile_navigation(); ?>
+		<aside class="off-canvas position-left" id="offCanvas" data-off-canvas>
+			<div class="off-canvas-content" data-off-canvas-content>
+				<ul class="vertical menu">
+					<li><label>Navigation</label></li>
+				</ul>
 				
+				<?php ssm_primary_mobile_navigation(); ?>
+			</div>
 		</aside>
-
-		<a class="exit-off-canvas"></a>
 		
 		<?php } // endif has_nav_menu ?>
 		
@@ -184,7 +178,7 @@ function ssm_do_home_page_primary_navigation() { ?>
 		
 		<?php if ( has_nav_menu('primary-navigation') ) { ?>
 		
-		<div class="show-for-large-up">
+		<div class="show-for-large">
 			<nav class="nav-primary">
 				<div class="wrap">	
 				<?php ssm_primary_navigation(); ?>
@@ -198,26 +192,20 @@ function ssm_do_home_page_primary_navigation() { ?>
 
 function ssm_do_home_page_mobile_primary_navigation() { ?>
 
-	<div class="show-for-medium-down mobile-menu">
+	<div class="hide-for-large mobile-menu">
 			<nav class="tab-bar">
-				<section class="left-small">
-					<a href="#" class="left-off-canvas-toggle menu-icon"><span></span></a>
-				</section>
-				<section class="middle tab-bar-section">
-					<h1 class="title">Menu</h1>
-				</section>
+				<button type="button" class="menu-item" data-open="offCanvasLeft"></button>
 			</nav>
 		</div>
 
-		<aside class="left-off-canvas-menu">
-			<ul class="off-canvas-list">
-				<li><label>Navigation</label></li>
-			</ul>
-			
-			<?php ssm_primary_mobile_navigation(); ?>
+		<aside class="off-canvas position-left" id="offCanvas" data-off-canvas>
+			<div class="off-canvas-content" data-off-canvas-content>
+				<ul class="vertical menu">
+					<li><label>Navigation</label></li>
+				</ul>
 				
+				<?php ssm_primary_mobile_navigation(); ?>
+			</div>
 		</aside>
-
-		<a class="exit-off-canvas"></a>
 
 <?php } 

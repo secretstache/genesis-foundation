@@ -38,7 +38,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_5525ebdcfa92b",
@@ -62,7 +63,8 @@
                             "other_choice": 0,
                             "save_other_choice": 0,
                             "default_value": "",
-                            "layout": "horizontal"
+                            "layout": "horizontal",
+                            "allow_null": 0
                         },
                         {
                             "key": "field_5525ebdcfa92c",
@@ -86,7 +88,8 @@
                                 "id": ""
                             },
                             "message": "Be sure to add a unique ID below to target this specific block.",
-                            "esc_html": 0
+                            "esc_html": 0,
+                            "new_lines": "wpautop"
                         },
                         {
                             "key": "field_5525ebdcfa92d",
@@ -200,7 +203,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_559083eed4a5c",
@@ -215,11 +219,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "choices": {
-                                "class-one": "Class One",
-                                "class-two": "Class Two",
-                                "class-three": "Class Three"
-                            },
+                            "choices": [],
                             "default_value": {
                                 "": ""
                             },
@@ -260,7 +260,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_554d71f9d514a",
@@ -276,7 +277,8 @@
                                 "id": ""
                             },
                             "message": "\/\/ Todo \/\/",
-                            "esc_html": 0
+                            "esc_html": 0,
+                            "new_lines": "wpautop"
                         }
                     ],
                     "min": "",
@@ -301,7 +303,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_54bc878fc6dba",
@@ -376,7 +379,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_55908571dcab9",
@@ -391,11 +395,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "choices": {
-                                "class-one": "Class One",
-                                "class-two": "Class Two",
-                                "class-three": "Class Three"
-                            },
+                            "choices": [],
                             "default_value": {
                                 "": ""
                             },
@@ -436,7 +436,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_558b47c6b2457",
@@ -452,7 +453,8 @@
                                 "id": ""
                             },
                             "message": "Optionally, choose an animation for each of the elements listed below.",
-                            "esc_html": 0
+                            "esc_html": 0,
+                            "new_lines": "wpautop"
                         },
                         {
                             "key": "field_558b478ab2456",
@@ -563,7 +565,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_554e2efdf3dd0",
@@ -579,7 +582,8 @@
                                 "id": ""
                             },
                             "message": "\/\/ Todo \/\/",
-                            "esc_html": 0
+                            "esc_html": 0,
+                            "new_lines": "wpautop"
                         }
                     ],
                     "min": "",
@@ -604,7 +608,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_54bc880a77316",
@@ -668,7 +673,8 @@
                             "other_choice": 0,
                             "save_other_choice": 0,
                             "default_value": "No",
-                            "layout": "horizontal"
+                            "layout": "horizontal",
+                            "allow_null": 0
                         },
                         {
                             "key": "field_5589e8276dc99",
@@ -727,7 +733,8 @@
                             "other_choice": 0,
                             "save_other_choice": 0,
                             "default_value": "Page",
-                            "layout": "horizontal"
+                            "layout": "horizontal",
+                            "allow_null": 0
                         },
                         {
                             "key": "field_5589e89f6dc9b",
@@ -827,7 +834,8 @@
                             "other_choice": 0,
                             "save_other_choice": 0,
                             "default_value": "Same Tab",
-                            "layout": "horizontal"
+                            "layout": "horizontal",
+                            "allow_null": 0
                         },
                         {
                             "key": "field_554e301d27353",
@@ -842,7 +850,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_559085b4dcaba",
@@ -857,11 +866,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "choices": {
-                                "class-one": "Class One",
-                                "class-two": "Class Two",
-                                "class-three": "Class Three"
-                            },
+                            "choices": [],
                             "default_value": {
                                 "": ""
                             },
@@ -902,7 +907,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_558b49a5ab8d3",
@@ -918,7 +924,8 @@
                                 "id": ""
                             },
                             "message": "Optionally, choose an animation for each of the elements listed below.",
-                            "esc_html": 0
+                            "esc_html": 0,
+                            "new_lines": "wpautop"
                         },
                         {
                             "key": "field_558b49e2ab8d5",
@@ -1029,7 +1036,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_554e304d27355",
@@ -1045,7 +1053,8 @@
                                 "id": ""
                             },
                             "message": "\/\/ Todo \/\/",
-                            "esc_html": 0
+                            "esc_html": 0,
+                            "new_lines": "wpautop"
                         }
                     ],
                     "min": "",
@@ -1070,7 +1079,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_54bc88627731b",
@@ -1135,7 +1145,8 @@
                             "other_choice": 0,
                             "save_other_choice": 0,
                             "default_value": "",
-                            "layout": "horizontal"
+                            "layout": "horizontal",
+                            "allow_null": 0
                         },
                         {
                             "key": "field_54bc88a77731e",
@@ -1157,7 +1168,8 @@
                             "other_choice": 0,
                             "save_other_choice": 0,
                             "default_value": "",
-                            "layout": "horizontal"
+                            "layout": "horizontal",
+                            "allow_null": 0
                         },
                         {
                             "key": "field_54bc88df77320",
@@ -1187,7 +1199,8 @@
                             "other_choice": 0,
                             "save_other_choice": 0,
                             "default_value": "",
-                            "layout": "horizontal"
+                            "layout": "horizontal",
+                            "allow_null": 0
                         },
                         {
                             "key": "field_54bc891677321",
@@ -1273,7 +1286,8 @@
                             "other_choice": 0,
                             "save_other_choice": 0,
                             "default_value": "Default",
-                            "layout": "horizontal"
+                            "layout": "horizontal",
+                            "allow_null": 0
                         },
                         {
                             "key": "field_54bc89f277324",
@@ -1330,7 +1344,8 @@
                             "max_width": 0,
                             "max_height": 0,
                             "max_size": 0,
-                            "mime_types": ""
+                            "mime_types": "",
+                            "insert": "append"
                         },
                         {
                             "key": "field_554e30e1cc7af",
@@ -1345,7 +1360,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_559085e9dcabb",
@@ -1360,11 +1376,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "choices": {
-                                "class-one": "Class One",
-                                "class-two": "Class Two",
-                                "class-three": "Class Three"
-                            },
+                            "choices": [],
                             "default_value": {
                                 "": ""
                             },
@@ -1405,7 +1417,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_558b4e54861af",
@@ -1421,7 +1434,8 @@
                                 "id": ""
                             },
                             "message": "Optionally, choose an animation for each of the elements listed below.",
-                            "esc_html": 0
+                            "esc_html": 0,
+                            "new_lines": "wpautop"
                         },
                         {
                             "key": "field_558b4e02861ac",
@@ -1532,7 +1546,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_554e30b6cc7ad",
@@ -1548,7 +1563,8 @@
                                 "id": ""
                             },
                             "message": "\/\/TODO\/\/",
-                            "esc_html": 0
+                            "esc_html": 0,
+                            "new_lines": "wpautop"
                         }
                     ],
                     "min": "",
@@ -1573,7 +1589,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_55245b7883c4d",
@@ -1634,6 +1651,7 @@
                             "max": 4,
                             "layout": "block",
                             "button_label": "Add Column",
+                            "collapsed": "",
                             "sub_fields": [
                                 {
                                     "key": "field_55245ba883c50",
@@ -1656,7 +1674,8 @@
                                     "other_choice": 0,
                                     "save_other_choice": 0,
                                     "default_value": "",
-                                    "layout": "horizontal"
+                                    "layout": "horizontal",
+                                    "allow_null": 0
                                 },
                                 {
                                     "key": "field_552dce84bc8cd",
@@ -1845,7 +1864,8 @@
                                     "other_choice": 0,
                                     "save_other_choice": 0,
                                     "default_value": "Default",
-                                    "layout": "horizontal"
+                                    "layout": "horizontal",
+                                    "allow_null": 0
                                 }
                             ]
                         },
@@ -1862,7 +1882,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_5590864adcabc",
@@ -1877,11 +1898,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "choices": {
-                                "class-one": "Class One",
-                                "class-two": "Class Two",
-                                "class-three": "Class Three"
-                            },
+                            "choices": [],
                             "default_value": {
                                 "": ""
                             },
@@ -1922,7 +1939,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_558b56a432406",
@@ -1938,7 +1956,8 @@
                                 "id": ""
                             },
                             "message": "Optionally, choose an animation for each of the elements listed below.",
-                            "esc_html": 0
+                            "esc_html": 0,
+                            "new_lines": "wpautop"
                         },
                         {
                             "key": "field_558b56c932407",
@@ -2081,7 +2100,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         }
                     ],
                     "min": "",
@@ -2106,7 +2126,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_5525e8ac06189",
@@ -2170,7 +2191,8 @@
                             "other_choice": 0,
                             "save_other_choice": 0,
                             "default_value": "Latest",
-                            "layout": "horizontal"
+                            "layout": "horizontal",
+                            "allow_null": 0
                         },
                         {
                             "key": "field_5528caede159d",
@@ -2249,7 +2271,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_55908672dcabd",
@@ -2264,11 +2287,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "choices": {
-                                "class-one": "Class One",
-                                "class-two": "Class Two",
-                                "class-three": "Class Three"
-                            },
+                            "choices": [],
                             "default_value": {
                                 "": ""
                             },
@@ -2309,7 +2328,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_558b58e221bd4",
@@ -2325,7 +2345,8 @@
                                 "id": ""
                             },
                             "message": "Optionally, choose an animation for each of the elements listed below.",
-                            "esc_html": 0
+                            "esc_html": 0,
+                            "new_lines": "wpautop"
                         },
                         {
                             "key": "field_558b58f221bd5",
@@ -2436,7 +2457,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         }
                     ],
                     "min": "",
@@ -2461,7 +2483,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_55245cb083c58",
@@ -2522,6 +2545,7 @@
                             "max": "",
                             "layout": "block",
                             "button_label": "Add Accordion Item",
+                            "collapsed": "",
                             "sub_fields": [
                                 {
                                     "key": "field_55245d1883c5b",
@@ -2577,7 +2601,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_5590868fdcabe",
@@ -2592,11 +2617,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "choices": {
-                                "class-one": "Class One",
-                                "class-two": "Class Two",
-                                "class-three": "Class Three"
-                            },
+                            "choices": [],
                             "default_value": {
                                 "": ""
                             },
@@ -2637,7 +2658,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_558b5cd1d61d5",
@@ -2653,7 +2675,8 @@
                                 "id": ""
                             },
                             "message": "Optionally, choose an animation for each of the elements listed below.",
-                            "esc_html": 0
+                            "esc_html": 0,
+                            "new_lines": "wpautop"
                         },
                         {
                             "key": "field_558b5d65d61d6",
@@ -2764,7 +2787,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         }
                     ],
                     "min": "",
@@ -2789,7 +2813,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_55245d7a83c63",
@@ -2850,6 +2875,7 @@
                             "max": "",
                             "layout": "block",
                             "button_label": "Add Tab Item",
+                            "collapsed": "",
                             "sub_fields": [
                                 {
                                     "key": "field_55245d9183c66",
@@ -2905,7 +2931,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_559086a5dcabf",
@@ -2920,11 +2947,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "choices": {
-                                "class-one": "Class One",
-                                "class-two": "Class Two",
-                                "class-three": "Class Three"
-                            },
+                            "choices": [],
                             "default_value": {
                                 "": ""
                             },
@@ -2965,7 +2988,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_558b6828ea6c3",
@@ -2981,7 +3005,8 @@
                                 "id": ""
                             },
                             "message": "Optionally, choose an animation for each of the elements listed below.",
-                            "esc_html": 0
+                            "esc_html": 0,
+                            "new_lines": "wpautop"
                         },
                         {
                             "key": "field_558b6880ea6c4",
@@ -3092,7 +3117,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         }
                     ],
                     "min": "",
@@ -3117,7 +3143,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_5525e518241ae",
@@ -3216,7 +3243,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_559086f0dcac0",
@@ -3231,11 +3259,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "choices": {
-                                "class-one": "Class One",
-                                "class-two": "Class Two",
-                                "class-three": "Class Three"
-                            },
+                            "choices": [],
                             "default_value": {
                                 "": ""
                             },
@@ -3276,7 +3300,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_558b6b3987cff",
@@ -3292,7 +3317,8 @@
                                 "id": ""
                             },
                             "message": "Optionally, choose an animation for each of the elements listed below.",
-                            "esc_html": 0
+                            "esc_html": 0,
+                            "new_lines": "wpautop"
                         },
                         {
                             "key": "field_558b6b5487d00",
@@ -3403,7 +3429,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "placement": "top"
+                            "placement": "top",
+                            "endpoint": 0
                         }
                     ],
                     "min": "",
@@ -3429,7 +3456,8 @@
                                 "id": ""
                             },
                             "message": "This closes the wrapper. No options are required.",
-                            "esc_html": 0
+                            "esc_html": 0,
+                            "new_lines": "wpautop"
                         }
                     ],
                     "min": "",
@@ -3453,7 +3481,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": [
-        "the_content",
         "excerpt",
         "custom_fields",
         "discussion",
@@ -3466,5 +3493,7 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1436547537
+    "active": 1,
+    "description": "",
+    "modified": 1469292483
 }
