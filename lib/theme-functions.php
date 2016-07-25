@@ -371,9 +371,6 @@ function ssm_scripts() {
     // Theme Scripts
     wp_enqueue_script('ssm-scripts', CHILD_URL . '/assets/js/main.min.js', array('jquery'), NULL, true );
 
-    // Animation Scripts
-    wp_enqueue_script('wow', CHILD_URL . '/assets/bower_components/wow.js/dist/wow.min.js', array('jquery'), NULL, true );
-
   }
 }
 
@@ -382,9 +379,6 @@ function ssm_scripts() {
  */
 function ssm_inline_scripts() { ?>
 
-<script>
-   new WOW().init();
-</script>
 
 <?php }
 
