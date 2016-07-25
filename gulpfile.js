@@ -27,7 +27,8 @@ gulp.task('styles', function() {
     return sass(path.sass + '/style.scss', {
         loadPath: [
                 path.sass,
-            ]
+            ],
+        defaultEncoding: 'UTF-8'
         })
         .on('error', sass.logError)
         .pipe(autoprefixer())
@@ -38,7 +39,7 @@ gulp.task('styles', function() {
 // Scripts
 gulp.task('scripts', function() {
   return gulp.src([
-      path.bower + '/foundation-sites/dist/plugins/**/*.js',
+      path.bower + '/foundation-sites/dist/foundation.js',
       path.bower + '/what-input/what-input.js'
     ])
     .pipe(concat(path.js + '/main.js'))

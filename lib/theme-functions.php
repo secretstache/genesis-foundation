@@ -378,7 +378,14 @@ function ssm_scripts() {
  * Inline Scripts
  */
 function ssm_inline_scripts() { ?>
-
+  <script>
+  /*
+   * Load up Foundation
+   */
+  jQuery(document).ready(function($) {
+    $(document).foundation();
+  });
+  </script>
 
 <?php }
 
