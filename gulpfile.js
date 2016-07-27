@@ -11,6 +11,7 @@ var gulp = require('gulp'),
     cache = require('gulp-cache'),
     livereload = require('gulp-livereload'),
     sort = require('gulp-sort'),
+    sourcemaps = require('gulp-sourcemaps'),
     del = require('del');
 
 // Configure Paths
@@ -42,10 +43,12 @@ gulp.task('scripts', function() {
       path.bower + '/foundation-sites/dist/foundation.js',
       path.bower + '/what-input/what-input.js'
     ])
+    .pipe(sourcemaps.init())
     .pipe(concat(path.js + '/main.js'))
     .pipe(gulp.dest('./'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./'))
     .pipe(notify({ message: 'Scripts task complete' }));
 });
