@@ -5205,6 +5205,13 @@ ul.genesis-nav-menu li.sfHover ul,
 #wpadminbar li:hover ul ul {
   left: 0; }
 
+@media screen and (min-width: 64em) {
+  .sub-menu ul {
+    display: none; } }
+
+.off-canvas-content ul li {
+  display: block; }
+
 /* Navigation Extras ----------- */
 .genesis-nav-menu li.right {
   float: right;

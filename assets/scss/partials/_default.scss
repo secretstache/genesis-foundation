@@ -443,6 +443,16 @@ pre {
     left: 0;
   }
 
+  .sub-menu ul {
+    @media #{$large-up} {
+      display: none;
+    }
+  }
+
+  .off-canvas-content ul li {
+    display: block;
+  }
+
   /* Navigation Extras ----------- */
 
   .genesis-nav-menu li.right {
