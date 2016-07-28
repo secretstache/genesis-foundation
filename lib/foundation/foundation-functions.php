@@ -7,6 +7,7 @@ add_action('genesis_before', 'ssm_open_offnav_markup', 10);
 function ssm_open_offnav_markup() {
   $offnavopen = '<div class="off-canvas-wrapper">';
   $offnavopen .= '<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>';
+
 	echo $offnavopen;
 }
 
@@ -17,7 +18,8 @@ add_action('genesis_after', 'ssm_close_offnav_markup', 5);
 function ssm_close_offnav_markup() {
   $offnavclose = '</div><!-- end .off-canvas-wrapper-inner -->';
   $offnavclose .= '</div><!-- end off-canvas-wrapper -->';
-	echo $offnavclose;
+	
+  echo $offnavclose;
 }
 
 /**
@@ -103,11 +105,9 @@ function ssm_do_primary_navigation() { ?>
 			</div>
 		</div>
 
-		<div class="off-canvas position-left" id="offCanvas" data-off-canvas data-position="left">
-			<div class="off-canvas-content" data-off-canvas-content>				
-				<?php ssm_primary_mobile_navigation(); ?>
-			</div>
-		</div>
+    <div class="off-canvas position-left" id="offCanvas" data-off-canvas data-position="left">
+      <?php ssm_primary_mobile_navigation(); ?>
+    </div>
 		
 		<?php } // endif has_nav_menu ?>
 		

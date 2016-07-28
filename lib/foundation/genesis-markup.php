@@ -17,7 +17,7 @@ function ssm_add_markup_class( $attr, $context ) {
         array(
             //'site-header'       		=> 'row',
             'title-area'                => array('small-12', 'medium-6', 'large-4', 'column'),
-            'site-container'       		=> 'inner-wrap',
+            'site-container'       		=> array('inner-wrap', 'off-canvas-content'),
             //'site-footer'       		=> 'row',
             //'content-sidebar-wrap'      => 'row',
             'content'           		=> array('small-12', 'medium-9', 'column'),
@@ -83,3 +83,14 @@ function ssm_modify_classes_based_on_template( $classes_to_add, $context, $attr 
 
     return $classes_to_add;
 }
+
+add_filter( 'genesis_attr_site-container', 'ssm_data_off_canvas_content' );
+
+function ssm_data_off_canvas_content($attributes) {
+    $attributes['data-off-canvas-content'] = 'data-off-canvas-content';
+    return $attributes;
+} 
+
+
+
+
