@@ -29,10 +29,13 @@ gulp.task('styles', function() {
         loadPath: [
                 path.sass,
             ],
-        defaultEncoding: 'UTF-8'
+        defaultEncoding: 'UTF-8',
+        sourcemap: true
         })
         .on('error', sass.logError)
+        .pipe(sourcemaps.init())
         .pipe(autoprefixer())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('./'))
         .pipe(notify({ message: 'Styles task complete' }));
 });
