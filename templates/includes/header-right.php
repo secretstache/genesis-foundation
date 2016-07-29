@@ -10,7 +10,7 @@
 
 	<div class="header-menu align-right">
 
-		<?php wp_nav_menu( array('depth' => 1, 'menu' => $header_menu) ); ?>
+		<?php wp_nav_menu( array('depth' => 2, 'menu' => $header_menu, 'menu_class'	=> 'dropdown menu', 'items_wrap' => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>', 'walker'  => new Foundation_Walker()) ); ?>
 
 	</div>
 	<!-- end .header-menu -->

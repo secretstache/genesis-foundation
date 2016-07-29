@@ -453,6 +453,10 @@ pre {
     display: block;
   }
 
+  .dropdown.menu > li.is-dropdown-submenu-parent.active > a::after {
+    border-color: $white transparent;
+  }
+
   /* Navigation Extras ----------- */
 
   .genesis-nav-menu li.right {
