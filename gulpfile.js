@@ -37,7 +37,7 @@ gulp.task('styles', function() {
         .pipe(autoprefixer())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./'))
-        .pipe(notify({ message: 'Styles task complete' }));
+        .pipe(notify({ message: 'Styles task complete', onLast: true }));
 });
 
 // Scripts
@@ -53,7 +53,7 @@ gulp.task('scripts', function() {
     .pipe(uglify())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./'))
-    .pipe(notify({ message: 'Scripts task complete' }));
+    .pipe(notify({ message: 'Scripts task complete', onLast: true }));
 });
 
 // Clean
@@ -70,7 +70,7 @@ gulp.task('default', ['clean'], function() {
 gulp.task('watch', function() {
 
   // Watch .scss files
-  gulp.watch(path.sass + '/**/*.scss', ['styles', 'scripts']);
+  gulp.watch(path.sass + '/**/*.scss', ['styles']);
 
   // Create LiveReload server
   livereload.listen();
