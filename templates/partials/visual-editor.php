@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 include( CHILD_DIR . '/templates/includes/additional-classes.php' );
 
@@ -8,41 +8,41 @@ include( CHILD_DIR . '/templates/includes/additional-classes.php' );
 
 <section <?php echo $html_id != NULL ? 'id="' . $html_id . '"' : ''; ?> class="content-block visual-editor row-<?php echo $cb_i; ?> row-<?php echo $even_odd; ?><?php echo $html_classes != NULL ? ' ' . $html_classes : ''; ?>">
 
-	<div class="wrap">
+  <div class="wrap">
 
-		<?php if ( get_sub_field('headline') || get_sub_field('subheadline') ) { ?>
+    <?php if ( get_sub_field('headline') || get_sub_field('subheadline') ) { ?>
 
-		<header class="section-header small-12 column">		
+    <header class="section-header small-12 column">
 
-			<?php if ( $headline = get_sub_field('headline') ) { ?>
+      <?php if ( $headline = get_sub_field('headline') ) { ?>
 
-			<h1 class="section-title"><?php echo $headline; ?></h1>
+      <h1 class="section-title"><?php echo $headline; ?></h1>
 
-			<?php } ?>
+      <?php } ?>
 
-			<?php if ( $subheadline = get_sub_field('subheadline') ) { ?>
+      <?php if ( $subheadline = get_sub_field('subheadline') ) { ?>
 
-			<h2 class="section-subtitle"><?php echo $subheadline; ?></h2>
+      <h2 class="section-subtitle"><?php echo $subheadline; ?></h2>
 
-			<?php } ?>
+      <?php } ?>
 
-		</header>
+    </header>
 
-		<?php } ?>
+    <?php } ?>
 
-		<?php if ( $wysiwyg = get_sub_field('visual_editor') ) { ?>
+    <?php if ( $wysiwyg = get_sub_field('visual_editor') ) { ?>
 
-		<div class="section-entry small-12 column<?php echo $visual_editor_animation != NULL ? ' wow ' . $visual_editor_animation : ''; ?>">
+    <div class="section-entry small-12 column">
 
-			<?php echo $wysiwyg; ?>
+      <?php echo $wysiwyg; ?>
 
-		</div>
-		<!-- end .section-entry -->
+    </div>
+    <!-- end .section-entry -->
 
-		<?php } ?>
+    <?php } ?>
 
-	</div>
-	<!-- end .wrap -->
+  </div>
+  <!-- end .wrap -->
 
 </section>
 <!-- end .visual-editor -->

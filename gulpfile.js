@@ -11,6 +11,7 @@ var gulp = require('gulp'),
     cache = require('gulp-cache'),
     livereload = require('gulp-livereload'),
     sort = require('gulp-sort'),
+    sourcemaps = require('gulp-sourcemaps'),
     del = require('del');
 
 // Configure Paths
@@ -27,26 +28,32 @@ gulp.task('styles', function() {
     return sass(path.sass + '/style.scss', {
         loadPath: [
                 path.sass,
-            ]
+            ],
+        defaultEncoding: 'UTF-8',
+        sourcemap: true
         })
         .on('error', sass.logError)
+        .pipe(sourcemaps.init())
         .pipe(autoprefixer())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('./'))
-        .pipe(notify({ message: 'Styles task complete' }));
+        .pipe(notify({ message: 'Styles task complete', onLast: true }));
 });
 
 // Scripts
 gulp.task('scripts', function() {
   return gulp.src([
-      path.bower + '/foundation-sites/dist/plugins/**/*.js',
+      path.bower + '/foundation-sites/dist/foundation.js',
       path.bower + '/what-input/what-input.js'
     ])
+    .pipe(sourcemaps.init())
     .pipe(concat(path.js + '/main.js'))
     .pipe(gulp.dest('./'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./'))
-    .pipe(notify({ message: 'Scripts task complete' }));
+    .pipe(notify({ message: 'Scripts task complete', onLast: true }));
 });
 
 // Clean
@@ -63,7 +70,7 @@ gulp.task('default', ['clean'], function() {
 gulp.task('watch', function() {
 
   // Watch .scss files
-  gulp.watch(path.sass + '/**/*.scss', ['styles', 'scripts']);
+  gulp.watch(path.sass + '/**/*.scss', ['styles']);
 
   // Create LiveReload server
   livereload.listen();
