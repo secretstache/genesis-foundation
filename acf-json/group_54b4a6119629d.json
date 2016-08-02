@@ -3,7 +3,7 @@
     "title": "Layout Builder",
     "fields": [
         {
-            "key": "field_54b4a625575b2",
+            "key": "field_54b4a625575b2__trashed",
             "label": "Content Blocks",
             "name": "content_blocks",
             "type": "flexible_content",
@@ -3481,6 +3481,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": [
+        "the_content",
         "excerpt",
         "custom_fields",
         "discussion",
@@ -3495,5 +3496,6 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1469292483
+    "modified": 1469795496,
+    "local": "json"
 }
