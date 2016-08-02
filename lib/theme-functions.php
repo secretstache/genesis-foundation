@@ -273,40 +273,6 @@ if( function_exists('acf_add_options_sub_page') ) {
 }
 
 /**
-*  Load default choices from options page into content blocks
-*/
-function acf_load_style_default_choices( $field ) {
-
-    // reset choices
-    $field['choices'] = array();
-
-
-    // if has rows
-    if( have_rows('additional_styles', 'option') ) {
-
-        // while has rows
-        while( have_rows('additional_styles', 'option') ) {
-
-            // instantiate row
-            the_row();
-
-              // vars
-            $value = get_sub_field('value');
-            $label = get_sub_field('label');
-
-            // append to choices
-            $field['choices'][ $value ] = $label;
-
-        }
-
-    }
-
-    // return the field
-    return $field;
-
-}
-
-/**
 *  Removes unnecessary menu items from add new dropdown
 */
 function remove_wp_nodes() {
