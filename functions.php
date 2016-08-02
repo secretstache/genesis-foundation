@@ -124,13 +124,19 @@ function child_theme_setup() {
 	// Remove Dashboard Meta Boxes
 	add_action('wp_dashboard_setup', 'ssm_remove_dashboard_widgets' );
 
+	// Remove ACF Menu for most users
+	add_action('admin_init', 'ssm_remove_acf_menu');
+
+	// Add 2 step verification to remove a content block or repeater field in ACF
+	add_action('acf/input/admin_footer', 'ssm_two_step_acf_field_deletion');
+
 	// Remove default link for images
 	add_action('admin_init', 'ssm_imagelink_setup', 10);
 
 	// Show Kitchen Sink in WYSIWYG Editor by default
 	add_filter( 'tiny_mce_before_init', 'ssm_unhide_kitchensink' );
 	
-	// Disable some or all of the default widgets.
+	// Disable some or all of the default widgets
 	add_action('widgets_init', 'ssm_unregister_default_widgets');
 	
 	// Modifies the TinyMCE settings array
@@ -141,6 +147,9 @@ function child_theme_setup() {
 	
 	// Remove the injected styles for the [gallery] shortcode
 	add_filter( 'gallery_style', 'ssm_gallery_style' );
+
+	// Automatically make pages named "Home" the front page
+	add_action('admin_init', 'ssm_force_home_page_on_front');
 	
 	// Replace Category Checkboxes with Radio Buttons
 	add_action( 'init', 'ssm_admin_catcher' );
@@ -151,8 +160,6 @@ function child_theme_setup() {
 	// Remove Editor Support on Pages (Replaced with ACF Page Builder)
 	add_action( 'init', 'ssm_remove_editor' );
 
-	// Load default choices from options page into content blocks
-	add_filter('acf/load_field/name=class_options', 'acf_load_style_default_choices');
 
 	// Remove unnecessary menu items from add new dropdown
 	add_action( 'admin_bar_menu', 'remove_wp_nodes', 999 );

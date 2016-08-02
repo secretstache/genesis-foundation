@@ -110,10 +110,9 @@ function ssm_remove_dashboard_widgets() {
 /**
  * Hide Advanced Custom Fields to Users
  */
-
-function remove_acf_menu(){
+function ssm_remove_acf_menu() {
     // provide a list of usernames who can edit custom field definitions here
-    $admins = array( 'admin', 'jrstaatsiii', 'brian');
+    $admins = array( 'admin', 'jrstaatsiii', 'aman');
 
     // get the current user
     $current_user = wp_get_current_user();
@@ -123,6 +122,19 @@ function remove_acf_menu(){
         remove_menu_page('edit.php?post_type=acf');
     }
 }
+
+/**
+ * Add 2 step verification to remove a content block or repeater field in ACF
+ */
+function ssm_two_step_acf_field_deletion() {  ?>
+  <script type="text/javascript">
+    (function($) {
+      $('body').on('click', '.-minus', function( e ){
+        return confirm("Are you sure you want to delete this field? This cannot be reversed.");
+      })
+    })(jQuery); 
+  </script>
+<?php }
 
 /**
  * Remove default link for images
@@ -196,14 +208,13 @@ function ssm_gallery_style( $css ) {
 /**
 *  Set Home Page Programmatically if a Page Called "Home" Exists
 */
+function ssm_force_home_page_on_front() {
+  $homepage = get_page_by_title( 'Home' );
 
-// Should this be wrapped in a function for better organization?
-
-$homepage = get_page_by_title( 'Home' );
-
-if ( $homepage ) {
-    update_option( 'page_on_front', $homepage->ID );
-    update_option( 'show_on_front', 'page' );
+  if ( $homepage ) {
+      update_option( 'page_on_front', $homepage->ID );
+      update_option( 'show_on_front', 'page' );
+  }
 }
 
 /*
