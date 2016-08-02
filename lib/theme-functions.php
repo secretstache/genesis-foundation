@@ -240,7 +240,7 @@ function ssm_swap_out_checkboxes($content) {
 function ssm_home_admin_body_class( $classes ) {
   global $post;
     $screen = get_current_screen();
-  $homepage = get_page_by_title( 'Home' );
+    $homepage = get_page_by_title( 'Home' );
 
     if ( 'post' == $screen->base && ( $post->ID == $homepage->ID ) ) {
         $classes .= 'front-page';
@@ -263,16 +263,9 @@ function ssm_remove_editor() {
 if( function_exists('acf_add_options_sub_page') ) {
 
   acf_add_options_page('Brand Options');
-  acf_add_options_page('Style Builder');
 
   acf_add_options_sub_page(array(
         'title' => 'Brand Options',
-        'parent' => 'options-general.php',
-        'capability' => 'manage_options'
-    ));
-
-    acf_add_options_sub_page(array(
-        'title' => 'Style Builder',
         'parent' => 'options-general.php',
         'capability' => 'manage_options'
     ));
