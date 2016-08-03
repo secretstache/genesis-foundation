@@ -52,3 +52,6 @@ debug.log
 
 # ignore node/grunt dependency directories
 node_modules/
+
+# ignore test ACF json files
+group_test_*.json
