@@ -3,7 +3,7 @@
     "title": "Layout Builder",
     "fields": [
         {
-            "key": "field_54b4a625575b2__trashed",
+            "key": "field_54b4a625575b2",
             "label": "Content Blocks",
             "name": "content_blocks",
             "type": "flexible_content",
@@ -3437,6 +3437,33 @@
                     "max": ""
                 },
                 {
+                    "key": "57a0efef91861",
+                    "name": "html_code_block",
+                    "label": "Html Code Block",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_57a0eff591862",
+                            "label": "HTML Code Block",
+                            "name": "html_code_block",
+                            "type": "code_area_field",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "mode": "htmlmixed",
+                            "theme": "ambiance"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
                     "key": "5525ec18fa95e",
                     "name": "wrapper_close",
                     "label": "Wrapper - Close",
@@ -3481,7 +3508,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": [
-        "the_content",
         "excerpt",
         "custom_fields",
         "discussion",
@@ -3496,6 +3522,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1469795496,
-    "local": "json"
+    "modified": 1470165186
 }
