@@ -1,0 +1,41 @@
+{
+    "key": "group_57a0a09d39d32",
+    "title": "Test Code area",
+    "fields": [
+        {
+            "key": "field_57a0a0a0e5efd",
+            "label": "Test Code area",
+            "name": "test_code_area",
+            "type": "code_area_field",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "mode": "javascript",
+            "theme": "monokai"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1470163663
+}
