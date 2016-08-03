@@ -132,7 +132,7 @@ function ssm_two_step_acf_field_deletion() {  ?>
       $('body').on('click', '.-minus', function( e ){
         return confirm("Are you sure you want to delete this field? This cannot be reversed.");
       })
-    })(jQuery); 
+    })(jQuery);
   </script>
 <?php }
 
@@ -531,3 +531,12 @@ if ( ! function_exists( "sanitize_html_classes" ) && function_exists( "sanitize_
     $classes = array_filter(array_map('trim', $classes));
     echo trim(implode(' ', apply_filters( 'fcb_set_block_wrapper_classes', $classes )));
 }
+
+/**
+ * Registering menus
+ */
+register_nav_menus(
+  array(
+    'primary-navigation' => __( 'Primary Navigation' ),
+  )
+);
