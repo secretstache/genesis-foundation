@@ -1,11 +1,3 @@
-/* Global */
-body {
-  color: $primary-color;
-  font-family: $primary-font-family;
-  font-size: $rem-base;
-}
-
-
 a,
 button,
 input:focus,
@@ -27,7 +19,7 @@ textarea:focus,
 }
 
 .landing-page .wrap {
-  max-width: $row-width*.8;
+  max-width: $global-width*.8;
 }
 
 .large-collapse.column {
@@ -110,11 +102,10 @@ img.alignright,
 }
 
 pre {
-  background: $default-bg-gray;
-  border: rem-calc(1) solid $default-border-gray;
+  background: $default-bg-color;
+  border: rem-calc(1) solid $default-border-color;
   font-size: 90%;
   padding: $global-padding/2;
-  line-height: $paragraph-line-height;
 }
 
   /* Jetpack
@@ -138,7 +129,7 @@ pre {
   }
 
   .archive-pagination li a {
-    background-color: $oil;
+    background-color: $dark-gray;
     border-radius: $global-radius;
     color: $white;
     cursor: pointer;
@@ -148,11 +139,11 @@ pre {
 
   .archive-pagination li a:hover,
   .archive-pagination li.active a {
-    background-color: $default-bg-gray;
+    background-color: $default-bg-color;
   }
 
   .entry-pagination a {
-    border-bottom: rem-calc(1) solid $default-border-gray;
+    border-bottom: rem-calc(1) solid $default-border-color;
   }
 
   /* Comments
@@ -173,7 +164,7 @@ pre {
 
   .comment-respond a,
   .entry-comments a {
-    border-bottom: rem-calc(1) solid $default-border-gray;
+    border-bottom: rem-calc(1) solid $default-border-color;
   }
 
   .comment-content {
@@ -210,7 +201,7 @@ pre {
   }
 
   li.comment {
-    background-color: $white-smoke;
+    background-color: $light-gray;
     border: rem-calc(2) solid $white;
   }
 
@@ -223,7 +214,7 @@ pre {
   }
 
   .form-allowed-tags {
-    background-color: $default-bg-gray;
+    background-color: $default-bg-color;
     font-size: 100%;
     padding: $global-padding;
   }
@@ -241,7 +232,7 @@ pre {
 
 .archive-description,
 .author-box {
-  background-color: $default-bg-gray;
+  background-color: $default-bg-color;
   margin-bottom: $global-margin;
 }
 
@@ -259,7 +250,7 @@ pre {
 }
 
 .author-box a {
-  border-bottom: rem-calc(1) solid $default-border-gray;
+  border-bottom: rem-calc(1) solid $default-border-color;
 }
 
 .author-box p {
@@ -314,12 +305,12 @@ pre {
   ---------------------------------------------------------------------------------------------------- */
 
   nav {
-    background: $default-bg-gray;
+    background: $default-bg-color;
     &.nav-primary .genesis-nav-menu {
       @include grid-column(12);
       a:hover,
       .active a {
-        background: darken($default-bg-gray, 10%);
+        background: darken($default-bg-color, 10%);
       }
     }
   }
@@ -360,7 +351,7 @@ pre {
 
   // .genesis-nav-menu.menu-primary,
   // .genesis-nav-menu.menu-secondary {
-  //   border-bottom: rem-calc(1) solid $default-border-gray;
+  //   border-bottom: rem-calc(1) solid $default-border-color;
   // }
 
   // .genesis-nav-menu ul {
@@ -386,18 +377,18 @@ pre {
   // }
 
   // .genesis-nav-menu .highlight-menu-item a {
-  //   background-color: $default-bg-gray;
+  //   background-color: $default-bg-color;
   // }
 
   // .genesis-nav-menu .highlight-menu-item a:hover {
-  //   background-color: darken($default-bg-gray, 10%);
+  //   background-color: darken($default-bg-color, 10%);
   // }
 
   // .genesis-nav-menu li li a,
   // .genesis-nav-menu li li a:link,
   // .genesis-nav-menu li li a:visited {
   //   background-color: $white;
-  //   border: rem-calc(1) solid $default-border-gray;
+  //   border: rem-calc(1) solid $default-border-color;
   //   border-top: none;
   //   padding: $global-padding/2 $global-padding;
   //   position: relative;

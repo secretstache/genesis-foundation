@@ -13,24 +13,12 @@ Template: genesis
 @charset "utf-8";
 @import "partials/settings";
 
-// Foundation Icons
-@import "partials/foundation-icons";
-
 // Foundation 6
 @import "../bower_components/foundation-sites/scss/foundation";
 @include foundation-everything;
 
-// Foundation Setting Overrides
-@import "partials/theme-settings";
-
 // Genesis / WordPress
 @import "partials/default";
 
-// Theme
-@import "partials/custom";
-
 // Sections
 @import "partials/sections";
-
-// Animate.css
-@import "partials/animate";

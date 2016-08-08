@@ -24,7 +24,7 @@ section.content-block {
 		}
 	}
 	&.bg-primary {
-		background: $default-bg-gray;
+		background: $default-bg-color;
 	}
 	&.align-center {
 		text-align: center;
@@ -38,11 +38,10 @@ section.content-block {
 		margin: 0;
 	}
 	h1.section-title {
-		font-weight: 700;
+
 	}
 	h2.section-subtitle {
-		font-size: $h1-font-size/1.75;
-		text-transform: uppercase;;
+
 	}
 	p:last-of-type {
 		margin-bottom: 0;
@@ -72,7 +71,7 @@ section.media {
 section.cols {
 	@include clearfix();
 	h2.col-title {
-		font-size: $h2-font-size/1.5;
+
 	}
 	.icon-image {
 		margin-bottom: $global-margin/2;
@@ -99,17 +98,16 @@ section.blog-posts {
 		}
 	}
 	h2.entry-title {
-		font-size: $h2-font-size/1.5;
 		line-height: 1.1;
 		margin-bottom: $global-margin/4;
 	}
 	p.entry-meta {
-		font-size: $paragraph-font-size/1.25;
+		font-size: $global-font-size/1.25;
 		line-height: 1.1;
 		margin-bottom: $global-margin/1.75;
 	}
 	.entry-footer {
-		border-top: rem-calc(1) solid $default-border-gray;
+		border-top: rem-calc(1) solid $default-border-color;
 		margin-top: $global-margin/1.75;
 		padding-top: $global-margin/2;
 	}
