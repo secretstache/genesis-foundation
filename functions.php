@@ -220,6 +220,9 @@ function child_theme_setup() {
 	// Modify the placeholder search text
 	add_filter( 'genesis_search_text', 'ssm_modify_search_text' );
 
+	// Adds body class if the page/post has a featured image
+	add_action('body_class', 'ssm_if_featured_image_class' );
+
 }
 
 

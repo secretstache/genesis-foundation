@@ -456,6 +456,19 @@ function ssm_modify_search_text( $text ) {
   }
 }
 
+/**
+ * Add body class if the page/post has a featured image
+ *
+ */
+function ssm_if_featured_image_class($classes) {
+  
+  if ( has_post_thumbnail() ) {
+    array_push($classes, 'has-featured-image');
+  }
+  
+  return $classes;
+}
+
 /****************************************
 Misc Theme Functions
 *****************************************/
