@@ -70,7 +70,7 @@ gulp.task('default', ['clean'], function() {
 gulp.task('watch', function() {
 
   // Watch .scss files
-  gulp.watch(path.sass + '/**/*.scss', ['styles']);
+  gulp.watch([path.sass + '/**/*.scss', path.bower + '/foundation-sites/scss/**/*.scss' ], ['styles']);
 
   // Create LiveReload server
   livereload.listen();
