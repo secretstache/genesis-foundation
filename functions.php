@@ -223,6 +223,9 @@ function child_theme_setup() {
 	// Adds body class if the page/post has a featured image
 	add_action('body_class', 'ssm_if_featured_image_class' );
 
+	// Build Off Canvas Menu
+	add_action('genesis_before', 'ssm_do_off_canvas_menu', 11);
+
 }
 
 
