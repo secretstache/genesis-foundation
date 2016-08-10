@@ -270,11 +270,17 @@ pre {
   header.site-header {
     padding-bottom: $global-padding;
     padding-top: $global-padding;
+    .wrap {
+      position: relative;
+    }
   }
 
   header ul.menu {
-    float: right;
     margin: 0;
+    text-align: center;
+    @media #{$large-up} {
+      float: right;
+    }
     li {
       display: inline-block;
       font-size: 90%;
@@ -289,15 +295,32 @@ pre {
     }
   }
 
-  header .header-right {
-    @media #{$small-only} {
-      margin-top: $global-margin;
-    }
-  }
-
   .landing-page header .title-area {
     float: none;
     margin: 0 auto;
+  }
+
+  header .header-right {
+    float: right;
+    &.last {
+      @media #{$small-only} {
+        text-align: center;
+      }
+    }
+    .menu-icon::after {
+      background: $black;
+      box-shadow: 0 7px 0 $black, 0 14px 0 $black;
+    }
+  }
+
+  header .title-area {
+    @media #{$large-up} {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
   }
 
 

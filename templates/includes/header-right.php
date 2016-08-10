@@ -36,10 +36,9 @@
 
 </div>
 
-<!-- 
 <div class="header-right show-for-small-only small-2 column last">
 	<button class="menu-icon" type="button" data-toggle="offCanvas"></button>
 </div>
--->
+
 
 <?php } ?>

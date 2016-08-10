@@ -16,7 +16,7 @@ function ssm_add_markup_class( $attr, $context ) {
         // default foundation markup values
         array(
             //'site-header'       		=> 'row',
-            'title-area'                => array('small-8', 'medium-6', 'large-4', 'column'),
+            'title-area'                => array('small-10', 'medium-4', 'medium-centered', 'large-uncentered', 'column'),
             'site-container'       		=> array('inner-wrap', 'off-canvas-content'),
             //'site-footer'       		=> 'row',
             //'content-sidebar-wrap'      => 'row',
