@@ -105,9 +105,13 @@ function child_theme_setup() {
 	// Remove Genesis Theme Settings Metaboxes
 	add_action( 'genesis_theme_settings_metaboxes', 'ssm_remove_genesis_metaboxes' );
 
+	// Reposition Genesis SEO Settings Metabox
+	add_action( 'admin_menu', 'ssm_add_inpost_seo_box' );
+	remove_action( 'admin_menu', 'genesis_add_inpost_seo_box' );
+
 	// Reposition Genesis Layout Settings Metabox
-	remove_action( 'admin_menu', 'genesis_add_inpost_layout_box' );
 	add_action( 'admin_menu', 'ssm_add_inpost_layout_box' );
+	remove_action( 'admin_menu', 'genesis_add_inpost_layout_box' );
 
 	// Don't update theme
 	add_filter( 'http_request_args', 'ssm_dont_update_theme', 5, 2 );

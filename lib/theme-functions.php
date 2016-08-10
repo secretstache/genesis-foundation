@@ -56,15 +56,29 @@ function ssm_remove_genesis_metaboxes( $_genesis_theme_settings_pagehook ) {
   //remove_meta_box( 'genesis-theme-settings-scripts',    $_genesis_theme_settings_pagehook, 'main' );
 }
 
+
 /**
- * Reposition Genesis Layout Metabox
+ * Re-prioritise Genesis SEO metabox from high to default.
+ */
+function ssm_add_inpost_seo_box() {
+  if ( genesis_detect_seo_plugins() )
+    return;
+  foreach ( (array) get_post_types( array( 'public' => true ) ) as $type ) {
+    if ( post_type_supports( $type, 'genesis-seo' ) )
+      add_meta_box( 'genesis_inpost_seo_box', __( 'Theme SEO Settings', 'genesis' ), 'genesis_inpost_seo_box', $type, 'normal', 'default' );
+  }
+}
+
+/**
+ * Re-prioritise Genesislayout metabox from high to default.
+ *
  */
 function ssm_add_inpost_layout_box() {
   if ( ! current_theme_supports( 'genesis-inpost-layouts' ) )
     return;
   foreach ( (array) get_post_types( array( 'public' => true ) ) as $type ) {
     if ( post_type_supports( $type, 'genesis-layouts' ) )
-      add_meta_box( 'genesis_inpost_layout_box', __( 'Layout Settings', 'genesis' ), 'genesis_inpost_layout_box', $type, 'normal', 'low' );
+      add_meta_box( 'genesis_inpost_layout_box', __( 'Layout Settings', 'genesis' ), 'genesis_inpost_layout_box', $type, 'normal', 'default' );
   }
 }
 
