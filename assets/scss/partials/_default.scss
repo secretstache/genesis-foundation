@@ -323,6 +323,17 @@ pre {
     }
   }
 
+  .landing-page header .title-area {
+    @media #{$large-up} {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+  }
+
 
   /* Primary Navigation
   ---------------------------------------------------------------------------------------------------- */
