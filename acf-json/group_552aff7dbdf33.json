@@ -24,7 +24,8 @@
             "other_choice": 0,
             "save_other_choice": 0,
             "default_value": "Empty",
-            "layout": "horizontal"
+            "layout": "horizontal",
+            "allow_null": 0
         },
         {
             "key": "field_552b04d027887",
@@ -79,30 +80,6 @@
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
-        },
-        {
-            "key": "field_558a05826a54a",
-            "label": "Note:",
-            "name": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_552aff8d425dd",
-                        "operator": "==",
-                        "value": "Social Networks"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "Choose Social Networks <a href=\"#acf-group_5525e0c443cc8\">Below<\/a>.",
-            "esc_html": 0
         }
     ],
     "location": [
@@ -120,5 +97,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1435531876
+    "active": 1,
+    "description": "",
+    "modified": 1470968276
 }
