@@ -17,6 +17,10 @@ Template: genesis
 @import "../../bower_components/foundation-sites/scss/foundation";
 @include foundation-everything;
 
+// Motion UI
+@import "../../bower_components/motion-ui/motion-ui";
+
+
 // Genesis / WordPress
 @import "partials/default";
 
