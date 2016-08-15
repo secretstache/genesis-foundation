@@ -12,10 +12,12 @@ var gulp = require('gulp'),
     livereload = require('gulp-livereload'),
     sort = require('gulp-sort'),
     sourcemaps = require('gulp-sourcemaps'),
+    svgo = require('gulp-svgo'),
     del = require('del');
 
 // Configure Paths
 var path = {
+    dist: './assets/dist',
     sass: './assets/scss',
     images: './assets/images',
     js: './assets/js',
@@ -23,11 +25,37 @@ var path = {
     bower: './assets/bower_components'
 }
 
+// CSS Paths
+var css = {
+    src: './assets/src/scss',
+    dest: './assets/dist/css',
+    autoprefixer: {
+        'browsers': ['last 3 version']
+    },
+    sourcemaps: {
+        'includeContent': false,
+        'sourceRoot': 'source'
+    }
+}
+
+// JS Paths
+var js = {
+    src: './assets/src/scripts',
+    dest: './assets/dist/js'
+}
+
+// Image Paths
+var images = {
+    src: './assets/src/images',
+    dest: './assets/dist/images',
+    svg: './assets/src/svg'
+}
+
 // Styles
 gulp.task('styles', function() {
-    return sass(path.sass + '/style.scss', {
+    return sass(css.src + '/style.scss', {
         loadPath: [
-                path.sass,
+                css.src,
             ],
         defaultEncoding: 'UTF-8',
         sourcemap: true
@@ -47,30 +75,37 @@ gulp.task('scripts', function() {
       path.bower + '/what-input/what-input.js'
     ])
     .pipe(sourcemaps.init())
-    .pipe(concat(path.js + '/main.js'))
-    .pipe(gulp.dest('./'))
+    .pipe(concat('main.js'))
+    .pipe(gulp.dest(js.dest))
     .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest(js.dest))
     .pipe(notify({ message: 'Scripts task complete', onLast: true }));
+});
+
+// SVG
+gulp.task('svg', function() {
+    gulp.src(images.svg + '/*')
+        .pipe(svgo())
+        .pipe(gulp.dest(images.dest + '/svg'));
 });
 
 // Clean
 gulp.task('clean', function() {
-  return del(['./style.css', path.js + '/main.js', path.js + '/main.min.js']);
+  return del([path.dist]);
 });
 
 // Default task
 gulp.task('default', ['clean'], function() {
-  gulp.start('styles', 'scripts');
+  gulp.start('styles', 'scripts', 'svg');
 });
 
 // Watch
 gulp.task('watch', function() {
 
   // Watch .scss files
-  gulp.watch([path.sass + '/**/*.scss', path.bower + '/foundation-sites/scss/**/*.scss' ], ['styles']);
+  gulp.watch([css.src + '/**/*.scss', path.bower + '/foundation-sites/scss/**/*.scss' ], ['styles']);
 
   // Create LiveReload server
   livereload.listen();

@@ -14,7 +14,7 @@ Template: genesis
 @import "partials/settings";
 
 // Foundation 6
-@import "../bower_components/foundation-sites/scss/foundation";
+@import "../../bower_components/foundation-sites/scss/foundation";
 @include foundation-everything;
 
 // Genesis / WordPress
