@@ -13,10 +13,13 @@ var gulp = require('gulp'),
     sort = require('gulp-sort'),
     sourcemaps = require('gulp-sourcemaps'),
     svgo = require('gulp-svgo'),
+    svgstore = require('gulp-svgstore'),
+    svgmin = require('gulp-svgmin'),
+    path = require('path'),
     del = require('del');
 
 // Configure Paths
-var path = {
+var paths = {
     dist: './assets/dist',
     sass: './assets/scss',
     images: './assets/images',
@@ -71,8 +74,8 @@ gulp.task('styles', function() {
 // Scripts
 gulp.task('scripts', function() {
   return gulp.src([
-      path.bower + '/foundation-sites/dist/foundation.js',
-      path.bower + '/what-input/what-input.js'
+      paths.bower + '/foundation-sites/dist/foundation.js',
+      paths.bower + '/what-input/what-input.js'
     ])
     .pipe(sourcemaps.init())
     .pipe(concat('main.js'))
@@ -85,15 +88,29 @@ gulp.task('scripts', function() {
 });
 
 // SVG
-gulp.task('svg', function() {
-    gulp.src(images.svg + '/*')
+gulp.task('svg', function () {
+    return gulp
+        .src(images.svg + '/*.svg')
         .pipe(svgo())
-        .pipe(gulp.dest(images.dest + '/svg'));
+        .pipe(gulp.dest(images.dest + '/svg'))
+        .pipe(svgmin(function (file) {
+            var prefix = path.basename(file.relative, path.extname(file.relative));
+            return {
+                plugins: [{
+                    cleanupIDs: {
+                        prefix: prefix + '-',
+                        minify: true
+                    }
+                }]
+            }
+        }))
+        .pipe(svgstore())
+        .pipe(gulp.dest(images.dest + '/svg/combined'));
 });
 
 // Clean
 gulp.task('clean', function() {
-  return del([path.dist]);
+  return del([paths.dist]);
 });
 
 // Default task
@@ -105,7 +122,7 @@ gulp.task('default', ['clean'], function() {
 gulp.task('watch', function() {
 
   // Watch .scss files
-  gulp.watch([css.src + '/**/*.scss', path.bower + '/foundation-sites/scss/**/*.scss' ], ['styles']);
+  gulp.watch([css.src + '/**/*.scss', paths.bower + '/foundation-sites/scss/**/*.scss' ], ['styles']);
 
   // Create LiveReload server
   livereload.listen();
