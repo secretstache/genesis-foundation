@@ -12,6 +12,8 @@ var gulp = require('gulp'),
     livereload = require('gulp-livereload'),
     sort = require('gulp-sort'),
     sourcemaps = require('gulp-sourcemaps'),
+    imagemin = require('gulp-imagemin'),
+    changed = require('gulp-changed'),
     svgo = require('gulp-svgo'),
     svgstore = require('gulp-svgstore'),
     svgmin = require('gulp-svgmin'),
@@ -87,6 +89,15 @@ gulp.task('scripts', function() {
     .pipe(notify({ message: 'Scripts task complete', onLast: true }));
 });
 
+// Images
+gulp.task('images', function() {
+  return gulp.src(images.src + '/**/*')
+    .pipe(changed(images.dest)) // Ignore unchanged files
+    .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
+    .pipe(gulp.dest(images.dest))
+    .pipe(notify({ message: 'Images task complete', onLast: true }));
+});
+
 // SVG
 gulp.task('svg', function () {
     return gulp
@@ -115,7 +126,7 @@ gulp.task('clean', function() {
 
 // Default task
 gulp.task('default', ['clean'], function() {
-  gulp.start('styles', 'scripts', 'svg');
+  gulp.start('styles', 'scripts', 'images', 'svg');
 });
 
 // Watch
@@ -123,6 +134,9 @@ gulp.task('watch', function() {
 
   // Watch .scss files
   gulp.watch([css.src + '/**/*.scss', paths.bower + '/foundation-sites/scss/**/*.scss' ], ['styles']);
+
+  // Watch Images
+  gulp.watch([images.src + '/**/*' ], ['images']);
 
   // Create LiveReload server
   livereload.listen();
