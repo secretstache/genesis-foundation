@@ -20,47 +20,19 @@ var gulp = require('gulp'),
     path = require('path'),
     del = require('del');
 
-// Configure Paths
-var paths = {
-    dist: './assets/dist',
-    sass: './assets/scss',
-    images: './assets/images',
-    js: './assets/js',
-    font: './assets/fonts',
-    bower: './assets/bower_components'
-}
+// Config
+var config = require('./config');
 
-// CSS Paths
-var css = {
-    src: './assets/src/scss',
-    dest: './assets/dist/css',
-    autoprefixer: {
-        'browsers': ['last 3 version']
-    },
-    sourcemaps: {
-        'includeContent': false,
-        'sourceRoot': 'source'
-    }
-}
-
-// JS Paths
-var js = {
-    src: './assets/src/scripts',
-    dest: './assets/dist/js'
-}
-
-// Image Paths
-var images = {
-    src: './assets/src/images',
-    dest: './assets/dist/images',
-    svg: './assets/src/svg'
-}
+// Foundation Array
+var f6Arr = config.f6.map(function(el) {
+  return config.paths.bower + '/foundation-sites/js/foundation.' + el + '.js';
+})
 
 // Styles
 gulp.task('styles', function() {
-    return sass(css.src + '/style.scss', {
+    return sass(config.css.src + '/style.scss', {
         loadPath: [
-                css.src,
+                config.css.src,
             ],
         defaultEncoding: 'UTF-8',
         sourcemap: true
@@ -75,35 +47,32 @@ gulp.task('styles', function() {
 
 // Scripts
 gulp.task('scripts', function() {
-  return gulp.src([
-      paths.bower + '/foundation-sites/dist/foundation.js',
-      paths.bower + '/what-input/what-input.js'
-    ])
+  return gulp.src(f6Arr, [config.paths.bower + '/what-input/what-input.js'])
     .pipe(sourcemaps.init())
     .pipe(concat('main.js'))
-    .pipe(gulp.dest(js.dest))
+    .pipe(gulp.dest(config.js.dest))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(uglify())
+    //.pipe(uglify())
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(js.dest))
+    .pipe(gulp.dest(config.js.dest))
     .pipe(notify({ message: 'Scripts task complete', onLast: true }));
 });
 
 // Images
 gulp.task('images', function() {
-  return gulp.src(images.src + '/**/*')
-    .pipe(changed(images.dest)) // Ignore unchanged files
+  return gulp.src(config.images.src + '/**/*')
+    .pipe(changed(config.images.dest)) // Ignore unchanged files
     .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
-    .pipe(gulp.dest(images.dest))
+    .pipe(gulp.dest(config.images.dest))
     .pipe(notify({ message: 'Images task complete', onLast: true }));
 });
 
 // SVG
 gulp.task('svg', function () {
     return gulp
-        .src(images.svg + '/*.svg')
+        .src(config.images.svg + '/*.svg')
         .pipe(svgo())
-        .pipe(gulp.dest(images.dest + '/svg'))
+        .pipe(gulp.dest(config.images.dest + '/svg'))
         .pipe(svgmin(function (file) {
             var prefix = path.basename(file.relative, path.extname(file.relative));
             return {
@@ -116,12 +85,12 @@ gulp.task('svg', function () {
             }
         }))
         .pipe(svgstore())
-        .pipe(gulp.dest(images.dest + '/svg/combined'));
+        .pipe(gulp.dest(config.images.dest + '/svg/combined'));
 });
 
 // Clean
 gulp.task('clean', function() {
-  return del([paths.dist]);
+  return del([config.paths.dist]);
 });
 
 // Default task
@@ -133,10 +102,10 @@ gulp.task('default', ['clean'], function() {
 gulp.task('watch', function() {
 
   // Watch .scss files
-  gulp.watch([css.src + '/**/*.scss', paths.bower + '/foundation-sites/scss/**/*.scss' ], ['styles']);
+  gulp.watch([config.css.src + '/**/*.scss', config.paths.bower + '/foundation-sites/scss/**/*.scss' ], ['styles']);
 
   // Watch Images
-  gulp.watch([images.src + '/**/*' ], ['images']);
+  gulp.watch([config.images.src + '/**/*' ], ['images']);
 
   // Create LiveReload server
   livereload.listen();
