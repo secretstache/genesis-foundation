@@ -46,7 +46,7 @@
 
 <div class="social small-12 medium-6 column">
 
-	<?php include( CHILD_DIR . '/templates/includes/social-networks.php' ); ?>
+	<?php include( CHILD_DIR . '/templates/partials/social-networks.php' ); ?>
 
 </div>
 <!-- end .social -->

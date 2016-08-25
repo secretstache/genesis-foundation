@@ -22,7 +22,7 @@ function ssm_home_loop() { ?>
 
 	<div class="entry-content" itemprop="text">
 
-		<?php include('templates/includes/content-blocks.php'); ?>
+		<?php include('templates/layout-builder/content-blocks.php'); ?>
 
 	</div>
 	<!-- entry-content -->

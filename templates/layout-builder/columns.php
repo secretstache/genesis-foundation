@@ -1,6 +1,6 @@
 <?php 
 
-include( CHILD_DIR . '/templates/includes/additional-classes.php' );
+include( CHILD_DIR . '/templates/partials/additional-classes.php' );
 
 $column_count = count(get_sub_field('column_list'));
 

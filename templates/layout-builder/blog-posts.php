@@ -1,6 +1,6 @@
 <?php 
 
-include( CHILD_DIR . '/templates/includes/additional-classes.php' );
+include( CHILD_DIR . '/templates/partials/additional-classes.php' );
 
 // Arguments for WP_Query
 $args = array(

@@ -28,7 +28,7 @@
 
 	<div class="header-social align-right">
 
-		<?php include( CHILD_DIR . '/templates/includes/social-networks.php' ); ?>
+		<?php include( CHILD_DIR . '/templates/partials/social-networks.php' ); ?>
 
 	</div>
 

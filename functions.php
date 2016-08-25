@@ -18,7 +18,6 @@ function child_theme_setup() {
 
     define( 'CHILD_THEME_VERSION', filemtime( get_stylesheet_directory() . '/style.css' ) );
 
-
     /****************************************
     Setup Foundation by Zurb
     *****************************************/

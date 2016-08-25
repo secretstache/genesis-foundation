@@ -128,7 +128,7 @@ function ssm_site_title( $title ) {
  */
 function ssm_do_header_right() {
 
-  include( CHILD_DIR . '/templates/includes/header-right.php');
+  include( CHILD_DIR . '/templates/partials/header-right.php');
 
 }
 
@@ -139,7 +139,7 @@ function ssm_do_header_right() {
  */
 function ssm_do_footer() {
 
-  include( CHILD_DIR . '/templates/includes/footer.php');
+  include( CHILD_DIR . '/templates/partials/footer.php');
 
 }
 

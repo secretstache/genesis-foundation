@@ -11,7 +11,7 @@ add_action('genesis_before_content', 'ssm_do_featured_image');
  */
 function ssm_do_featured_image() {
 
-	include('templates/includes/featured-image.php');
+	include('templates/partials/featured-image.php');
 	
 }
 
@@ -22,7 +22,7 @@ add_action('genesis_entry_content', 'ssm_insert_content_blocks');
  */
 function ssm_insert_content_blocks() {
 
-	include('templates/includes/content-blocks.php');
+	include('templates/layout-builder/content-blocks.php');
 
 }
 

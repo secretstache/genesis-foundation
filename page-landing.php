@@ -44,7 +44,7 @@ add_action('genesis_entry_content', 'ssm_insert_content_blocks');
  */
 function ssm_insert_content_blocks() {
 
-	include('templates/includes/content-blocks.php');
+	include('templates/layout-builder/content-blocks.php');
 
 }
 
