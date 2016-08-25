@@ -20,45 +20,32 @@ function child_theme_setup() {
 
 
     /****************************************
-    Setup Foundation 5 by Zurb
+    Setup Foundation by Zurb
     *****************************************/
 
     include_once( CHILD_DIR . '/lib/foundation/foundation-walker.php' );
     include_once( CHILD_DIR . '/lib/foundation/genesis-markup.php' );
     include_once( CHILD_DIR . '/lib/foundation/foundation-functions.php' );
 
-
     /****************************************
-    Setup child theme functions
+    Setup child theme 
     *****************************************/
 
-    include_once( CHILD_DIR . '/lib/theme-functions.php' );
-
+    include_once( CHILD_DIR . '/lib/functions/admin-functions.php' );
+    include_once( CHILD_DIR . '/lib/functions/public-functions.php' );
+    include_once( CHILD_DIR . '/lib/functions/helper-functions.php' );
+    include_once( CHILD_DIR . '/lib/branding/admin-branding.php');
 
     /****************************************
-    Backend
+    Admin Functions
     *****************************************/
-
-    // Admin Branding
-    include_once( CHILD_DIR . '/lib/admin-branding.php');
 
     // Image Sizes
-    // add_image_size( $name, $width = 0, $height = 0, $crop = false );
     add_image_size( 'featured-image', 9999, 600, TRUE );
     add_image_size( 'square-500', 500, 500, TRUE );
     add_image_size( 'icon', 100, 100, TRUE );
 
     // add_filter( 'image_size_names_choose', 'ssm_image_size_names_choose' );
-    /**
-     *
-     * Add new image sizes to media size selection menu
-     * See: http://wpdaily.co/top-10-snippets/
-     *
-     */
-    function ssm_image_size_names_choose( $sizes ) {
-        $sizes['desktop-size'] = 'Desktop';
-        return $sizes;
-    }
 
     // Clean up Head
     remove_action('wp_head', 'rsd_link');
@@ -170,7 +157,7 @@ function child_theme_setup() {
 
 
     /****************************************
-    Frontend
+    Public Functions
     *****************************************/
 
     // Add HTML5 markup structure
@@ -230,15 +217,15 @@ function child_theme_setup() {
     // Build Off Canvas Menu
     add_action('genesis_before', 'ssm_do_off_canvas_menu', 11);
 
+    /****************************************
+    Helper Functions
+    *****************************************/
+
+    // Unregister the superfish scripts
+    add_action( 'wp_enqueue_scripts', 'ssm_unregister_superfish' );
+
+    // Filter Yoast SEO Metabox Priority
+    add_filter( 'wpseo_metabox_prio', 'ssm_filter_yoast_seo_metabox' );
+
 }
 
-
-/****************************************
-Misc Theme Functions
-*****************************************/
-
-// Unregister the superfish scripts
-add_action( 'wp_enqueue_scripts', 'ssm_unregister_superfish' );
-
-// Filter Yoast SEO Metabox Priority
-add_filter( 'wpseo_metabox_prio', 'ssm_filter_yoast_seo_metabox' );
