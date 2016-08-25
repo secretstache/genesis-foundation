@@ -16,25 +16,7 @@ include( CHILD_DIR . '/templates/partials/additional-classes.php' );
 
 	<?php } ?>
 
-		<?php if ( get_sub_field('headline') || get_sub_field('subheadline') ) { ?>
-
-		<header class="section-header small-12 column">		
-
-			<?php if ( $headline = get_sub_field('headline') ) { ?>
-
-			<h1 class="section-title"><?php echo $headline; ?></h1>
-
-			<?php } ?>
-
-			<?php if ( $subheadline = get_sub_field('subheadline') ) { ?>
-
-			<h2 class="section-subtitle"><?php echo $subheadline; ?></h2>
-
-			<?php } ?>
-
-		</header>
-
-		<?php } ?>
+		<?php ssm_maybe_add_content_block_header(); ?>
 
 		<div class="small-12 column<?php echo $media_size == 'Full Width' ? ' large-collapse' : ''; ?>">
 

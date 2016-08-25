@@ -56,3 +56,26 @@ if ( ! function_exists( "sanitize_html_classes" ) && function_exists( "sanitize_
     $classes = array_filter(array_map('trim', $classes));
     echo trim(implode(' ', apply_filters( 'fcb_set_block_wrapper_classes', $classes )));
 }
+
+
+function ssm_maybe_add_content_block_header() { ?>
+  <?php if ( get_sub_field('headline') || get_sub_field('subheadline') ) { ?>
+
+    <header class="section-header small-12 column">   
+
+      <?php if ( $headline = get_sub_field('headline') ) { ?>
+
+      <h1 class="section-title"><?php echo $headline; ?></h1>
+
+      <?php } ?>
+
+      <?php if ( $subheadline = get_sub_field('subheadline') ) { ?>
+
+      <h2 class="section-subtitle"><?php echo $subheadline; ?></h2>
+
+      <?php } ?>
+
+    </header>
+
+  <?php } 
+}
