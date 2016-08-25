@@ -1,21 +1,6 @@
 <?php
 
 /**
- * Unregister the superfish scripts
- */
-function ssm_unregister_superfish() {
-  wp_deregister_script( 'superfish' );
-  wp_deregister_script( 'superfish-args' );
-}
-
-/**
- * Filter Yoast SEO Metabox Priority
- */
-function ssm_filter_yoast_seo_metabox() {
-  return 'low';
-}
-
-/**
  *  Sanitize multiple classes at once
  */
 if ( ! function_exists( "sanitize_html_classes" ) && function_exists( "sanitize_html_class" ) ) {
@@ -71,12 +56,3 @@ if ( ! function_exists( "sanitize_html_classes" ) && function_exists( "sanitize_
     $classes = array_filter(array_map('trim', $classes));
     echo trim(implode(' ', apply_filters( 'fcb_set_block_wrapper_classes', $classes )));
 }
-
-/**
- * Registering menus
- */
-register_nav_menus(
-  array(
-    'primary-navigation' => __( 'Primary Navigation' ),
-  )
-);

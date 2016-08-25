@@ -319,3 +319,19 @@ function remove_wp_nodes() {
     // $wp_admin_bar->remove_node( 'new-shop_order' );
     $wp_admin_bar->remove_node( 'new-user' );
 }
+
+/**
+ * Filter Yoast SEO Metabox Priority
+ */
+function ssm_filter_yoast_seo_metabox() {
+  return 'low';
+}
+
+/**
+ * Registering menus
+ */
+register_nav_menus(
+  array(
+    'primary-navigation' => __( 'Primary Navigation' ),
+  )
+);

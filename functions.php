@@ -150,7 +150,6 @@ function child_theme_setup() {
     // Remove Editor Support on Pages (Replaced with ACF Page Builder)
     add_action( 'init', 'ssm_remove_editor' );
 
-
     // Remove unnecessary menu items from add new dropdown
     add_action( 'admin_bar_menu', 'remove_wp_nodes', 999 );
 
@@ -213,15 +212,15 @@ function child_theme_setup() {
     // Adds body class if the page/post has a featured image
     add_action('body_class', 'ssm_if_featured_image_class' );
 
+    // Unregister the superfish scripts
+    add_action( 'wp_enqueue_scripts', 'ssm_unregister_superfish' );
+
     // Build Off Canvas Menu
     add_action('genesis_before', 'ssm_do_off_canvas_menu', 11);
 
     /****************************************
     Helper Functions
     *****************************************/
-
-    // Unregister the superfish scripts
-    add_action( 'wp_enqueue_scripts', 'ssm_unregister_superfish' );
 
     // Filter Yoast SEO Metabox Priority
     add_filter( 'wpseo_metabox_prio', 'ssm_filter_yoast_seo_metabox' );

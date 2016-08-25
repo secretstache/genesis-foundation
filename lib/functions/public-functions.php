@@ -174,6 +174,15 @@ function ssm_if_featured_image_class($classes) {
 }
 
 /**
+ * Unregister the superfish scripts
+ *
+ */
+function ssm_unregister_superfish() {
+  wp_deregister_script( 'superfish' );
+  wp_deregister_script( 'superfish-args' );
+}
+
+/**
  * Build Off Canvas Menu
  *
  */
