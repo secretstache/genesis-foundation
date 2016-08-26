@@ -153,6 +153,8 @@ function child_theme_setup() {
     // Remove unnecessary menu items from add new dropdown
     add_action( 'admin_bar_menu', 'remove_wp_nodes', 999 );
 
+    // Enqueue Admin Styles
+    add_action( 'admin_enqueue_scripts', 'ssm_admin_styles' );
 
     /****************************************
     Public Functions

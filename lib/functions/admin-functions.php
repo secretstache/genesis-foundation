@@ -315,8 +315,6 @@ function remove_wp_nodes() {
     global $wp_admin_bar;
     $wp_admin_bar->remove_node( 'new-link' );
     $wp_admin_bar->remove_node( 'new-media' );
-    // $wp_admin_bar->remove_node( 'new-shop_coupon' );
-    // $wp_admin_bar->remove_node( 'new-shop_order' );
     $wp_admin_bar->remove_node( 'new-user' );
 }
 
@@ -335,3 +333,9 @@ register_nav_menus(
     'primary-navigation' => __( 'Primary Navigation' ),
   )
 );
+
+function ssm_admin_styles() {
+
+  wp_enqueue_style( 'ssm-admin-css', CHILD_URL . '/admin.css' );
+
+}
