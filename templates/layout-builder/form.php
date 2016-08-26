@@ -4,7 +4,7 @@ include( CHILD_DIR . '/templates/partials/additional-classes.php' );
 
 ?>
 
-<section <?php echo $html_id != NULL ? 'id="' . $html_id . '"' : ''; ?> class="content-block form row-<?php echo $cb_i; ?> row-<?php echo $even_odd; ?><?php echo $html_classes != NULL ? ' ' . $html_classes : ''; ?>">
+<section <?php echo $section_id_classes; ?>>
 
 	<div class="wrap">
 

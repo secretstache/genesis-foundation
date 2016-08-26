@@ -6,7 +6,7 @@ $column_count = count(get_sub_field('column_list'));
 
 ?>
 
-<section <?php echo $html_id != NULL ? 'id="' . $html_id . '"' : ''; ?> class="content-block cols has-<?php echo $column_count; ?>-cols row-<?php echo $cb_i; ?> row-<?php echo $even_odd; ?><?php echo $html_classes != NULL ? ' ' . $html_classes : ''; ?>">
+<section <?php echo $section_id_classes; ?>>
 
 	<div class="wrap">
 

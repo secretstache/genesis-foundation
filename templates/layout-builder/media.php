@@ -4,9 +4,7 @@ include( CHILD_DIR . '/templates/partials/additional-classes.php' );
 
 ?>
 
-<?php $media_type = sanitize_title_with_dashes( get_sub_field('media_type') ); ?>
-
-<section <?php echo $html_id != NULL ? 'id="' . $html_id . '"' : ''; ?> class="content-block media<?php echo $media_type != NULL ? ' ' . $media_type : ''; ?> row-<?php echo $cb_i; ?> row-<?php echo $even_odd; ?><?php echo $html_classes != NULL ? ' ' . $html_classes : ''; ?>">
+<section <?php echo $section_id_classes; ?>>
 
 	<?php $media_size = get_sub_field('media_size'); ?>
 

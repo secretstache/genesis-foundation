@@ -16,7 +16,7 @@ if ( get_sub_field('background_options') == 'Photo' && get_sub_field('image') ) 
 } ?>
 
 
-<div<?php echo $html_id != NULL ? ' id="' . $html_id . '"' : ''; ?> class="section-wrapper<?php echo $html_classes != NULL ? ' ' . $html_classes : ''; ?>"<?php echo $css = $image =! null ? ' ' . $css : ''; ?>>
+<div<?php echo $wrapper_id_classes; ?>><?php echo $css = $image =! null ? ' ' . $css : ''; ?>>
 
 <?php if ( get_sub_field('video') ) { ?>
 
