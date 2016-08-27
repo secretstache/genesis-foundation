@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /****************************************
 Frontend
@@ -43,7 +43,7 @@ function ssm_scripts() {
   if ( !is_admin() ) {
 
     // Theme Scripts
-    wp_enqueue_script('ssm-scripts', CHILD_URL . '/assets/js/main.min.js', array('jquery'), NULL, true );
+    wp_enqueue_script('ssm-scripts', CHILD_URL . '/assets/dist/js/main.min.js', array('jquery'), NULL, true );
 
   }
 }
@@ -114,7 +114,7 @@ function ssm_site_title( $title ) {
 
   } else {
 
-    $url = CHILD_URL . '/assets/images/ph-logo.png';
+    $url = CHILD_URL . '/assets/dist/images/png/ph-logo.png';
 
   }
 
@@ -165,11 +165,11 @@ function ssm_modify_search_text( $text ) {
  *
  */
 function ssm_if_featured_image_class($classes) {
-  
+
   if ( has_post_thumbnail() ) {
     array_push($classes, 'has-featured-image');
   }
-  
+
   return $classes;
 }
 

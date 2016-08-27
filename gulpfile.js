@@ -23,7 +23,7 @@ var gulp = require('gulp'),
 // Config
 var config = require('./config');
 
-// Foundation Array
+// Foundation Files Array
 var f6Arr = config.f6.map(function(el) {
   return config.paths.bower + '/foundation-sites/js/foundation.' + el + '.js';
 })

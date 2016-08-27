@@ -26,27 +26,27 @@ add_action( 'login_enqueue_scripts', 'ssm_replace_login_logo' );
  */
 function ssm_replace_login_logo() { ?>
 
-<?php if ( $image = get_field('brand_logo', 'options') ) { 
-	
-	$background_image = $image['url'];
-	
-	} else {	
-	
-	$background_image =  get_stylesheet_directory_uri() . '/assets/images/ph-logo.png';
-	
-	} 
-	
-	?>
-	
-	<style type="text/css">
-		body.login div#login h1 a {
-			background: url(<?php echo $background_image; ?>) no-repeat !important;
-			background-size: 292px 36px;
-			height: 36px;
-			padding-bottom: 15px;
-			width: 292px;
-		}
-	</style>
+<?php if ( $image = get_field('brand_logo', 'options') ) {
+
+    $background_image = $image['url'];
+
+    } else {
+
+    $background_image =  get_stylesheet_directory_uri() . '/assets/dist/images/png/ph-logo.png';
+
+    }
+
+    ?>
+
+    <style type="text/css">
+        body.login div#login h1 a {
+            background: url(<?php echo $background_image; ?>) no-repeat !important;
+            background-size: 292px 36px;
+            height: 36px;
+            padding-bottom: 15px;
+            width: 292px;
+        }
+    </style>
 
 <?php
 
@@ -58,7 +58,7 @@ add_filter( 'wp_mail_from_name', 'ssm_mail_from_name' );
  * @since 1.0.0
  */
 function ssm_mail_from_name() {
-	return get_option( 'blogname' );
+    return get_option( 'blogname' );
 }
 
 add_filter( 'wp_mail_from', 'ssm_wp_mail_from' );
@@ -68,7 +68,7 @@ add_filter( 'wp_mail_from', 'ssm_wp_mail_from' );
  * @since 1.0.0
  */
 function ssm_wp_mail_from() {
-	return get_option( 'admin_email' );
+    return get_option( 'admin_email' );
 }
 
 add_action( 'wp_before_admin_bar_render', 'ssm_remove_wp_icon_from_admin_bar' );
@@ -89,5 +89,5 @@ add_filter( 'admin_footer_text', 'ssm_admin_footer_text' );
  * @since 1.0.0
  */
 function ssm_admin_footer_text () {
-	echo 'Built by <a href="http://www.secretstache.com" target="_blank">Secret Stache Media</a> with WordPress.';
+    echo 'Built by <a href="http://www.secretstache.com" target="_blank">Secret Stache Media</a> with WordPress.';
 }
