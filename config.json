@@ -1,0 +1,60 @@
+{
+    "paths": {
+        "dist": "./assets/dist",
+        "sass": "./assets/scss",
+        "images": "./assets/images",
+        "js": "./assets/js",
+        "font": "./assets/fonts",
+        "bower": "./assets/bower_components"
+    },
+    "images": {
+        "src": "./assets/src/images",
+        "dest": "./assets/dist/images",
+        "svg": "./assets/src/svg"
+    },
+    "css": {
+        "src": "./assets/src/scss",
+        "dest": "./assets/dist/css",
+        "autoprefixer": {
+            "browsers": ["last 3 version"]
+        },
+        "sourcemaps": {
+            "includeContent": false,
+            "sourceRoot": "source"
+        }
+    },
+    "js": {
+        "src": "./assets/src/scripts",
+        "dest": "./assets/dist/js"
+    },
+    "f6": [
+        "core", 
+        "abide",
+        "accordion",
+        "accordionMenu",
+        "drilldown",
+        "dropdown",
+        "dropdownMenu",
+        "equalizer",
+        "interchange",
+        "magellan",
+        "offcanvas",
+        "orbit",
+        "responsiveMenu",
+        "responsiveToggle",
+        "reveal",
+        "slider",
+        "sticky",
+        "tabs",
+        "toggler",
+        "tooltip",
+        "util.box",
+        "util.keyboard",
+        "util.mediaQuery",
+        "util.motion",
+        "util.nest",
+        "util.timerAndImagagesLoader",
+        "util.touch",
+        "util.triggers"
+    ]
+}

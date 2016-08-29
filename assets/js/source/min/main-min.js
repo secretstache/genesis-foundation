@@ -1,1 +1,0 @@
-!function(n){n(document).foundation()}(jQuery);

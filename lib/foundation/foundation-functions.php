@@ -65,21 +65,6 @@ function ssm_do_primary_navigation() { ?>
       </div>
     </div>
 
-    <div class="off-canvas position-left" id="offCanvas" data-off-canvas data-position="left">
-      <?php
-        wp_nav_menu(array(
-          'container'	=> false,
-          'menu' => 'Primary Navigation',  				// nav name
-          'menu_class' =>	'vertical menu',				// ul class
-          'theme_location' => 'primary-navigation',       // where it's located in the theme
-          'before' => '',                                 // before the menu
-          'after' => '',                                  // after the menu
-          'link_before' => '',                            // before each link
-          'link_after' => '',                             // after each link
-          'walker'	=> new Foundation_Walker()
-      )); ?>
-    </div>
-
     <?php } // endif has_nav_menu ?>
 
 <?php }
