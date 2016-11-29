@@ -39,6 +39,7 @@ gulp.task('styles', function() {
         })
         .on('error', sass.logError)
         .pipe(sourcemaps.init())
+        .pipe(cleanCSS({compatibility: 'ie8', keepSpecialComments: 1}))
         .pipe(autoprefixer())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./'))
