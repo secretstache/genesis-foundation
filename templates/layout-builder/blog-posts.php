@@ -1,7 +1,5 @@
 <?php 
 
-include( CHILD_DIR . '/templates/partials/additional-classes.php' );
-
 // Arguments for WP_Query
 $args = array(
 
@@ -28,9 +26,9 @@ if ( $curated = get_sub_field('blog_posts_display') == 'Curated' ) {
 
 ?>
 
-<section <?php echo $section_id_classes; ?>>
+<section <?php echo section_id_classes(); ?>>
 
-	<div class="wrap">
+	<div class="row">
 
 		<?php ssm_maybe_add_content_block_header(); ?>
 
@@ -38,7 +36,7 @@ if ( $curated = get_sub_field('blog_posts_display') == 'Curated' ) {
 
 		<?php if ( $post_query->have_posts() ) { ?>
 
-			<div class="row" data-equalizer data-options="equalize_on_stack: true">
+			<div data-equalizer data-options="equalize_on_stack: true">
 
 			<?php do_action( 'genesis_before_while' ); ?>
 
@@ -79,14 +77,13 @@ if ( $curated = get_sub_field('blog_posts_display') == 'Curated' ) {
 				<?php } // endwhile $post_query->have_posts() ?>
 
 			</div>
-			<!-- end .row -->
 
 		<?php } // endif $post_query->have_posts() ?>
 
 		<?php wp_reset_postdata(); ?>
 
 	</div>
-	<!-- end .wrap -->
+	<!-- end .row -->
 
 </section>
 <!-- end .blog-posts -->

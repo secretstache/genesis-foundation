@@ -1,12 +1,6 @@
-<?php 
+<section <?php echo section_id_classes(); ?>>
 
-include( CHILD_DIR . '/templates/partials/additional-classes.php' );
-
-?>
-
-<section <?php echo $section_id_classes; ?>>
-
-	<div class="wrap">
+	<div class="row">
 
 		<?php ssm_maybe_add_content_block_header(); ?>
 	

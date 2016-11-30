@@ -1,16 +1,10 @@
-<?php 
-
-include( CHILD_DIR . '/templates/partials/additional-classes.php' );
-
-?>
-
-<section <?php echo $section_id_classes; ?>>
+<section <?php echo section_id_classes(); ?>>
 
 	<?php $media_size = get_sub_field('media_size'); ?>
 
 	<?php if ( $media_size == 'Contained' ) { ?>
 
-	<div class="wrap">
+	<div class="row">
 
 	<?php } ?>
 

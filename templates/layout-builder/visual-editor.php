@@ -1,14 +1,8 @@
-<?php
+<section <?php echo section_id_classes(); ?>>
 
-include( CHILD_DIR . '/templates/partials/additional-classes.php' );
+  <?php ssm_maybe_add_content_block_header(); ?>
 
-?>
-
-<section <?php echo $section_id_classes; ?>>
-
-  <div class="wrap">
-
-    <?php ssm_maybe_add_content_block_header(); ?>
+  <div class="row">
 
     <?php if ( $wysiwyg = get_sub_field('visual_editor') ) { ?>
 
@@ -22,7 +16,7 @@ include( CHILD_DIR . '/templates/partials/additional-classes.php' );
     <?php } ?>
 
   </div>
-  <!-- end .wrap -->
+  <!-- end .row -->
 
 </section>
 <!-- end .visual-editor -->

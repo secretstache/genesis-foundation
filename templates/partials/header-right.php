@@ -2,7 +2,7 @@
 
 <?php $header_right = get_field('header_right_options', 'options'); ?>
 
-<div class="header-right show-for-medium medium-centered large-8 column">
+<div class="header-right show-for-medium shrink column">
 
 	<?php if  ( $header_right == 'Menu' ) { ?>
 
@@ -36,8 +36,10 @@
 
 </div>
 
-<div class="header-right show-for-small-only small-2 column last">
-	<button class="menu-icon" type="button" data-toggle="offCanvas"></button>
+<div class="header-right show-for-small-only small-2 small-offset-4 column">
+
+	<button class="menu-icon" type="button" data-toggle="offCanvas" aria-expanded="false" aria-controls="offCanvas"></button>
+
 </div>
 
 

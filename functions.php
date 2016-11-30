@@ -217,8 +217,8 @@ function child_theme_setup() {
     // Unregister the superfish scripts
     add_action( 'wp_enqueue_scripts', 'ssm_unregister_superfish' );
 
-    // Build Off Canvas Menu
-    add_action('genesis_before', 'ssm_do_off_canvas_menu', 11);
+    // Insert Royal Preloader
+    // add_action( 'genesis_before', 'ssm_do_royal_preloader', 10 );
 
     /****************************************
     Helper Functions

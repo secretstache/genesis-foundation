@@ -1,38 +1,24 @@
 <?php 
 
-include( CHILD_DIR . '/templates/partials/additional-classes.php' );
-
 $column_count = count(get_sub_field('column_list'));
 
 ?>
 
-<section <?php echo $section_id_classes; ?>>
-
-	<div class="wrap">
+<section <?php echo section_id_classes(); ?>>
 
 		<?php ssm_maybe_add_content_block_header(); ?>
 
 		<?php if ( $columns = get_sub_field('column_list') ) { ?>
 
-			<?php 
-				if ( $column_count == 2 ) { 
-					$column_classes = 'small-12 medium-6 column';
-				} elseif ( $column_count == 3 ) {
-					$column_classes = 'small-12 medium-4 column';
-				} elseif ( $column_count == 4 ) {
-					$column_classes = 'small-12 medium-3 column';
-				}
-			?>
-
 			<?php $i = 1; ?>
 
-			<div class="section-entry row">
+			<div class="row">
 
 				<?php foreach ( $columns as $column ) { ?>
 
 				<?php $column_type = sanitize_html_classes(sanitize_title_with_dashes($column['content_type'])); ?>
 
-				<div class="<?php echo $column_type; ?> col-<?php echo $i; ?> <?php echo sanitize_html_classes($column_classes); ?>">
+				<div class="small-12 medium-expand <?php echo $column_type; ?> col-<?php echo $i; ?> <?php echo sanitize_html_classes($column_classes); ?>">
 
 					<?php if ( ( $column['content_type'] == 'Visual Editor') && $icon = $column['icon'] )  { ?>
 					
@@ -83,7 +69,7 @@ $column_count = count(get_sub_field('column_list'));
 				<?php } // end foreach $columns ?>
 
 			</div>
-			<!-- end .section-entry -->
+			<!-- end .row -->
 
 		<?php } ?>
 

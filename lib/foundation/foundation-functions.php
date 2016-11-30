@@ -1,26 +1,38 @@
 <?php
 
-add_action('genesis_before', 'ssm_open_offnav_markup', 10);
+add_action('genesis_before', 'ssm_offcanvas_markup', 11);
 /**
  * Add Foundation offcanvas opening markup
  */
-function ssm_open_offnav_markup() {
-  $offnavopen = '<div class="off-canvas-wrapper">';
-  $offnavopen .= '<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>';
+function ssm_offcanvas_markup() { ?>
 
-  echo $offnavopen;
-}
+  <div class="off-canvas" id="offCanvas" data-toggler=".is-active">
+    <?php // ssm_do_off_canvas_menu(); ?>
+  </div>
 
-add_action('genesis_after', 'ssm_close_offnav_markup', 5);
+<?php }
+
+add_action('genesis_header', 'ssm_open_header_markup', 5);
 /**
- * Add Foundation offcanvas closing markup
+ * Add Foundation opening header markup
  */
-function ssm_close_offnav_markup() {
-  $offnavclose = '</div><!-- end .off-canvas-wrapper-inner -->';
-  $offnavclose .= '</div><!-- end off-canvas-wrapper -->';
+function ssm_open_header_markup() { ?>
 
-  echo $offnavclose;
-}
+  <div class="title-bar">
+    <div class="row align-justify align-middle">
+
+<?php }
+
+add_action('genesis_header', 'ssm_close_header_markup', 11);
+/**
+ * Add Foundation opening header markup
+ */
+function ssm_close_header_markup() { ?>
+
+    </div>
+  </div>
+
+<?php }
 
 /**
  * Rebuild Navigation Menus
@@ -38,32 +50,26 @@ function ssm_do_primary_navigation() { ?>
 
     <?php if ( has_nav_menu('primary-navigation') ) { ?>
 
-    <div class="show-for-large">
-      <nav class="nav-primary">
-        <div class="wrap">
-        <?php
-          wp_nav_menu(array(
-            'container'	=> false,
-            'menu' => 'Primary Navigation',
-            'menu_class'	=> 'dropdown menu', 				// nav name
-            'theme_location' => 'primary-navigation',       // where it's located in the theme
-            'before' => '',                                 // before the menu
-            'after' => '',                                  // after the menu
-            'link_before' => '',                            // before each link
-            'link_after' => '',
-            'items_wrap' => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
-            'walker'  => new Foundation_Walker()                            // after each link
-        ));
-         ?>
+      <nav class="primary">
+        <div class="row">
+          <div class="show-for-medium medium-12 column">
+            <?php
+              wp_nav_menu(array(
+                'container' => false,
+                'menu' => 'Primary Navigation',
+                'menu_class'  => 'dropdown menu',               // nav name
+                'theme_location' => 'primary-navigation',       // where it's located in the theme
+                'before' => '',                                 // before the menu
+                'after' => '',                                  // after the menu
+                'link_before' => '',                            // before each link
+                'link_after' => '',
+                'items_wrap' => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
+                'walker'  => new Foundation_Walker()                            // after each link
+              ));
+            ?>
+          </div>
         </div>
       </nav>
-    </div>
-
-    <div class="hide-for-large mobile-menu">
-      <div class="title-bar">
-         <button class="menu-icon" type="button" data-toggle="offCanvas"></button>
-      </div>
-    </div>
 
     <?php } // endif has_nav_menu ?>
 

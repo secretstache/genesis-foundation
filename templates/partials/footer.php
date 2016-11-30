@@ -1,3 +1,5 @@
+<div class="row">
+
 <?php if ( get_field('content', 'options') || get_field('footer_menu', 'options') ) { ?>
 
 	<div class="small-12 medium-6 column">
@@ -52,3 +54,5 @@
 <!-- end .social -->
 
 <?php } // endif $social_networks ?>
+
+</div>

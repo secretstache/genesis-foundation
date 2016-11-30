@@ -1,58 +1,56 @@
-<?php 
+<section <?php echo section_id_classes(); ?>>
 
-include( CHILD_DIR . '/templates/partials/additional-classes.php' );
-
-?>
-
-<section <?php echo $section_id_classes; ?>>
-
-	<div class="wrap">
+	<div class="row">
 
 	<?php if ( get_sub_field('headline') || get_sub_field('subheadline') ) { ?>
 
-	<header class="section-header small-12 column">		
+	<div class="small-12 column">
 
-		<?php if ( $headline = get_sub_field('headline') ) { ?>
+		<header class="section-header">		
 
-		<h1 class="section-title"><?php echo $headline; ?></h1>
+			<?php if ( $headline = get_sub_field('headline') ) { ?>
 
-		<?php } ?>
+			<h1 class="section-title"><?php echo $headline; ?></h1>
 
-		<?php if ( $subheadline = get_sub_field('subheadline') ) { ?>
+			<?php } ?>
 
-		<h2 class="section-subtitle"><?php echo $subheadline; ?></h2>
+			<?php if ( $subheadline = get_sub_field('subheadline') ) { ?>
 
-		<?php } ?>
+			<h2 class="section-subtitle"><?php echo $subheadline; ?></h2>
 
-		<?php if ( get_sub_field('include_cta') == 'Yes' && $button_text = get_sub_field('button_text') ) { ?>
+			<?php } ?>
 
-		<div class="button-wrapper">
+			<?php if ( get_sub_field('include_cta') == 'Yes' && $button_text = get_sub_field('button_text') ) { ?>
 
-			<?php if ( get_sub_field('button_link') == 'Page' ) { 
-				$link = get_sub_field('choose_page');
-			} elseif ( get_sub_field('button_link') == 'Absolute URL' ) {
-				$link = get_sub_field('url');
-			} ?>
+			<div class="button-wrapper">
 
-			<?php if ( get_sub_field('button_link') == 'Absolute URL' && get_sub_field('link_target') == 'New Tab') {
-				$target= ' target="_blank"';
-			} else {
-				$target = '';
-			}; ?>
+				<?php if ( get_sub_field('button_link') == 'Page' ) { 
+					$link = get_sub_field('choose_page');
+				} elseif ( get_sub_field('button_link') == 'Absolute URL' ) {
+					$link = get_sub_field('url');
+				} ?>
 
-			<a class="button" href="<?php echo $link; ?>"<?php echo $target; ?>><?php echo $button_text; ?></a>
+				<?php if ( get_sub_field('button_link') == 'Absolute URL' && get_sub_field('link_target') == 'New Tab') {
+					$target= ' target="_blank"';
+				} else {
+					$target = '';
+				}; ?>
 
-		</div>
-		<!-- end .button-wrapper -->
+				<a class="button" href="<?php echo $link; ?>"<?php echo $target; ?>><?php echo $button_text; ?></a>
 
-		<?php } ?> 
+			</div>
+			<!-- end .button-wrapper -->
 
-	</header>
+			<?php } ?> 
+
+		</header>
+
+	</div>
 
 	<?php } ?>
 
 	</div>
-	<!-- end .wrap -->
+	<!-- end .row -->
 
 </section>
 <!-- end .headline -->

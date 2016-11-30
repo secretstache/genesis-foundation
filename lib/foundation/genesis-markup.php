@@ -1,13 +1,13 @@
 <?php
 
 // add foundation classes
-add_filter( 'genesis_attr_site-header',         'ssm_add_markup_class', 10, 2 );
+// add_filter( 'genesis_attr_site-header',         'ssm_add_markup_class', 10, 2 );
 add_filter( 'genesis_attr_title-area',         'ssm_add_markup_class', 10, 2 );
-add_filter( 'genesis_attr_site-container',      'ssm_add_markup_class', 10, 2 );
-//add_filter( 'genesis_attr_content-sidebar-wrap','ssm_add_markup_class', 10, 2 );
-add_filter( 'genesis_attr_content',             'ssm_add_markup_class', 10, 2 );
-add_filter( 'genesis_attr_sidebar-primary',     'ssm_add_markup_class', 10, 2 );
-add_filter( 'genesis_attr_archive-pagination',  'ssm_add_markup_class', 10, 2 );
+// add_filter( 'genesis_attr_site-container',      'ssm_add_markup_class', 10, 2 );
+// add_filter( 'genesis_attr_content-sidebar-wrap','ssm_add_markup_class', 10, 2 );
+// add_filter( 'genesis_attr_content',             'ssm_add_markup_class', 10, 2 );
+// add_filter( 'genesis_attr_sidebar-primary',     'ssm_add_markup_class', 10, 2 );
+// add_filter( 'genesis_attr_archive-pagination',  'ssm_add_markup_class', 10, 2 );
 // add_filter( 'genesis_attr_site-footer',         'ssm_add_markup_class', 10, 2 );
 
 function ssm_add_markup_class( $attr, $context ) {
@@ -16,13 +16,13 @@ function ssm_add_markup_class( $attr, $context ) {
         // default foundation markup values
         array(
             //'site-header'       		=> 'row',
-            'title-area'                => array('small-10', 'medium-4', 'medium-centered', 'large-uncentered', 'column'),
-            'site-container'       		=> array('inner-wrap', 'off-canvas-content'),
+            'title-area'                => array('small-6', 'medium-3', 'column'),
+            // 'site-container'       		=> array('inner-wrap', 'off-canvas-content'),
             //'site-footer'       		=> 'row',
             //'content-sidebar-wrap'      => 'row',
-            'content'           		=> array('small-12', 'medium-9', 'column'),
-			'sidebar-primary'   		=> array('small-12', 'medium-3', 'column'),
-            'archive-pagination'		=> 'clearfix',
+            // 'content'           		=> array('small-12', 'medium-9', 'column'),
+			// 'sidebar-primary'   		=> array('small-12', 'medium-3', 'column'),
+            // 'archive-pagination'		=> 'clearfix',
         ),
         $context,
         $attr
@@ -84,12 +84,12 @@ function ssm_modify_classes_based_on_template( $classes_to_add, $context, $attr 
     return $classes_to_add;
 }
 
-add_filter( 'genesis_attr_site-container', 'ssm_data_off_canvas_content' );
+// add_filter( 'genesis_attr_site-container', 'ssm_data_off_canvas_content' );
 
-function ssm_data_off_canvas_content($attributes) {
-    $attributes['data-off-canvas-content'] = 'data-off-canvas-content';
-    return $attributes;
-} 
+// function ssm_data_off_canvas_content($attributes) {
+//     $attributes['data-off-canvas-content'] = 'data-off-canvas-content';
+//     return $attributes;
+// } 
 
 
 

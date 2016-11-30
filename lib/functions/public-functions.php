@@ -186,21 +186,28 @@ function ssm_unregister_superfish() {
  * Build Off Canvas Menu
  *
  */
-function ssm_do_off_canvas_menu() { ?>
+function ssm_do_off_canvas_menu() { 
 
-<div class="off-canvas position-left" id="offCanvas" data-off-canvas data-position="left">
-  <?php
-    wp_nav_menu(array(
-      'container' => false,
-      'menu' => 'Primary Navigation',                 // nav name
-      'menu_class' => 'vertical menu',                // ul class
-      'theme_location' => 'primary-navigation',       // where it's located in the theme
-      'before' => '',                                 // before the menu
-      'after' => '',                                  // after the menu
-      'link_before' => '',                            // before each link
-      'link_after' => '',                             // after each link
-      'walker'  => new Foundation_Walker()
-  )); ?>
-</div>
+  wp_nav_menu(array(
+    'container' => false,
+    'menu' => 'Primary Navigation',                 // nav name
+    'menu_class' => 'vertical menu',                // ul class
+    'theme_location' => 'primary-navigation',       // where it's located in the theme
+    'before' => '',                                 // before the menu
+    'after' => '',                                  // after the menu
+    'link_before' => '',                            // before each link
+    'link_after' => '',                             // after each link
+    'walker'  => new Foundation_Walker()
+  ));
 
-<?php }
+}
+
+remove_theme_support( 'genesis-structural-wraps' );
+
+/**
+ * Insert Royal Preloader
+ *
+ */
+function ssm_do_royal_preloader() {
+  echo '<div id="royal_preloader"></div>';
+}

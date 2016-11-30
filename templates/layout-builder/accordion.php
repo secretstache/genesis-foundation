@@ -1,14 +1,8 @@
-<?php 
-
-include( CHILD_DIR . '/templates/partials/additional-classes.php' );
-
-?>
-
-<section <?php echo $section_id_classes; ?>>
-
-	<div class="wrap">
+<section <?php echo section_id_classes(); ?>>
 
 	<?php ssm_maybe_add_content_block_header(); ?>
+
+	<div class="row">
 
 	<?php if ( $accordion = get_sub_field('accordion_list') ) { ?>
 
@@ -43,7 +37,7 @@ include( CHILD_DIR . '/templates/partials/additional-classes.php' );
 	<?php } ?>
 
 	</div>
-	<!-- end .wrap -->
+	<!-- end .row -->
 
 </section>
 <!-- end .accordion -->
