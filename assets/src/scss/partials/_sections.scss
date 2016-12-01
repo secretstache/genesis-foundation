@@ -124,12 +124,12 @@ section.accordion {
 	}
 }
 
-section.tabs {
-	@include clearfix();
-	.tabs-content {
-		margin-bottom: 0;
-	}
-}
+// section.tabs {
+// 	@include clearfix();
+// 	.tabs-content {
+// 		margin-bottom: 0;
+// 	}
+// }
 
 section.form {
 	.gform_wrapper {

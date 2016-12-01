@@ -4,7 +4,7 @@
 
 	<?php if ( get_sub_field('headline') || get_sub_field('subheadline') ) { ?>
 
-	<div class="small-12 column">
+	<div class="small-10 column">
 
 		<header class="section-header">		
 

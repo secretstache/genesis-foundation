@@ -2,15 +2,15 @@
 
 	<?php $media_size = get_sub_field('media_size'); ?>
 
+	<?php ssm_maybe_add_content_block_header(); ?>
+
 	<?php if ( $media_size == 'Contained' ) { ?>
 
 	<div class="row">
 
 	<?php } ?>
 
-		<?php ssm_maybe_add_content_block_header(); ?>
-
-		<div class="small-12 column<?php echo $media_size == 'Full Width' ? ' large-collapse' : ''; ?>">
+		<div class="small-12 column<?php echo $media_size == 'Full Width' ? ' large-collapse' : 'large-9'; ?>">
 
 			<?php if ( get_sub_field('media_type') == 'Photo' && $image = get_sub_field('image') ) { ?>
 
@@ -43,7 +43,7 @@
 
 				<?php if ( get_sub_field( 'layout' ) == 'Slideshow' ) { ?>
 
-				<ul data-orbit data-options="slide_number:false;timer:false;">
+				<ul>
 
 					<?php foreach ( $gallery as $image ) { ?>
 
@@ -53,12 +53,11 @@
 
 						<?php if ( $image['caption'] ) { ?>
 
-						<div class="orbit-caption">
+						<div class="caption">
 
 							<?php echo $image['caption']; ?>
 
 						</div>
-						<!-- end .orbit-caption -->
 
 						<?php } ?>
 
@@ -67,7 +66,6 @@
 					<?php } ?>
 
 				</ul>
-				<!-- end data-orbit -->
 
 				<?php } elseif ( get_sub_field( 'layout' ) == 'Thumbnails with Modal Preview' ) { ?>
 

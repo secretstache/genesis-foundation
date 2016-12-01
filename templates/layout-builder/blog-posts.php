@@ -24,19 +24,19 @@ if ( $curated = get_sub_field('blog_posts_display') == 'Curated' ) {
 
 }
 
+global $cb_i;
+
 ?>
 
 <section <?php echo section_id_classes(); ?>>
 
-	<div class="row">
+	<div class="row" data-equalizer data-equalize-on="medium" id="equal-id-<?php echo $cb_i; ?>">
 
 		<?php ssm_maybe_add_content_block_header(); ?>
 
 		<?php $post_query = new WP_Query($args); ?>
 
 		<?php if ( $post_query->have_posts() ) { ?>
-
-			<div data-equalizer data-options="equalize_on_stack: true">
 
 			<?php do_action( 'genesis_before_while' ); ?>
 
@@ -75,8 +75,6 @@ if ( $curated = get_sub_field('blog_posts_display') == 'Curated' ) {
 				</article>
 
 				<?php } // endwhile $post_query->have_posts() ?>
-
-			</div>
 
 		<?php } // endif $post_query->have_posts() ?>
 

@@ -1,23 +1,25 @@
 <section <?php echo section_id_classes(); ?>>
 
-	<div class="row">
+	<?php ssm_maybe_add_content_block_header(); ?>
 
-		<?php ssm_maybe_add_content_block_header(); ?>
-	
-		<?php if ( $tabs = get_sub_field('tab_list') ) { ?>
+	<?php if ( $tabs = get_sub_field('tab_list') ) { ?>
 
-		<?php $t_i = 1; ?>
-		<?php $c_i = 1; ?>
+	<?php $t_i = 1; ?>
+	<?php $c_i = 1; ?>
 
-		<div class="small-12 column">
+	<?php global $cb_i; ?>
 
-			<ul class="tabs" data-tab>
+	<div class="row align-center">
+
+		<div class="small-12 large-9 column">
+
+			<ul class="tabs" data-tabs id="tab-set-<?php echo $cb_i; ?>">
 
 				<?php foreach ( $tabs as $item ) { ?>
 
 				<?php $id = sanitize_title_with_dashes($item['headline']); ?>
 
-				<li class="tab-title<?php echo $t_i == 1 ? ' active' : ''; ?>">
+				<li class="tabs-title<?php echo $t_i == 1 ? ' is-active' : ''; ?>">
 
 					<a href="#<?php echo $id; ?>"><?php echo $item['headline']; ?></a>
 
@@ -30,13 +32,13 @@
 			</ul>
 			<!-- end .accordion -->
 
-			<div class="tabs-content">
+			<div class="tabs-content" data-tabs-content="tab-set-<?php echo $cb_i; ?>">
 
 				<?php foreach ( $tabs as $item ) { ?>
 
 				<?php $id = sanitize_title_with_dashes($item['headline']); ?>
 
-				<div id="<?php echo $id; ?>" class="content<?php echo $c_i == 1 ? ' active' : ''; ?>">
+				<div id="<?php echo $id; ?>" class="tabs-panel<?php echo $c_i == 1 ? ' is-active' : ''; ?>">
 
 					<?php echo $item['content']; ?>
 
@@ -51,12 +53,11 @@
 			<!--end .tabs-content -->
 
 		</div>
-		<!-- end .column -->
-
-		<?php } ?>
 
 	</div>
-	<!-- end .wrap -->
+	<!-- end .row -->
+
+	<?php } ?>
 
 </section>
 <!-- end .tabs -->

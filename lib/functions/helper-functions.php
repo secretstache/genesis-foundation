@@ -227,7 +227,7 @@ function section_id_classes() {
   }
 
   if ( get_row_layout() == 'tabs' ) {
-    $section_id_classes .= ' tabs';
+    $section_id_classes .= ' tab-set';
   }
 
   if ( get_row_layout() == 'form' ) {

@@ -66,10 +66,6 @@ function ssm_layout_options_modify_classes_to_add( $classes_to_add ) {
         $classes_to_add['content'] = array('small-12', 'column');
     }
 
-    if ( 'full-width-content' === $layout ) {
-        $classes_to_add['content'] = array('small-12', 'column');
-    }
-
     // sidebar-content
     // - same markup as content-sidebar with css modifications rather than markup
 
