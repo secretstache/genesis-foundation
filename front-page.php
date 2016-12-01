@@ -9,28 +9,21 @@
 /** Force full width layout */
 add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 
+/** Remove Entry Header */
+remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
+remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
+remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
 
-/** Replace the standard loop with our custom loop */
-remove_action( 'genesis_loop', 'genesis_do_loop' );
-add_action( 'genesis_loop', 'ssm_home_loop' );
 
-function ssm_home_loop() { ?>
+add_action('genesis_entry_content', 'ssm_insert_content_blocks');
+/*
+ * Includes the content blocks to build the page layout 
+ *
+ */
+function ssm_insert_content_blocks() {
 
-<?php do_action('genesis_before_entry'); ?>
+  include('templates/layout-builder/content-blocks.php');
 
-<article <?php post_class(); ?> itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+}
 
-	<div class="entry-content" itemprop="text">
-
-		<?php include('templates/layout-builder/content-blocks.php'); ?>
-
-	</div>
-	<!-- entry-content -->
-
-</article>
-
-<?php do_action('genesis_after_entry'); ?>
-
-<?php }
-
-genesis();
+genesis_lite();

@@ -26,4 +26,4 @@ function ssm_insert_content_blocks() {
 
 }
 
-genesis(); 
+genesis_lite(); 

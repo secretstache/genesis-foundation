@@ -55,4 +55,4 @@ remove_action( 'genesis_header', 'ssm_do_header_right' );
 remove_action( 'genesis_after_header', 'ssm_do_primary_navigation' );
 
 
-genesis();
+genesis_lite();
