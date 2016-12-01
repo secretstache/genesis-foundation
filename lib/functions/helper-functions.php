@@ -264,6 +264,11 @@ function genesis_lite() {
   do_action('genesis_before_content');
 
   genesis_markup( array(
+    'open'   => '<div %s>',
+    'context' => 'row',
+  ) );
+
+  genesis_markup( array(
       'open'   => '<main %s>',
       'context' => 'content',
     ) );
@@ -310,6 +315,11 @@ function genesis_header_lite() {
 }
 
 function genesis_footer_lite() {
+
+  genesis_markup( array(
+    'close' => '</div>', // End .row
+    'context' => 'row',
+  ) );
 
   do_action( 'genesis_before_footer' );
   do_action( 'genesis_footer' );

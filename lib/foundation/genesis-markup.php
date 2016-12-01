@@ -5,8 +5,8 @@
 add_filter( 'genesis_attr_title-area',         'ssm_add_markup_class', 10, 2 );
 // add_filter( 'genesis_attr_site-container',      'ssm_add_markup_class', 10, 2 );
 // add_filter( 'genesis_attr_content-sidebar-wrap','ssm_add_markup_class', 10, 2 );
-// add_filter( 'genesis_attr_content',             'ssm_add_markup_class', 10, 2 );
-// add_filter( 'genesis_attr_sidebar-primary',     'ssm_add_markup_class', 10, 2 );
+add_filter( 'genesis_attr_content',             'ssm_add_markup_class', 10, 2 );
+add_filter( 'genesis_attr_sidebar-primary',     'ssm_add_markup_class', 10, 2 );
 // add_filter( 'genesis_attr_archive-pagination',  'ssm_add_markup_class', 10, 2 );
 // add_filter( 'genesis_attr_site-footer',         'ssm_add_markup_class', 10, 2 );
 
@@ -20,8 +20,8 @@ function ssm_add_markup_class( $attr, $context ) {
             // 'site-container'       		=> array('inner-wrap', 'off-canvas-content'),
             //'site-footer'       		=> 'row',
             //'content-sidebar-wrap'      => 'row',
-            // 'content'           		=> array('small-12', 'medium-9', 'column'),
-			// 'sidebar-primary'   		=> array('small-12', 'medium-3', 'column'),
+            'content'           		=> array('small-12', 'medium-9', 'column'),
+			'sidebar-primary'   		=> array('small-12', 'medium-3', 'column'),
             // 'archive-pagination'		=> 'clearfix',
         ),
         $context,
@@ -66,6 +66,10 @@ function ssm_layout_options_modify_classes_to_add( $classes_to_add ) {
         $classes_to_add['content'] = array('small-12', 'column');
     }
 
+    if ( 'full-width-content' === $layout ) {
+        $classes_to_add['content'] = array('small-12', 'column');
+    }
+
     // sidebar-content
     // - same markup as content-sidebar with css modifications rather than markup
 
@@ -83,14 +87,3 @@ function ssm_modify_classes_based_on_template( $classes_to_add, $context, $attr 
 
     return $classes_to_add;
 }
-
-// add_filter( 'genesis_attr_site-container', 'ssm_data_off_canvas_content' );
-
-// function ssm_data_off_canvas_content($attributes) {
-//     $attributes['data-off-canvas-content'] = 'data-off-canvas-content';
-//     return $attributes;
-// } 
-
-
-
-
