@@ -181,15 +181,12 @@ function section_id_classes() {
   }
 
   $section_id_classes = '';
-  // $wrapper_id_classes = '';
 
   if ( $html_id = get_sub_field('html_id') ) {
     $html_id = sanitize_html_class(strtolower($html_id));
     $section_id_classes .= ' id="' . $html_id . '" class="content-block row-' . $cb_i . ' row-' . $even_odd;
-    // $wrapper_id_classes .= ' id="' . $html_id . '" class=" section-wrapper';
   } else { 
     $section_id_classes .= ' class="content-block row-' . $cb_i . ' row-' . $even_odd;
-    // $wrapper_id_classes .= ' class="section-wrapper';
   }
 
   if ( get_row_layout() == 'visual_editor' ) {
@@ -223,7 +220,7 @@ function section_id_classes() {
   }
 
   if ( get_row_layout() == 'accordion' ) {
-    $section_id_classes .= ' accordion';
+    $section_id_classes .= ' accordion-set';
   }
 
   if ( get_row_layout() == 'tabs' ) {
@@ -248,25 +245,48 @@ function section_id_classes() {
 
   if ( $inline_classes != NULL ) {
     $section_id_classes .= ' ' . $inline_classes;
-    // $wrapper_id_classes .= ' ' . $inline_classes;
   }
 
   $section_id_classes .= '"';
-  // $wrapper_id_classes .= '"';
 
   return $section_id_classes;
 
 }
+
+function wrapper_id_classes() {
+
+  $wrapper_id_classes = '';
+
+  if ( $wrapper_id = get_sub_field('wrapper_id') ) {
+    $wrapper_id = sanitize_html_class(strtolower($wrapper_id));
+    $wrapper_id_classes .= ' id="' . $wrapper_id . '" class="section-wrapper'; 
+
+  } else {
+    $wrapper_id_classes .= ' class="section-wrapper'; 
+  
+  }
+
+  if ( $wrapper_classes = get_sub_field('wrapper_classes') ) {
+    $wrapper_id_classes .= ' ' . $wrapper_classes;
+
+  }
+
+  $wrapper_id_classes .= '"';
+  
+  return $wrapper_id_classes;
+
+}
+
 
 function genesis_lite() {
   genesis_header_lite();
 
   do_action('genesis_before_content');
 
-  genesis_markup( array(
-    'open'   => '<div %s>',
-    'context' => 'row',
-  ) );
+  // genesis_markup( array(
+  //   'open'   => '<div %s>',
+  //   'context' => 'row',
+  // ) );
 
   genesis_markup( array(
       'open'   => '<main %s>',
@@ -316,10 +336,10 @@ function genesis_header_lite() {
 
 function genesis_footer_lite() {
 
-  genesis_markup( array(
-    'close' => '</div>', // End .row
-    'context' => 'row',
-  ) );
+  // genesis_markup( array(
+  //   'close' => '</div>', // End .row
+  //   'context' => 'row',
+  // ) );
 
   do_action( 'genesis_before_footer' );
   do_action( 'genesis_footer' );

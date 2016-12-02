@@ -20,7 +20,7 @@ function ssm_add_markup_class( $attr, $context ) {
             // 'site-container'       		=> array('inner-wrap', 'off-canvas-content'),
             //'site-footer'       		=> 'row',
             //'content-sidebar-wrap'      => 'row',
-            'content'           		=> array('small-12', 'medium-9', 'column'),
+            //'content'           		=> array('small-12', 'medium-9', 'column'),
 			'sidebar-primary'   		=> array('small-12', 'medium-3', 'column'),
             // 'archive-pagination'		=> 'clearfix',
         ),
@@ -62,9 +62,9 @@ function ssm_layout_options_modify_classes_to_add( $classes_to_add ) {
     // content-sidebar          // default
 
     // full-width-content       // supported
-    if ( 'full-width-content' === $layout ) {
-        $classes_to_add['content'] = array('small-12', 'column');
-    }
+    // if ( 'full-width-content' === $layout ) {
+    //     $classes_to_add['content'] = array('small-12', 'column');
+    // }
 
     // sidebar-content
     // - same markup as content-sidebar with css modifications rather than markup

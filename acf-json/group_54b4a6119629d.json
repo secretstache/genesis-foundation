@@ -55,16 +55,16 @@
                                 "id": ""
                             },
                             "choices": {
+                                "Solid Color": "Solid Color",
                                 "Photo": "Photo",
                                 "Video": "Video",
-                                "Repeatable Pattern": "Repeatable Pattern",
                                 "Custom": "Custom"
                             },
+                            "allow_null": 0,
                             "other_choice": 0,
                             "save_other_choice": 0,
                             "default_value": "",
-                            "layout": "horizontal",
-                            "allow_null": 0
+                            "layout": "horizontal"
                         },
                         {
                             "key": "field_5525ebdcfa92c",
@@ -87,9 +87,32 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "message": "Be sure to add a unique ID below to target this specific block.",
-                            "esc_html": 0,
-                            "new_lines": "wpautop"
+                            "message": "Be sure to add a unique ID to target this specific block with CSS.",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_5840be93b38f2",
+                            "label": "Solid Color",
+                            "name": "solid_color",
+                            "type": "color_picker",
+                            "instructions": "",
+                            "required": "",
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5525ebdcfa92b",
+                                        "operator": "==",
+                                        "value": "Solid Color"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": ""
                         },
                         {
                             "key": "field_5525ebdcfa92d",
@@ -151,53 +174,13 @@
                             "mime_types": ""
                         },
                         {
-                            "key": "field_5525ebdcfa92f",
-                            "label": "Pattern",
-                            "name": "pattern",
-                            "type": "image",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_5525ebdcfa92b",
-                                        "operator": "==",
-                                        "value": "Repeatable Pattern"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "array",
-                            "preview_size": "thumbnail",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
-                        },
-                        {
-                            "key": "field_554d71367d88c",
-                            "label": "Style",
+                            "key": "field_5840c5d19ff69",
+                            "label": "Styles",
                             "name": "",
                             "type": "tab",
                             "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_5525ebdcfa92b",
-                                        "operator": "==",
-                                        "value": "Photo"
-                                    }
-                                ]
-                            ],
+                            "required": "",
+                            "conditional_logic": "",
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -209,7 +192,7 @@
                         {
                             "key": "field_559083eed4a5c",
                             "label": "HTML Classes",
-                            "name": "html_classes",
+                            "name": "wrapper_classes",
                             "type": "text",
                             "instructions": "",
                             "required": 0,
@@ -230,7 +213,7 @@
                         {
                             "key": "field_5525ebdcfa95d",
                             "label": "HTML ID",
-                            "name": "html_id",
+                            "name": "wrapper_id",
                             "type": "text",
                             "instructions": "",
                             "required": 0,
@@ -2269,5 +2252,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1480637577
+    "modified": 1480639973
 }
