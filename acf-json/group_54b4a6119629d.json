@@ -400,7 +400,7 @@
                     "key": "54bc87f777315",
                     "name": "headline",
                     "label": "Headline",
-                    "display": "row",
+                    "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_554e2ff727352",
@@ -607,7 +607,7 @@
                     "key": "54bc885d7731a",
                     "name": "media",
                     "label": "Media",
-                    "display": "row",
+                    "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_554e307fcc7aa",
@@ -956,7 +956,7 @@
                     "key": "552458ca83c4c",
                     "name": "columns",
                     "label": "Columns",
-                    "display": "row",
+                    "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_554e310acc7b1",
@@ -1317,7 +1317,7 @@
                     "key": "5525e89806188",
                     "name": "blog_posts",
                     "label": "Blog Posts",
-                    "display": "row",
+                    "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_554e3119cc7b2",
@@ -1530,7 +1530,7 @@
                     "key": "55245c9f83c56",
                     "name": "accordion",
                     "label": "Accordion",
-                    "display": "row",
+                    "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_554e315acc7b5",
@@ -1716,7 +1716,7 @@
                     "key": "55245cad83c57",
                     "name": "tabs",
                     "label": "Tabs",
-                    "display": "row",
+                    "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_554e319bcc7b8",
@@ -1902,7 +1902,7 @@
                     "key": "5525e50d241ad",
                     "name": "form",
                     "label": "Form",
-                    "display": "row",
+                    "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_554e31d5cc7bb",
@@ -2214,7 +2214,7 @@
                     "key": "5525ec18fa95e",
                     "name": "wrapper_close",
                     "label": "Wrapper - Close",
-                    "display": "row",
+                    "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_5525ec2cfa95f",
@@ -2269,5 +2269,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1480637394
+    "modified": 1480637577
 }
