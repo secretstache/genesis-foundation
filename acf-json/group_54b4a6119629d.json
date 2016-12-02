@@ -489,7 +489,7 @@
                             "name": "button_text",
                             "type": "text",
                             "instructions": "",
-                            "required": 0,
+                            "required": 1,
                             "conditional_logic": [
                                 [
                                     {
@@ -511,87 +511,20 @@
                             "maxlength": "",
                             "readonly": 0,
                             "disabled": 0
-                        },
-                        {
-                            "key": "field_5589e83e6dc9a",
-                            "label": "Button Link",
-                            "name": "button_link",
-                            "type": "radio",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_5589e7fc6dc98",
-                                        "operator": "==",
-                                        "value": "Yes"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "Page": "Page",
-                                "Absolute URL": "Absolute URL"
-                            },
-                            "other_choice": 0,
-                            "save_other_choice": 0,
-                            "default_value": "Page",
-                            "layout": "horizontal",
-                            "allow_null": 0
-                        },
-                        {
-                            "key": "field_5589e89f6dc9b",
-                            "label": "Choose Page",
-                            "name": "choose_page",
-                            "type": "page_link",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_5589e7fc6dc98",
-                                        "operator": "==",
-                                        "value": "Yes"
-                                    },
-                                    {
-                                        "field": "field_5589e83e6dc9a",
-                                        "operator": "==",
-                                        "value": "Page"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "post_type": [],
-                            "taxonomy": [],
-                            "allow_null": 0,
-                            "multiple": 0
                         },
                         {
                             "key": "field_5589e8c86dc9d",
                             "label": "URL",
-                            "name": "url",
+                            "name": "button_url",
                             "type": "text",
                             "instructions": "",
-                            "required": 0,
+                            "required": 1,
                             "conditional_logic": [
                                 [
                                     {
                                         "field": "field_5589e7fc6dc98",
                                         "operator": "==",
                                         "value": "Yes"
-                                    },
-                                    {
-                                        "field": "field_5589e83e6dc9a",
-                                        "operator": "==",
-                                        "value": "Absolute URL"
                                     }
                                 ]
                             ],
@@ -607,42 +540,6 @@
                             "maxlength": "",
                             "readonly": 0,
                             "disabled": 0
-                        },
-                        {
-                            "key": "field_5589e8ea6dc9f",
-                            "label": "Link Target",
-                            "name": "link_target",
-                            "type": "radio",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_5589e7fc6dc98",
-                                        "operator": "==",
-                                        "value": "Yes"
-                                    },
-                                    {
-                                        "field": "field_5589e83e6dc9a",
-                                        "operator": "==",
-                                        "value": "Absolute URL"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "Same Tab": "Same Tab",
-                                "New Tab": "New Tab"
-                            },
-                            "other_choice": 0,
-                            "save_other_choice": 0,
-                            "default_value": "Same Tab",
-                            "layout": "horizontal",
-                            "allow_null": 0
                         },
                         {
                             "key": "field_554e301d27353",
@@ -2372,5 +2269,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1472503659
+    "modified": 1480637394
 }

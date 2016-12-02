@@ -20,23 +20,14 @@
 
 			<?php } ?>
 
-			<?php if ( get_sub_field('include_cta') == 'Yes' && $button_text = get_sub_field('button_text') ) { ?>
+			<?php if ( get_sub_field('include_cta') == 'Yes' ) { ?>
 
 			<div class="button-wrapper">
 
-				<?php if ( get_sub_field('button_link') == 'Page' ) { 
-					$link = get_sub_field('choose_page');
-				} elseif ( get_sub_field('button_link') == 'Absolute URL' ) {
-					$link = get_sub_field('url');
-				} ?>
+				<?php $button_text = get_sub_field('button_text'); ?>
+				<?php $url = get_sub_field('url'); ?>
 
-				<?php if ( get_sub_field('button_link') == 'Absolute URL' && get_sub_field('link_target') == 'New Tab') {
-					$target= ' target="_blank"';
-				} else {
-					$target = '';
-				}; ?>
-
-				<a class="button" href="<?php echo $link; ?>"<?php echo $target; ?>><?php echo $button_text; ?></a>
+				<a class="button" href="<?php echo $button_url; ?>"><?php echo $button_text; ?></a>
 
 			</div>
 			<!-- end .button-wrapper -->
