@@ -111,7 +111,4 @@ gulp.task('watch', function() {
   // Create LiveReload server
   livereload.listen();
 
-  // Watch any files in assets/, reload on change
-  gulp.watch(['./**']).on('change', livereload.changed);
-
 });
