@@ -339,3 +339,15 @@ function ssm_admin_styles() {
   wp_enqueue_style( 'ssm-admin-css', CHILD_URL . '/admin.css' );
 
 }
+
+/**
+ *  Enable SVG Uploads
+ */
+function wp_svg_fnc($arr = array() ) {
+  $arr['svg'] = 'image/svg+xml'; 
+  return $arr;
+}
+
+function fix_svg_thumb_display() {
+  echo '<style> svg, img[src*=".svg"] { width: 120px; height: 120px; } </style>';
+}

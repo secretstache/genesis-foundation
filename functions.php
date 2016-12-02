@@ -156,6 +156,10 @@ function child_theme_setup() {
     // Enqueue Admin Styles
     add_action( 'admin_enqueue_scripts', 'ssm_admin_styles' );
 
+    // Enable SVG Uploads
+    add_filter('upload_mimes', 'wp_svg_fnc');
+    add_action('admin_head', 'fix_svg_thumb_display');
+
     /****************************************
     Public Functions
     *****************************************/
