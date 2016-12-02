@@ -7,7 +7,8 @@ add_action('genesis_before', 'ssm_offcanvas_markup', 11);
 function ssm_offcanvas_markup() { ?>
 
   <div class="off-canvas" id="offCanvas" data-toggler=".is-active">
-    <?php // ssm_do_off_canvas_menu(); ?>
+    <?php ssm_do_off_canvas_menu(); ?>
+    <button class="button off-canvas-close" data-toggle="offCanvas">Close</button>
   </div>
 
 <?php }

@@ -36,7 +36,7 @@
 
 </div>
 
-<div class="header-right show-for-small-only small-2 small-offset-4 column">
+<div class="header-right show-for-small-only shrink small-offset-4 column">
 
 	<button class="menu-icon" type="button" data-toggle="offCanvas" aria-expanded="false" aria-controls="offCanvas"></button>
 
