@@ -25,7 +25,7 @@ function ssm_html5_doctype() {
  * Load custom favicon to header
  */
 function ssm_custom_favicon_filter( $favicon_url ) {
-  return CHILD_URL . '/assets/images/favicon.ico';
+  return CHILD_URL . '/assets/dist/images/png/favicon.png';
 }
 
 /**
@@ -85,6 +85,10 @@ function ssm_remove_more_jump_link($link) {
   return $link;
 }
 
+/**
+ * Remove Genesis Structural Wraps
+ */
+remove_theme_support( 'genesis-structural-wraps' );
 
 /**
  * Fix Gravity Form Tabindex Conflicts
@@ -128,7 +132,31 @@ function ssm_site_title( $title ) {
  */
 function ssm_do_header_right() {
 
-  include( CHILD_DIR . '/templates/partials/header-right.php');
+  get_template_part('templates/partials/header-right');
+
+}
+
+/*
+ * Add featured image above title
+ *
+ */
+function ssm_do_featured_image() {
+
+  // include('templates/partials/featured-image.php');
+
+  get_template_part('templates/partials/featured-image');
+  
+}
+
+/*
+ * Includes the content blocks to build the page layout 
+ *
+ */
+function ssm_insert_content_blocks() {
+
+  // include('templates/layout-builder/content-blocks.php');
+
+  get_template_part('templates/layout-builder/content-blocks');
 
 }
 
@@ -139,7 +167,7 @@ function ssm_do_header_right() {
  */
 function ssm_do_footer() {
 
-  include( CHILD_DIR . '/templates/partials/footer.php');
+  get_template_part('/templates/partials/footer');
 
 }
 
@@ -201,8 +229,6 @@ function ssm_do_off_canvas_menu() {
   ));
 
 }
-
-remove_theme_support( 'genesis-structural-wraps' );
 
 /**
  * Insert Royal Preloader

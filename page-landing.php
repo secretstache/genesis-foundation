@@ -1,10 +1,15 @@
 <?php
+/**
+ * This is the landing page template file.
+ * Template Name: Landing Page
+ *
+ * @package  Genesis-Foundation
+ * @since    1.0.0
+ */
 
-//* Template Name: Landing Page
+//* 
 
-// Force full width layout */
 add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
-
 
 add_filter( 'body_class', 'ssm_landing_page_class' );
 /*
@@ -38,21 +43,7 @@ function ssm_maybe_show_title() {
 }
 
 add_action('genesis_entry_content', 'ssm_insert_content_blocks');
-/*
- * Includes the content blocks to build the page layout 
- *
- */
-function ssm_insert_content_blocks() {
-
-	include('templates/layout-builder/content-blocks.php');
-
-}
-
-//Remove Header Right
 remove_action( 'genesis_header', 'ssm_do_header_right' );
-
-// Remove Primary Navigation
 remove_action( 'genesis_after_header', 'ssm_do_primary_navigation' );
-
 
 genesis_lite();

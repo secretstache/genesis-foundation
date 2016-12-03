@@ -186,7 +186,7 @@ function ssm_unregister_default_widgets() {
 
   unregister_widget( 'WP_Widget_Pages' );
   unregister_widget( 'WP_Widget_Calendar' );
-  // unregister_widget( 'WP_Widget_Archives' );
+  unregister_widget( 'WP_Widget_Archives' );
   unregister_widget( 'WP_Widget_Meta' );
   // unregister_widget( 'WP_Widget_Search' );
   // unregister_widget( 'WP_Widget_Text' );
@@ -243,7 +243,7 @@ function ssm_force_home_page_on_front() {
 }
 
 /*
- * Limits a post to a single category by changing the checkboxes into radio buttons. Simple.
+ * Limits a post to a single category by changing the checkboxes into radio buttons.
  *
  */
 function ssm_admin_catcher() {

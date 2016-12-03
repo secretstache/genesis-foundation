@@ -69,7 +69,7 @@ function child_theme_setup() {
     genesis_unregister_layout( 'sidebar-sidebar-content' );
     genesis_unregister_layout( 'sidebar-content-sidebar' );
     genesis_unregister_layout( 'sidebar-content' );
-    // genesis_unregister_layout( 'content-sidebar' );
+    genesis_unregister_layout( 'content-sidebar' );
 
     // Remove Unused User Settings
     add_filter( 'user_contactmethods', 'ssm_contactmethods' );
@@ -171,8 +171,8 @@ function child_theme_setup() {
     add_theme_support( 'genesis-responsive-viewport' );
 
     // HTML5 doctype with conditional classes
-    remove_action( 'genesis_doctype', 'genesis_do_doctype' );
-    add_action( 'genesis_doctype', 'ssm_html5_doctype' );
+    // remove_action( 'genesis_doctype', 'genesis_do_doctype' );
+    // add_action( 'genesis_doctype', 'ssm_html5_doctype' );
 
     // Load custom favicon to header
     add_filter( 'genesis_pre_load_favicon', 'ssm_custom_favicon_filter' );
