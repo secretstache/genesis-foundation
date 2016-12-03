@@ -1,0 +1,131 @@
+a,
+button,
+input:focus,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+textarea:focus,
+.button {
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition:    all 0.1s ease-in-out;
+  -ms-transition:     all 0.1s ease-in-out;
+  -o-transition:      all 0.1s ease-in-out;
+  transition:         all 0.1s ease-in-out;
+}
+
+p a {
+  text-decoration: underline;
+}
+
+.avatar {
+  float: left;
+}
+
+.alignleft .avatar {
+  margin-right: $global-margin;
+}
+
+.alignright .avatar {
+  margin-left: $global-margin;
+}
+
+.search-form input[type="submit"] {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+img.centered,
+.aligncenter {
+  display: block;
+  margin: 0 auto $global-margin;
+}
+
+img.alignnone {
+  margin-bottom: $global-margin/2;
+}
+
+.alignleft {
+  float: left;
+  text-align: left;
+}
+
+.alignright {
+  float: right;
+  text-align: right;
+}
+
+img > wp-caption-text {
+  margin-bottom: $global-margin;
+}
+
+img.alignleft,
+.wp-caption.alignleft {
+  margin: 0 $global-margin $global-margin 0;
+}
+
+img.alignright,
+.wp-caption.alignright {
+  margin: 0 0 $global-margin $global-margin;
+}
+
+.wp-caption-text {
+  font-size: 90%;
+  font-weight: bold;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+pre {
+  background: $light-gray;
+  border: rem-calc(1) solid $medium-gray;
+  font-size: 90%;
+  padding: $global-padding/2;
+}
+
+img#wpstats {
+  display: none;
+}
+
+.breadcrumb {
+  margin-bottom: $global-margin;
+}
+
+.archive-description,
+.author-box {
+  background-color: $light-gray;
+  margin-bottom: $global-margin;
+}
+
+.archive-description {
+  padding: $global-padding $global-padding $global-padding/2;
+}
+
+.author-box {
+  padding: $global-padding;
+}
+
+.author-box-title {
+  color: $primary-color;
+  margin-bottom: $global-margin/5;
+}
+
+.author-box a {
+  border-bottom: rem-calc(1) solid $medium-gray;
+}
+
+.author-box p {
+  margin-bottom: 0;
+}
+
+.author-box .avatar {
+  margin-right: $global-margin;
+}
+
+#wpadminbar li:hover ul ul {
+  left: 0;
+}

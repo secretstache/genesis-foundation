@@ -1,0 +1,36 @@
+footer {
+  @include clearfix();
+  padding-bottom: $global-padding;
+}
+
+footer p {
+  margin-bottom: $global-margin/2;
+}
+
+footer ul.menu {
+  margin: 0;
+  li {
+    display: inline-block;
+    font-size: 80%;
+    list-style-type: none;
+    margin: 0 $global-padding/5;
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+}
+
+ul.social-networks {
+  float: right;
+  margin: 0;
+  @media #{$small-only} {
+    float: left;
+  }
+  li {
+    display: inline-block;
+    font-size: rem-calc(24);
+    list-style-type: none;
+    line-height: 1.1;
+    padding: 0 $global-padding/4;
+  }
+}

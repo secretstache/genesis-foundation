@@ -1,0 +1,27 @@
+section {
+  @include clearfix;
+  @include responsive-margin('top');
+  clear: both;
+}
+
+section[class^='bg-'],
+section[class*='bg-'] {
+  @include responsive-padding('vert');
+}
+
+section:first-of-type[class^='bg-'],
+section:first-of-type[class*='bg-'],
+section[class^='bg-'] + section[class^='bg-'],
+section[class*='bg-'] + section[class*='bg-'] {
+  margin-top: 0;
+
+}
+
+section:last-of-type {
+  @include responsive-margin('bottom');
+}
+
+section:last-of-type[class^='bg-'],
+section:last-of-type[class*='bg-'] {
+  margin-bottom: 0;
+}

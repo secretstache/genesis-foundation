@@ -1,0 +1,180 @@
+$global-margin: rem-calc(20);
+$global-padding: rem-calc(20);
+
+// Mixins
+@mixin responsive-padding($direction: 'vert', $unit: $global-padding) {
+  
+  @if $direction == 'top' {
+    padding-top: rem-calc($unit/2);
+    @include breakpoint(medium) {
+      padding-top: rem-calc($unit);
+    }
+
+  } @elseif $direction == 'bottom' {
+    padding-bottom: rem-calc($unit/2);
+    @include breakpoint(medium) {
+      padding-bottom: rem-calc($unit);
+    }
+
+  } @elseif $direction == 'vert' {
+    padding-bottom: rem-calc($unit/2);
+    padding-top: rem-calc($unit/2);
+    @include breakpoint(medium) {
+      padding-bottom: rem-calc($unit);
+      padding-top: rem-calc($unit);
+    }
+  
+  } @elseif $direction == 'horz' {
+    padding-left: rem-calc($unit/2);
+    padding-right: rem-calc($unit/2);
+    @include breakpoint(medium) {
+      padding-left: rem-calc($unit);
+      padding-right: rem-calc($unit);
+    }
+
+  }  @elseif $direction == 'all' {
+    padding: rem-calc($unit/2);
+    @include breakpoint(medium) {
+      padding: rem-calc($unit);
+    }
+
+  }
+
+}
+
+@mixin responsive-margin($direction: 'vert', $unit: $global-margin) {
+  
+  @if $direction == 'top' {
+    margin-top: rem-calc($unit/2);
+    @include breakpoint(medium) {
+      margin-top: rem-calc($unit);
+    }
+
+  } @elseif $direction == 'bottom' {
+    margin-bottom: rem-calc($unit/2);
+    @include breakpoint(medium) {
+      margin-bottom: rem-calc($unit);
+    }
+
+  } @elseif $direction == 'vert' {
+    margin-bottom: rem-calc($unit/2);
+    margin-top: rem-calc($unit/2);
+    @include breakpoint(medium) {
+      margin-bottom: rem-calc($unit);
+      margin-top: rem-calc($unit);
+    }
+  
+  } @elseif $direction == 'horz' {
+    margin-left: rem-calc($unit/2);
+    margin-right: rem-calc($unit/2);
+    @include breakpoint(medium) {
+      margin-left: rem-calc($unit);
+      margin-right: rem-calc($unit);
+    }
+
+  } @elseif $direction == 'all' {
+    margin: rem-calc($unit/2);
+    @include breakpoint(medium) {
+      margin: rem-calc($unit);
+    }
+
+  }
+
+}
+
+@mixin responsive-type($size) { 
+  font-size: rem-calc($size*.75);
+  @include breakpoint(medium) {
+    font-size: rem-calc($size);
+  }
+}
+
+
+/**
+ * Allows you to use retina images at various pixel densities.
+ * Examples:
+ *
+ *   @include retina(/images/mypic.jpg, 2);
+ *   @include retina(/images/mypic.jpg, 3, 100px 100px, left top no-repeat transparent);
+ *
+ * @param  {Value}  $path               The path to the file name minus extension.
+ * @param  {Number} $cap:    2          The highest pixel density level images exist for.
+ * @param  {Value}  $size:   auto auto  The intended width of the rendered image.
+ * @param  {Value}  $extras: null       Any other `background` values to be added.
+ */
+@mixin retina($path, $cap: 2, $size: auto auto, $extras: null) {
+
+  /*
+   * Set a counter and get the length of the image path.
+   */
+  $position: -1;
+  $strpath: '#{$path}';
+  $length: str-length($strpath);
+
+  /*
+   * Loop ver the image path and figure out the
+   * position of the dot where the extension begins.
+   */
+  @for $i from $length through $length - 10{
+      @if $position == -1 {
+          $char : str-slice($strpath, $i, $i);
+          @if str-index($char, ".") == 1 {
+              $position: $i;
+          }
+      }
+  }
+
+  /*
+   * If we were able to figure out where the extension is,
+   * slice the path into a base and an extension. Use that to
+   * calculate urls for different density environments. Set
+   * values for different environments.
+   */
+  @if $position != -1 {
+    $ext: str-slice($strpath, $position + 1, $length);
+    $base: str-slice($strpath, 1, $position - 1);
+    $at1x_path: "#{$base}.#{$ext}";
+    $at2x_path: "#{$base}@2x.#{$ext}";
+
+    /*
+     * Set a base background for 1x environments.
+     */
+    background: url("#{$at1x_path}") $extras;
+    background-size: $size;
+
+    /*
+     * Create an @2x-ish media query.
+     */
+    @media all and (-webkit-min-device-pixel-ratio : 1.5),
+           all and (-o-min-device-pixel-ratio: 3/2),
+           all and (min--moz-device-pixel-ratio: 1.5),
+           all and (min-device-pixel-ratio: 1.5) {
+             background      : url("#{$at2x_path}") $extras;
+             background-size : $size;
+    }
+
+    /*
+     * Create media queries for all environments that the user has
+     * provided images for.
+     */
+    @if $cap >= 2 {
+      @for $env from 2 through $cap {
+        $suffix: "@#{$env}x";
+        @media (-webkit-min-device-pixel-ratio: $env),
+               (min-resolution: $env * 96dpi) {
+                 background      : url("#{$base}#{$suffix}.#{$ext}") $extras;
+                 background-size : $size;
+        }
+      }
+    }
+
+  /*
+   * If anything went wrong trying to separate the file from its
+   * extension, set a background value without doing anything to it.
+   */
+  } @else {
+    background: url("#{$path}") $extras;
+    background-size: $size;
+  }
+
+}

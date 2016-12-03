@@ -1,0 +1,14 @@
+section.cols {
+  @include clearfix();
+  h2.col-title {
+
+  }
+  .icon-image {
+    margin-bottom: $global-margin/2;
+  }
+  @media #{$small-only} {
+    .image {
+      margin-bottom: $global-margin;
+    }
+  }
+}

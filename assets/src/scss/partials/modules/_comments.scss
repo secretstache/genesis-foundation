@@ -1,0 +1,73 @@
+.comment-respond,
+  .entry-comments,
+  .entry-pings {
+    background-color: $white;
+    margin-bottom: $global-margin;
+  }
+
+
+  .comment-respond,
+  .entry-pings {
+    padding: $global-padding 0 $global-padding/2;
+  }
+
+  .comment-respond a,
+  .entry-comments a {
+    border-bottom: rem-calc(1) solid $medium-gray;
+  }
+
+  .comment-content {
+    clear: both;
+  }
+
+  .entry-comments .comment-author {
+    margin-bottom: 0;
+  }
+
+  .comment-respond input[type="email"],
+  .comment-respond input[type="text"],
+  .comment-respond input[type="url"] {
+    width: 50%
+  }
+
+  .comment-respond label {
+    display: block;
+    margin-right: $global-margin;
+  }
+
+  .comment-list, ul.children {
+    margin-left: 0;
+  }
+
+  .comment-list li,
+  .ping-list li {
+    list-style-type: none;
+  }
+
+  .comment-list li {
+    margin-top: $global-margin;
+    padding: $global-padding;
+  }
+
+  li.comment {
+    background-color: $light-gray;
+    border: rem-calc(2) solid $white;
+  }
+
+  .comment .avatar {
+    margin: 0 $global-margin/2 $global-margin 0;
+  }
+
+  .entry-pings .reply {
+    display: none;
+  }
+
+  .form-allowed-tags {
+    background-color: $light-gray;
+    font-size: 100%;
+    padding: $global-padding;
+  }
+
+  p.form-submit input {
+    @include button();
+  }

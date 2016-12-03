@@ -1,0 +1,27 @@
+.archive-pagination,
+.entry-pagination {
+  font-size: 100%;
+  margin: $global-margin 0;
+}
+
+.archive-pagination li {
+  display: inline;
+}
+
+.archive-pagination li a {
+  background-color: $dark-gray;
+  border-radius: $global-radius;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  padding: $global-padding $global-padding*1.5;
+}
+
+.archive-pagination li a:hover,
+.archive-pagination li.active a {
+  background-color: $light-gray;
+}
+
+.entry-pagination a {
+  border-bottom: rem-calc(1) solid $medium-gray;
+}

@@ -1,0 +1,10 @@
+nav {
+  background: $light-gray;
+  &.primary {
+    @include grid-column(12);
+    a:hover,
+    .active a {
+      background: darken($light-gray, 10%);
+    }
+  }
+}
