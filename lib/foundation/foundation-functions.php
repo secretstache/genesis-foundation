@@ -19,7 +19,6 @@ add_action('genesis_header', 'ssm_open_header_markup', 5);
  */
 function ssm_open_header_markup() { ?>
 
-  <div class="title-bar">
     <div class="row align-justify align-middle">
 
 <?php }
@@ -31,7 +30,6 @@ add_action('genesis_header', 'ssm_close_header_markup', 11);
 function ssm_close_header_markup() { ?>
 
     </div>
-  </div>
 
 <?php }
 
