@@ -1,17 +1,5 @@
 section.blog-posts {
   @include clearfix();
-  article:nth-child(odd) {
-    padding-right: $global-padding*2;
-    @media #{$small-only} {
-      padding-right: $global-padding;
-    }
-  }
-  article:nth-child(even) {
-    padding-left: $global-padding*2;
-    @media #{$small-only} {
-      padding-left: $global-padding;
-    }
-  }
   h2.entry-title {
     line-height: 1.1;
     margin-bottom: $global-margin/4;
@@ -25,10 +13,5 @@ section.blog-posts {
     border-top: rem-calc(1) solid $light-gray;
     margin-top: $global-margin/1.75;
     padding-top: $global-margin/2;
-  }
-  @media #{$small-only} {
-    article {
-      margin-bottom: $global-margin;
-    }
   }
 }
