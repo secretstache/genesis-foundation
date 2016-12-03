@@ -1,23 +1,20 @@
 $panel-width: 90% !default;
-$panel-height: 100% !default;
-$panel-background: green !default;
+$panel-background: $medium-gray !default;
 $panel-transition-easing: ease !default;
 $panel-transition-timing: .25s !default;
 $panel-content-padding: 60px 0 0 !default;
 $panel-z-index: 9999 !default;
-$panel-shadow-color: darken(green, 30%) !default;
+$panel-shadow-color: darken($panel-background, 30%) !default;
 $panel-shadow: .01em 0 .5em $panel-shadow-color !default;
 $panel-translate: translateX(100%);
-$panel-side: "right" !default;
+$panel-side: "left" !default;
 $panel-links-color: $white !default;
-$bg-gray-dark: #777 !default;
-
 
 .off-canvas {
   position: fixed;
   height: 100%;
   width: $panel-width;
-  background: $bg-gray-dark;
+  background: $panel-background;
   padding: $panel-content-padding;
   z-index: $panel-z-index;
   overflow-y: auto;
@@ -35,30 +32,34 @@ $bg-gray-dark: #777 !default;
   }
   
   ul.menu > li {
-    margin-bottom: rem-calc(10); 
+    display: block;
+    width: 100%;
   }
 
   ul.menu > li > a {
     color: $panel-links-color; 
-    
     &:hover {
-      background: darken(gold, 10%);
+      background: darken($primary-color, 10%);
     }
+  }
+
+  ul.menu ul.menu > li a {
+    padding-left: $global-padding;
   }
 
   .menu-item.button {
     margin: 0 0.7rem;
   }
 
-  li.button.outline.gold a:hover {
-    background: transparent;
-  }
 }
 
 .off-canvas-close {
   position: absolute;
   right: 0;
   top: 0;
-  background: gold;
-  color: $black;
+  background: $primary-color;
+  color: $white;
+  &:hover {
+    background: darken($primary-color, 10%);
+  }
 }
