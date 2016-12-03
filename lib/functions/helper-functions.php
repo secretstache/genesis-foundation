@@ -46,16 +46,16 @@ if ( ! function_exists( "sanitize_html_classes" ) && function_exists( "sanitize_
   *
   * @return string string of classes
   */
- function ssm_block_wrapper_classes() {
-    global $cb_i;
-    $classes    = array();
-    $classes[]  = get_sub_field('html_id');
-    $classes[]  = sanitize_html_classes(get_sub_field('class_options'));
-    $classes[]  = 0 == $cb_i % 2 ? 'even' : 'odd';
+//  function ssm_block_wrapper_classes() {
+//     global $cb_i;
+//     $classes    = array();
+//     $classes[]  = get_sub_field('html_id');
+//     $classes[]  = sanitize_html_classes(get_sub_field('class_options'));
+//     $classes[]  = 0 == $cb_i % 2 ? 'even' : 'odd';
 
-    $classes = array_filter(array_map('trim', $classes));
-    echo trim(implode(' ', apply_filters( 'fcb_set_block_wrapper_classes', $classes )));
-}
+//     $classes = array_filter(array_map('trim', $classes));
+//     echo trim(implode(' ', apply_filters( 'fcb_set_block_wrapper_classes', $classes )));
+// }
 
 
 function ssm_maybe_add_content_block_header() { ?>
