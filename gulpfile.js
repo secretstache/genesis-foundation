@@ -47,16 +47,42 @@ gulp.task('styles', function() {
 });
 
 // Scripts
-gulp.task('scripts', function() {
-  return gulp.src(f6Arr, [config.paths.bower + '/what-input/what-input.js'])
+gulp.task('f6-scripts', function() {
+  return gulp.src(f6Arr)
     .pipe(sourcemaps.init())
-    .pipe(concat('main.js'))
+    .pipe(concat('foundation.js'))
     .pipe(gulp.dest(config.js.dest))
     .pipe(rename({ suffix: '.min' }))
     //.pipe(uglify())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(config.js.dest))
-    .pipe(notify({ message: 'Scripts task complete', onLast: true }));
+    .pipe(notify({ message: 'Foundation scripts task complete', onLast: true }));
+});
+
+// Scripts
+gulp.task('vendors-scripts', function() {
+  return gulp.src([config.js.src + '/vendors/**/*.js'])
+    .pipe(sourcemaps.init())
+    .pipe(concat('vendors.js'))
+    .pipe(gulp.dest(config.js.dest))
+    .pipe(rename({ suffix: '.min' }))
+    //.pipe(uglify())
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest(config.js.dest))
+    .pipe(notify({ message: 'Vendor scripts task complete', onLast: true }));
+});
+
+// app-js
+gulp.task('app-js', function() {
+  return gulp.src([config.js.src + '/app.js'])
+    .pipe(sourcemaps.init())
+    .pipe(concat('app.js'))
+    .pipe(gulp.dest(config.js.dest))
+    .pipe(rename({ suffix: '.min' }))
+    //.pipe(uglify())
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest(config.js.dest))
+    .pipe(notify({ message: 'App.js task complete', onLast: true }));
 });
 
 // Images
@@ -96,7 +122,7 @@ gulp.task('clean', function() {
 
 // Default task
 gulp.task('default', ['clean'], function() {
-  gulp.start('styles', 'scripts', 'images', 'svg');
+  gulp.start('styles', 'f6-scripts', 'vendors-scripts', 'app-js', 'images', 'svg');
 });
 
 // Watch
@@ -108,10 +134,10 @@ gulp.task('watch', function() {
   // Watch Images
   gulp.watch([config.images.src + '/**/*' ], ['images']);
 
-  // Create LiveReload server
-  livereload.listen();
+  // Watch vendors
+  gulp.watch([config.js.src + '/vendors/**/*.js' ], ['vendors-scripts']);
 
-  // Watch any files in assets/, reload on change
-  gulp.watch(['./**']).on('change', livereload.changed);
+  // Watch app
+  gulp.watch([config.js.src + '/app.js' ], ['app-js']);
 
 });
