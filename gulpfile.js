@@ -53,7 +53,7 @@ gulp.task('f6-scripts', function() {
     .pipe(concat('foundation.js'))
     .pipe(gulp.dest(config.js.dest))
     .pipe(rename({ suffix: '.min' }))
-    //.pipe(uglify())
+    .pipe(uglify())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(config.js.dest))
     .pipe(notify({ message: 'Foundation scripts task complete', onLast: true }));
@@ -66,7 +66,7 @@ gulp.task('vendors-scripts', function() {
     .pipe(concat('vendors.js'))
     .pipe(gulp.dest(config.js.dest))
     .pipe(rename({ suffix: '.min' }))
-    //.pipe(uglify())
+    .pipe(uglify())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(config.js.dest))
     .pipe(notify({ message: 'Vendor scripts task complete', onLast: true }));
@@ -79,7 +79,7 @@ gulp.task('app-js', function() {
     .pipe(concat('app.js'))
     .pipe(gulp.dest(config.js.dest))
     .pipe(rename({ suffix: '.min' }))
-    //.pipe(uglify())
+    .pipe(uglify())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(config.js.dest))
     .pipe(notify({ message: 'App.js task complete', onLast: true }));

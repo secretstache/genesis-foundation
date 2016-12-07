@@ -28,7 +28,7 @@
         "dest": "./assets/dist/js"
     },
     "f6": [
-        "core", 
+        "core",
         "abide",
         "accordion",
         "accordionMenu",
@@ -53,7 +53,7 @@
         "util.mediaQuery",
         "util.motion",
         "util.nest",
-        "util.timerAndImagagesLoader",
+        "util.timerAndImageLoader",
         "util.touch",
         "util.triggers"
     ]
